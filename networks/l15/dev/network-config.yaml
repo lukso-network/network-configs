@@ -1,0 +1,17 @@
+# Network:
+NETWORK: l15
+GENESIS_TIME: 1632755437
+
+# Chain:
+CHAIN_ID: 231
+NETWORK_ID: 231
+FORK_CHOICE: 0x63a55317
+
+# Bootnodes:
+PANDORA_BOOTNODES: ""
+VANGUARD_BOOTNODES: ""
+
+# Stats pages:
+ETH1_STATS_URL: https://dev.stats.pandora.l15.lukso.network/
+ETH1_STATS_APIKEY:
+ETH2_STATS_URL:
