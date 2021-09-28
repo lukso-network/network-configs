@@ -12,7 +12,7 @@
     "istanbulBlock": 0,
     "muirGlacierBlock": 0,
     "pandora": {
-      "genesisStartTime": 1632755437,
+      "genesisStartTime": 1627579138,
       "slotsPerEpoch": 32,
       "slotTimeDuration": 6
     }
