@@ -19,7 +19,7 @@ SHUFFLE_ROUND_COUNT: 90
 # `2**14` (= 16,384)
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 1
 # Jan 3, 2020
-MIN_GENESIS_TIME: 1627288043
+MIN_GENESIS_TIME: 1633003500
 # 4
 HYSTERESIS_QUOTIENT: 4
 # 1 (minus 0.25)
@@ -61,8 +61,8 @@ GENESIS_FORK_VERSION: 0x63a55317
 BLS_WITHDRAWAL_PREFIX: 0x00
 # Time parameters
 # ---------------------------------------------------------------
-# 172800 seconds (2 days)
-GENESIS_DELAY: 700
+# 120 seconds (2 minutes)
+GENESIS_DELAY: 120
 # 12 seconds
 SECONDS_PER_SLOT: 6
 # 2**0 (= 1) slots 12 seconds

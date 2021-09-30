@@ -1,7 +1,7 @@
 # Mainnet preset
 # Note: the intention of this file (for now) is to illustrate what a mainnet configuration could look like.
 # Some of these constants may still change before the launch of Phase 0.
-CONFIG_NAME: "lukso-private-testnet"
+CONFIG_NAME: "CHANGE_CONFIG_NAME"
 # Misc
 # ---------------------------------------------------------------
 # 2**6 (= 64)
@@ -19,7 +19,7 @@ SHUFFLE_ROUND_COUNT: 90
 # `2**14` (= 16,384)
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 1
 # Jan 3, 2020
-MIN_GENESIS_TIME: 1627288043
+MIN_GENESIS_TIME: CHANGE_MIN_GENESIS_TIME
 # 4
 HYSTERESIS_QUOTIENT: 4
 # 1 (minus 0.25)
@@ -57,12 +57,12 @@ EFFECTIVE_BALANCE_INCREMENT: 1000000000
 # Initial values
 # ---------------------------------------------------------------
 # Mainnet initial fork version, recommend altering for testnets
-GENESIS_FORK_VERSION: 0x83a55317
+GENESIS_FORK_VERSION: CHANGE_GENESIS_FORK_VERSION
 BLS_WITHDRAWAL_PREFIX: 0x00
 # Time parameters
 # ---------------------------------------------------------------
-# 172800 seconds (2 days)
-GENESIS_DELAY: 700
+# 120 seconds (2 minutes)
+GENESIS_DELAY: 120
 # 12 seconds
 SECONDS_PER_SLOT: 6
 # 2**0 (= 1) slots 12 seconds
@@ -127,6 +127,6 @@ DOMAIN_VOLUNTARY_EXIT: 0x04000000
 DOMAIN_SELECTION_PROOF: 0x05000000
 DOMAIN_AGGREGATE_AND_PROOF: 0x06000000
 #added
-DEPOSIT_CHAIN_ID: 808081
-DEPOSIT_NETWORK_ID: 808081
+DEPOSIT_CHAIN_ID: CHANGE_DEPOSIT_CHAIN_ID
+DEPOSIT_NETWORK_ID: CHANGE_DEPOSIT_NETWORK_ID
 DEPOSIT_CONTRACT_ADDRESS: "0x000000000000000000000000000000000000cafe"
