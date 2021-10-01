@@ -1,17 +1,34 @@
-# network-configs
+# LUKSO network configs repository
 
-## L15
-### PRODUCTION
-ChainID: `23`  
-NetworkID: `23`  
-Fork: `0x83a55317`
+This repository hosts the current LUKSO network specifications. Discussions about design rationale and proposed changes can be brought up and discussed as issues. Solidified, agreed-upon changes to the spec can be made through pull requests.
 
-### STAGING
-ChainID: `232`  
-NetworkID: `232`  
-Fork: `0x73a55317`
+## Current network configs
 
-### DEVELOPMENT
-ChainID: `231`  
-NetworkID: `231`  
-Fork: `0x63a55317`
+| | [PRODUCTION](l15/prod)  | [STAGING](l15/staging)  | [DEVELOPMENT](l15/dev) |
+|:------------:| :------------: |:---------------:| :-----:|
+|Chain ID| 23      | 232 | 231 |
+|Network ID| 23      | 232        |   231 |
+|Fork version| 0x83a55317 | 0x73a55317        |    0x63a55317 |
+
+## Network services
+
+PRODUCTION:
+* https://launchpad.l15.lukso.network/
+* https://stats.pandora.l15.lukso.network/
+* https://explorer.pandora.l15.lukso.network/
+* https://stats.vanguard.l15.lukso.network/
+* https://explorer.vanguard.l15.lukso.network/
+
+STAGING:
+* https://staging.launchpad.l15.lukso.network/
+* https://staging.stats.pandora.l15.lukso.network/
+* https://staging.explorer.pandora.l15.lukso.network/
+* https://staging.stats.vanguard.l15.lukso.network/
+* https://staging.explorer.vanguard.l15.lukso.network/
+
+DEVELOPMENT:
+* https://dev.launchpad.l15.lukso.network/
+* https://dev.stats.pandora.l15.lukso.network/
+* https://dev.explorer.pandora.l15.lukso.network/
+* https://dev.stats.vanguard.l15.lukso.network/
+* https://dev.explorer.vanguard.l15.lukso.network/
