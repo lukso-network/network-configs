@@ -15,8 +15,11 @@ tmp=$(mktemp)
 dst="./$NETWORK/$NAMESPACE/network-config.yaml"
 yq eval '.GENESIS_TIME = '$GENESIS_TIME $dst >"$tmp" && mv "$tmp" $dst
 
+rm -f $NETWORK/$NAMESPACE/vanguard-genesis.ssz \
+$NETWORK/$NAMESPACE/vanguard-genesis.json
+
 ./genesis-state-gen-dev \
-  --deposit-json-file deposit_data_l15-dev-32.json \
+  --deposit-json-file $NETWORK/$NAMESPACE/deposit_data.json \
   --genesis-time $GENESIS_TIME \
   --output-ssz $NETWORK/$NAMESPACE/vanguard-genesis.ssz \
   --output-json $NETWORK/$NAMESPACE/vanguard-genesis.json \
