@@ -24,5 +24,5 @@ $NETWORK/$NAMESPACE/vanguard-genesis.json
   --output-ssz $NETWORK/$NAMESPACE/vanguard-genesis.ssz \
   --output-json $NETWORK/$NAMESPACE/vanguard-genesis.json \
   --mainnet-config
-
-#echo gsutil cp ./$NETWORK/$NAMESPACE/* gs://l15-cdn/networks/$NETWORK/$NAMESPACE
+  echo done
+exit
