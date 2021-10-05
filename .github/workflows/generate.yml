@@ -22,6 +22,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      - run: |
+      - name: Run config generator script
+        run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           sh ./updateGenesisTime.sh ${{ inputs.network }} ${{ inputs.namespace }} ${{ inputs.genesisTime }}
