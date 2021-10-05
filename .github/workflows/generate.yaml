@@ -1,0 +1,25 @@
+name: Generate config
+
+on:
+  workflow_dispatch:
+    inputs:
+      genesisTime:
+        description: 'Genesis time'
+        required: true
+        default: '0'
+      network:
+        description: 'Network'
+        required: false
+        default: 'l15'
+      namespace:
+        description: 'Namespace'
+        required: false
+        default: 'dev'
+
+jobs:
+  generateConfigs:
+    runs-on: ubuntu-18.04
+    steps:
+      - run: |
+          echo "Log level: ${{ github.event.inputs.logLevel }}"
+          ./updateGenesisTime.sh ${{ inputs.network }} ${{ inputs.namespace }} ${{ inputs.genesisTime }}
