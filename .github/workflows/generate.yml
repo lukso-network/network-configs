@@ -20,8 +20,8 @@ jobs:
   generateConfigs:
     runs-on: ubuntu-18.04
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
       - run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
-          ls -la ${GITHUB_WORKSPACE}
-          chmod +x ${GITHUB_WORKSPACE}/updateGenesisTime.sh
-          ${GITHUB_WORKSPACE}/updateGenesisTime.sh ${{ inputs.network }} ${{ inputs.namespace }} ${{ inputs.genesisTime }}
+          sh ./updateGenesisTime.sh ${{ inputs.network }} ${{ inputs.namespace }} ${{ inputs.genesisTime }}
