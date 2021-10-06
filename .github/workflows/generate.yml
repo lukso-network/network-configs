@@ -36,5 +36,5 @@ jobs:
 
         uses: google-github-actions/upload-cloud-storage@main
         with:
-          path: /l15/dev
+          path: ./l15/dev
           destination: l15-cdn/networks/l15-dev-actions
