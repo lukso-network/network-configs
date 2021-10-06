@@ -26,4 +26,4 @@ jobs:
         run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
-          ./updateGenesisTime.sh ${{ inputs.network }} ${{ inputs.namespace }} ${{ inputs.genesisTime }}
+          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
