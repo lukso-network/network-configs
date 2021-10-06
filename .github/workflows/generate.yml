@@ -1,0 +1,40 @@
+name: Generate config
+
+on:
+  workflow_dispatch:
+    inputs:
+      genesisTime:
+        description: 'Genesis time'
+        required: true
+        default: '0'
+      network:
+        description: 'Network'
+        required: false
+        default: 'l15'
+      namespace:
+        description: 'Namespace'
+        required: false
+        default: 'dev'
+
+jobs:
+  generateConfigs:
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Run config generator script
+        run: |
+          echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
+          chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
+      - name: Authorize GCP
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+      - name: Upload files
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: ./${{ github.event.inputs.network }}/${{ github.event.inputs.namespace }}
+          destination: l15-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
+          parent: false
