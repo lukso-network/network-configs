@@ -37,7 +37,3 @@ jobs:
         with:
           path: /l15/dev
           destination: l15-cdn/networks/l15-dev-actions
-      - name: Uploaded files summary
-        uses: foo/bar@master
-        env:
-          files: ${{steps.upload-files.outputs.uploaded}}
