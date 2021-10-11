@@ -18,6 +18,7 @@ PRODUCTION:
 * https://explorer.pandora.l15.lukso.network/
 * https://stats.vanguard.l15.lukso.network/
 * https://explorer.vanguard.l15.lukso.network/
+* https://rpc.l15.lukso.network/
 
 STAGING:
 * https://staging.launchpad.l15.lukso.network/
@@ -25,6 +26,7 @@ STAGING:
 * https://staging.explorer.pandora.l15.lukso.network/
 * https://staging.stats.vanguard.l15.lukso.network/
 * https://staging.explorer.vanguard.l15.lukso.network/
+* https://staging.rpc.l15.lukso.network/
 
 DEVELOPMENT:
 * https://dev.launchpad.l15.lukso.network/
@@ -32,3 +34,4 @@ DEVELOPMENT:
 * https://dev.explorer.pandora.l15.lukso.network/
 * https://dev.stats.vanguard.l15.lukso.network/
 * https://dev.explorer.vanguard.l15.lukso.network/
+* https://dev.rpc.l15.lukso.network/
