@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       genesisTime:
-        description: 'Genesis time'
+        description: 'Genesis timestamp'
         required: true
         default: '0'
       network:
@@ -15,6 +15,10 @@ on:
         description: 'Namespace'
         required: false
         default: 'dev'
+      requestUpgrade:
+        description: 'Request network upgrade with new genesis time'
+        required: false
+        default: 'false'
 
 jobs:
   generateConfigs:
@@ -22,19 +26,33 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
       - name: Run config generator script
         run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
           ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
+
       - name: Authorize GCP
         uses: google-github-actions/setup-gcloud@master
         with:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
+
       - name: Upload files
         uses: google-github-actions/upload-cloud-storage@main
         with:
           path: ./${{ github.event.inputs.network }}/${{ github.event.inputs.namespace }}
           destination: l15-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
           parent: false
+
+      - name: Request network upgrade
+        if: ${{ github.event.inputs.requestUpgrade }} == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"event_type":"genesis_dev", "client_payload": {"repository": "NETWORK-CONFIGS", "genesis_time": "${{ github.event.inputs.genesisTime }}"}}' \
+          -u "$GITHUB_TOKEN" \
+          https://api.github.com/repos/lukso-network/network-helm-charts/dispatches
