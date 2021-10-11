@@ -15,8 +15,8 @@ on:
         description: 'Namespace'
         required: false
         default: 'dev'
-      requestRollout:
-        description: 'Request rollout'
+      requestUpgrade:
+        description: 'Request network upgrade'
         required: false
         default: 'false'
 
@@ -46,13 +46,13 @@ jobs:
           destination: l15-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
           parent: false
 
-      - name: Request network rollout
-        if: ${{ github.event.inputs.requestRollout }} == 'true'
+      - name: Request network upgrade
+        if: ${{ github.event.inputs.requestUpgrade }} == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           curl -X POST \
           -H "Accept: application/vnd.github.v3+json" \
-          -d '{"event_type":"rollout_dev", "client_payload": {"repository": "NETWORK-CONFIGS", "genesis_time": "${{ github.event.inputs.genesisTime }}"}}' \
+          -d '{"event_type":"upgrade_dev", "client_payload": {"repository": "NETWORK-CONFIGS", "genesis_time": "${{ github.event.inputs.genesisTime }}"}}' \
           -u "$GITHUB_TOKEN" \
           https://api.github.com/repos/lukso-network/network-helm-charts/dispatches
