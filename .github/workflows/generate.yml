@@ -53,7 +53,6 @@ jobs:
           parent: false
 
       - name: Verify genesis time
-        uses: google-github-actions/upload-cloud-storage@main
         run: |
           wget -O ./network-config-test.yaml https://storage.googleapis.com/l15-cdn/networks/l15-dev/network-config.yaml?ignoreCache=1
           echo $(sha256sum ./network-config-test.yaml)
