@@ -32,6 +32,7 @@ jobs:
         env:
           NETWORK: ${{ github.event.inputs.network }}
           NAMESPACE: ${{ github.event.inputs.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
