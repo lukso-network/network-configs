@@ -36,9 +36,9 @@ jobs:
         run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
           export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
           echo "::set-env name=SHA256_SUM::$SHA256_SUM"
-          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
 
       - name: Authorize GCP
         uses: google-github-actions/setup-gcloud@master
