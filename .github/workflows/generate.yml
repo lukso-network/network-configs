@@ -53,6 +53,10 @@ jobs:
           destination: l15-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
           parent: false
 
+      - name: GCS Set cache-control
+        run: |
+          gsutil setmeta -h "Cache-Control: no-store" gs://l15-cdn/networks/l15-dev/*
+
       - name: Verify genesis time
         run: |
           wget -O ./network-config-test.yaml https://storage.googleapis.com/l15-cdn/networks/l15-dev/network-config.yaml?ignoreCache=1
