@@ -10,4 +10,4 @@ VANGUARD_BOOTNODES: "enr:-LK4QLJGcH8STH5wrUbn54StMoqbnO7QX_jczMOz_lyVUrO2Acfboz6
 # Stats pages:
 ETH1_STATS_URL: staging.stats.pandora.l15.lukso.network
 ETH1_STATS_APIKEY:
-ETH2_STATS_URL:
+ETH2_STATS_URL: 35.204.59.110:9090
