@@ -3,6 +3,8 @@ NETWORK=$1
 NAMESPACE=$2
 GENESIS_TIME=$3
 
+echo "Preparing config files for network $NETWORK-$NAMESPACE"
+
 tmp=$(mktemp)
 dst="./$NETWORK/$NAMESPACE/pandora-genesis.json"
 jq '.config.pandora.genesisStartTime = '$GENESIS_TIME'' $dst >"$tmp" && mv "$tmp" $dst
@@ -18,7 +20,9 @@ yq eval '.GENESIS_TIME = '$GENESIS_TIME $dst >"$tmp" && mv "$tmp" $dst
 rm -f $NETWORK/$NAMESPACE/vanguard-genesis.ssz \
 $NETWORK/$NAMESPACE/vanguard-genesis.json
 
-./genesis-state-gen-dev \
+echo "Generating genesis state for network $NETWORK-$NAMESPACE"
+
+./genesis-state-gen-$NAMESPACE \
   --deposit-json-file $NETWORK/$NAMESPACE/deposit_data.json \
   --genesis-time $GENESIS_TIME \
   --output-ssz $NETWORK/$NAMESPACE/vanguard-genesis.ssz \

@@ -35,3 +35,11 @@ DEVELOPMENT:
 * https://dev.stats.vanguard.l15.lukso.network/
 * https://dev.explorer.vanguard.l15.lukso.network/
 * https://dev.rpc.l15.lukso.network/
+
+## How to use genesis state generator
+
+In this project repository root use command like:
+
+`./updateGenesisTime.sh l15 dev 1633435200` (example how to generate for l15-dev network*)
+
+*execute command as `sudo` user
