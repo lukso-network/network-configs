@@ -9,7 +9,7 @@ tmp=$(mktemp)
 dst="./$NETWORK/$NAMESPACE/pandora-genesis.json"
 jq '.config.pandora.genesisStartTime = '$GENESIS_TIME'' $dst >"$tmp" && mv "$tmp" $dst
 HEX_GENESIS_TIME=$(echo "obase=16; $GENESIS_TIME" | bc)
-jq '.timestamp = '$HEX_GENESIS_TIME'' $dst >"$tmp" && mv "$tmp" $dst
+jq '.timestamp = '\"0x \"'' $dst >"$tmp" && mv "$tmp" $dst
 
 tmp=$(mktemp)
 dst="./$NETWORK/$NAMESPACE/vanguard-config.yaml"
