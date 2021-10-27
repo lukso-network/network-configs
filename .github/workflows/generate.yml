@@ -55,11 +55,19 @@ jobs:
 
       - name: GCS Set cache-control
         run: |
+ 
           gsutil setmeta -h "Cache-Control: no-store" gs://${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/*
 
       - name: Verify genesis time
         run: |
           wget -O ./network-config-test.yaml https://storage.googleapis.com/${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/network-config.yaml?ignoreCache=1
+
+          gsutil setmeta -h "Cache-Control: no-store" gs://${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/*
+
+      - name: Verify genesis time
+        run: |
+          wget -O ./network-config-test.yaml https://storage.googleapis.com/${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/network-config.yaml?ignoreCache=1
+
           echo $(sha256sum ./network-config-test.yaml)
           echo $SHA256_SUM
 
