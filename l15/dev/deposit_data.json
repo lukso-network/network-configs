@@ -658,5 +658,115 @@
     "fork_version": "63a55317",
     "eth2_network_name": "l15-dev",
     "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "b704250dcc4a43b6a14fcca91f171f7c383475c3031296e1c883891c9ff1a652e16ee4dc3359a25272899dc69d7af362",
+    "withdrawal_credentials": "00aee30be6cc1fbb9d3dd98179e17bd83bc2ea20d8b862cb4199b88955e8a328",
+    "amount": 32000000000,
+    "signature": "a0a72cb15fd2d350f6f88ec23b8f63a681db5417c45224f808c68b743f841d7eafc9fd18b034dc6ec1e0a5bb2e0ffe2606b1710b8b248e5f37547b93f938d9fd2717f79be4f0e140c713c85e9539971de6368f831c5b6adf1e06432a10256b2d",
+    "deposit_message_root": "4037e3e4299ce6a8604fbc7b7b779a60606c242c108d72bef7e062e1526f36d7",
+    "deposit_data_root": "63c4d011730400c94841bd55087e2569081616d8fda2bfd4ae4e8e97814e4e27",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "84df5cbeec6bd747b21248cb5445c21fd5b3f91c4b38c60401ab314e21658d25be9dd7ef40e86f6254707b2560801012",
+    "withdrawal_credentials": "000b6f3848cb122fb92f8c1d64579ae8b33529eb8889767111bcb2e8e4566fae",
+    "amount": 32000000000,
+    "signature": "a8ad04c8686a8ff749af2630608681238dba93cf01d7a0da3d30f0f70a32f6b0a2d4a3b05a5a0f01b305c88fb767993c18dd307b0d948b81060c828b2068e1f2e6d5bebeb8bcfe57c6d02c5b4fe344e87f26c05580337c93adfca37def62b383",
+    "deposit_message_root": "58017db459ea51cb0b77ee2e92959edf97a4ca73980fc5e5ba1ef5006cf1030b",
+    "deposit_data_root": "ce9b145014c3fde584f15bd6411bdbc6b111bacb55653649f23aab3436c8f4d8",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "acec88f09bdb44aa86902d9640432ebc5f59ed4c36e7ae4353e41d9243b6e6f1574336e04cec7680561e13dde8704359",
+    "withdrawal_credentials": "00d9f6c926aae424de7db8c03e8ec74f0112bea5a728ed44ed70df5af4f386b6",
+    "amount": 32000000000,
+    "signature": "a496f2c91533a8dc9f50385f63e740d593969afef78351c8072a1195eb350f1b0ba719b7fad829173eff8b749e92edeb092e2c135a960ca1c6f36d2e5a6cd0ede5374687f4bfbb456facc177fe0450b83c9efb07e8aaf21b0ba3e5f10ff9d293",
+    "deposit_message_root": "3497067f7fd1ed409835c87e16b2685468a2a84bb3fe2fc7c5d3a00fa254696c",
+    "deposit_data_root": "d6f2d145f29a8e5b28f29a659ba3bca9a2d8ca62d966ac32713119a814f944a6",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "b5807e53528e9efcc966f190d7be1bc414e8a0609f72b1399efe7461d155ab133b36faa0807ae201e0f2c23d1c63d115",
+    "withdrawal_credentials": "00200099057f8300bf3f026b6c835aefdcded63e32c4c55aa4f501ff8f065bc8",
+    "amount": 32000000000,
+    "signature": "867b699bac2eee512b459ffa8fd7a045a2cbdd38717082d6397cd8f2c295ef3f704751d584ea740697882f35cfc280c50fa87fa9b719c9f923b6d1fecc1df2a0c47ad8f2d624bdfb9f7a37005a3e4edf592890a790798c6911152b050e81128c",
+    "deposit_message_root": "88d5225cd06cc3480a860c01ce6c106873d7db0659c9aa05e9bddd5947dbb0ec",
+    "deposit_data_root": "70233b8085003935f112aa788566f279095eb6fabcf9abef3e86a519a339f6e5",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "8b010ddb4b20eefa9003db8fe7add114e9c4d209ef40aeabc3fbc3b852111d44b09bc786235e2b3be4a0815ae90434f2",
+    "withdrawal_credentials": "008cf6dec67bc44b8be3ef94897801e718cb99d50ad692ee10a624c0fcd8150b",
+    "amount": 32000000000,
+    "signature": "8080314216953e15edae8acc48ad800efd23ff612f4a1f9c78e0f795b7d2850b8b1f0cf310f957b8067feae468b06ea003d6bdf510d0a2ba908ac8653ae3f54167227eb4475f39884b19cb080954c4e89bfafd142e39e96ec085c95acec70923",
+    "deposit_message_root": "2c7e82b2810c0b8daa5e1139cfaad02184bdd5761fb602d6b05e062be760eb44",
+    "deposit_data_root": "6fca967426da2cf4630e78a3a9d1e298c6fc28ce24519b2219593138a11dfd0a",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "86edc09084c3364a76489591800f8e8a1ce2c596f7f66f1f0306582ef9dd559e9a4700ee60f73cf760d3249089c8a4d7",
+    "withdrawal_credentials": "00f83373dcc6b5ecc0ead4dda1224583356376efd11c2dede9f92326126a1652",
+    "amount": 32000000000,
+    "signature": "93f9937464a973b0d8e254d1a6174171090798b0e730152612415861f82b50d84cd0bb5dc9e8f6fa25a54f668742cf3a0b5e913a3ca902f68ff1693a6ac42b51e4fbbe836194c79e9b492fadecc02b83b424b9ff4527ee83fdf027be42550c59",
+    "deposit_message_root": "9e4af4206d9739725bdc80ea196569258910f9ff382f3b04e88d5fe556ccbb36",
+    "deposit_data_root": "74f5638f131c8a7ab13362a3d701ddd174b64c7bf3dbfddc5b86b36835c3bc5d",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "a34b857950c3294e1f6ce0853884d49d000f0e8ccc2c01aa611a2b8e504d317b9a73123f0adbfca47d77919755efb7ac",
+    "withdrawal_credentials": "00df64892a762542caa2ea630435e4e66ee372245b1d1b5bc2719c7afd189c95",
+    "amount": 32000000000,
+    "signature": "a14ae10aa4af1f9f49f330fc13711e4bb49d5372e44f0c9d971d477d5a2b012ad7e8cdf8f6755641159691b8cfe507ab163144d0e45c2ef7603ceae39fe29cbe4d381e462d5fd38c65e125c92c86ee7c1db17e9cbb67b1c32de22e180a34e025",
+    "deposit_message_root": "db404a80ec3bafe9766e74144e255b6508fc62091ab7a10cf1c9e70d6336bb80",
+    "deposit_data_root": "29d7c9190ed2964f62bb14f1b436f2ff0dc9497fb47847ea6cd90c2f7157f3f5",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "aa56e9b3e59ee44353df8d43354c87ff8af8112e4aa5d69467dffbc488726e45a91b3620bef6cd1c90c5e33de8836260",
+    "withdrawal_credentials": "006938d92a4e26eb70b97de76732108dce6a0c91f5c57ae0fe991d897795133a",
+    "amount": 32000000000,
+    "signature": "b5b93164986a2076f39a0aad208fbeaf7480e35b62edb6bd47e6f061486fef5c3901ae60dc6cd092596e5fd9d100581f17f6b11dd31c182c2b66cd7ef5d3bf8333b4155dde510ef79a19f442572d283406c89eba303305a4fb182a079dea6489",
+    "deposit_message_root": "167a0a7bf1bb9f42799dbecc9703d6e7c07af42a68d97179e360337c21bdf765",
+    "deposit_data_root": "6d42d8bc33f6d341224ffe49fc162cde723a18d0271b326b3682e408c8f4ef50",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "ad9cd09f50f4a4a253619e8faf8ba505fff7bb7a269455d82caf998cffe2c0305390c2fdee0158e24f26af600e937f72",
+    "withdrawal_credentials": "00d09d1f6c62d6f820c611b1bf86e2b96635716680e33e620873a5fbaf7f9c63",
+    "amount": 32000000000,
+    "signature": "8149fa6ced9813a720ea263cc3402468748889119e6659b7a5491b3bd3869d342892010f11c14cfd82dcc40ce24766ed0ed34a4e3f5d4263585ba67c895a67568d36bfddb25c2d06530b3687698c4ef96237fa00a4d2d456b5aa197a77de683a",
+    "deposit_message_root": "87ff85baf9401589fedd2d5a8210d4a9761088be3255d7505630d38f7431cbc3",
+    "deposit_data_root": "a261819b759716022814c14f9603c1f894ec6f2228a066a8aa11d247a7fa6762",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
+  },
+  {
+    "pubkey": "8ddec5051b5c8b38e51665503446c91ed0f8d59d3858d6814b2c9f44bd661235820ee88a6c978100845e86792106649a",
+    "withdrawal_credentials": "009015ab0e8320f0f781d022236e1d442ff9dad02089ed98b185a4732eb66026",
+    "amount": 32000000000,
+    "signature": "83cefb2e14e622d3544ad61b41f540eb54df12c659fb8edee4709259935c46c6bb65c3b9c9a1e706e04236894491af4104b87dea87401c022106143362ad6624d5f3c5c078bef29d3cea2dcec885e0088e278984c9e1bdbd982962e777235cef",
+    "deposit_message_root": "36c85542baf44dbeac73537fa0e9b9b89a109db745711e2acc3e38175fdcc61b",
+    "deposit_data_root": "ff196fac4292a1a2a1905a1a07eeef577bfd33294433cf1bb54b40c714fdc92e",
+    "fork_version": "63a55317",
+    "eth2_network_name": "l15-dev",
+    "deposit_cli_version": "1.2.6-LUKSO"
   }
 ]
