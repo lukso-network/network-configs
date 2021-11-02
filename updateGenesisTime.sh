@@ -25,7 +25,7 @@ $NETWORK/$NAMESPACE/vanguard-genesis.json
 echo "Generating genesis state for network $NETWORK-$NAMESPACE"
 
 ./genesis-state-gen-$NAMESPACE \
-  --deposit-json-file $NETWORK/$NAMESPACE/deposit_data.json \
+  --deposit-json-file $NETWORK/deposit-data/$NAMESPACE/deposit_data.json \
   --genesis-time $GENESIS_TIME \
   --output-ssz $NETWORK/$NAMESPACE/vanguard-genesis.ssz \
   --output-json $NETWORK/$NAMESPACE/vanguard-genesis.json \
