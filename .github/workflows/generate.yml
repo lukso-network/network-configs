@@ -16,7 +16,7 @@ on:
         required: false
         default: 'dev'
       requestUpgrade:
-        description: 'Request l15-dev network upgrade with new genesis time. IT TRIGGERS ONLY l15-dev NETWORK UPGRADE!'
+        description: 'Request l15-dev network upgrade with new genesis time. This ignores trigger for l15-staging and l15-prod'
         required: false
         default: 'false'
 
@@ -64,7 +64,7 @@ jobs:
           echo $SHA256_SUM
 
       - name: Request l15-dev network upgrade
-        if: ${{ github.event.inputs.requestUpgrade == 'true' }}
+        if: ${{ github.event.inputs.requestUpgrade == 'true' && github.event.inputs.network == 'l15' && github.event.inputs.namespace == 'dev' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
