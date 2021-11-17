@@ -16,7 +16,7 @@ on:
         required: false
         default: 'dev'
       requestUpgrade:
-        description: 'Request network upgrade with new genesis time'
+        description: 'Request l15-dev network upgrade with new genesis time'
         required: false
         default: 'false'
 
@@ -63,7 +63,7 @@ jobs:
           echo $(sha256sum ./network-config-test.yaml)
           echo $SHA256_SUM
 
-      - name: Request network upgrade
+      - name: Request l15-dev network upgrade
         if: ${{ github.event.inputs.requestUpgrade == 'true' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
