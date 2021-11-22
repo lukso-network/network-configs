@@ -1,0 +1,75 @@
+name: Generate config
+
+on:
+  workflow_dispatch:
+    inputs:
+      genesisTime:
+        description: 'Genesis timestamp'
+        required: true
+        default: '0'
+      network:
+        description: 'Network'
+        required: false
+        default: 'l15'
+      namespace:
+        description: 'Namespace'
+        required: false
+        default: 'dev'
+      requestUpgrade:
+        description: 'Request l15-dev network upgrade with new genesis time.'
+        required: false
+        default: 'false'
+
+jobs:
+  generateConfigs:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run config generator script
+        env:
+          NETWORK: ${{ github.event.inputs.network }}
+          NAMESPACE: ${{ github.event.inputs.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        run: |
+          echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
+          chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
+          export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
+          echo "::set-env name=SHA256_SUM::$SHA256_SUM"
+
+      - name: Authorize GCP
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Upload files
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: ./${{ github.event.inputs.network }}/${{ github.event.inputs.namespace }}
+          destination: ${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
+          parent: false
+
+      - name: GCS Set cache-control
+        run: |
+          gsutil setmeta -h "Cache-Control: no-store" gs://${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/*
+
+      - name: Verify genesis time
+        run: |
+          wget -O ./network-config-test.yaml https://storage.googleapis.com/${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/network-config.yaml?ignoreCache=1
+          echo $(sha256sum ./network-config-test.yaml)
+          echo $SHA256_SUM
+
+      - name: Request l15-dev network upgrade
+        if: ${{ github.event.inputs.requestUpgrade == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"event_type":"l15_restart_trigger", "client_payload": {"repository": "network-configs", "namespace": "${{ github.event.inputs.namespace }}"}}' \
+          -u "$GITHUB_TOKEN" \
+          https://api.github.com/repos/lukso-network/network-gitops/dispatches
