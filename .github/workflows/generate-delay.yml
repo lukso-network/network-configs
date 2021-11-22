@@ -14,7 +14,7 @@ on:
       timestampMethod:
         description: 'Timestamp on hand (0) or with certain delay (1)'
         required: true
-        default: '0'
+        default: '1'
       network:
         description: 'Network'
         required: false
