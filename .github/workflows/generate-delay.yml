@@ -38,6 +38,7 @@ jobs:
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
+          chmod +x timestamp.sh
           newtimestamp=`./timestamp.sh`
           echo $newtimestamp
       
