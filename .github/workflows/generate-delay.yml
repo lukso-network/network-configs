@@ -11,6 +11,10 @@ on:
         description: 'Delay time in minutes'
         required: false
         default: '0'
+      timestampMethod:
+        description: 'Timestamp on hand (0) or with certain delay (1)'
+        required: true
+        default: '0'
       network:
         description: 'Network'
         required: false
@@ -31,14 +35,25 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
-      - name: Run config generator script
+      
+      - name: Run config generator script 0
         env:
           NETWORK: ${{ github.event.inputs.network }}
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        if: steps.main.outputs.timestampMethod == 0
+        run: |
+          echo "You choosed option 0"
+
+      - name: Run config generator script 1
+        env:
+          NETWORK: ${{ github.event.inputs.network }}
+          NAMESPACE: ${{ github.event.inputs.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        if: steps.main.outputs.timestampMethod == 1
         run: |
           chmod +x timestamp.sh
           newtimestamp=`./timestamp.sh ${{ github.event.inputs.delay }}`
           echo $newtimestamp
+          
       
