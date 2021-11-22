@@ -39,6 +39,6 @@ jobs:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
           chmod +x timestamp.sh
-          newtimestamp=`./timestamp.sh ${{ github.event.inputs.namespace }}`
+          newtimestamp=`./timestamp.sh ${{ github.event.inputs.delay }}`
           echo $newtimestamp
       
