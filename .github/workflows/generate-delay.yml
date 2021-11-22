@@ -12,7 +12,11 @@ on:
         required: false
         default: '0'
       timestampMethod:
-        description: 'Timestamp on hand (0) or with certain delay (1)'
+        type: choice
+        options: 
+        - monalisa
+        - cschleiden
+        description: 'Timestamp by hand (0) or with certain delay (1)'
         required: true
         default: '1'
       network:
