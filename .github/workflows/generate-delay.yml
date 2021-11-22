@@ -5,7 +5,7 @@ on:
     inputs:
       genesisTime:
         description: 'Genesis timestamp'
-        required: true
+        required: false
         default: '0'
       delay:
         description: 'Delay time in minutes'
@@ -38,5 +38,6 @@ jobs:
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
         run: |
-        
+          newtimestamp=`./timestamp.sh`
+          echo $newtimestamp
       
