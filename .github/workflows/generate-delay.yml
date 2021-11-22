@@ -41,7 +41,7 @@ jobs:
           NETWORK: ${{ github.event.inputs.network }}
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-        if: ${{ github.event.inputs.timestampMethod == "0" }}
+        if: ${{ github.event.inputs.timestampMethod == '0' }}
         run: |
           echo "You choosed option 0"
 
@@ -50,7 +50,7 @@ jobs:
           NETWORK: ${{ github.event.inputs.network }}
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
-        if: ${{ github.event.inputs.timestampMethod == "1" }}
+        if: ${{ github.event.inputs.timestampMethod == '1' }}
         run: |
           chmod +x timestamp.sh
           newtimestamp=`./timestamp.sh ${{ github.event.inputs.delay }}`
