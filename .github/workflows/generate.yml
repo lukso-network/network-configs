@@ -1,18 +1,28 @@
-name: Generate configs and trigger network restart
+name: Generate config with delay
 
 on:
   workflow_dispatch:
     inputs:
       genesisTime:
-        description: Genesis timestamp
-        required: true
-        default: '0'
-      network:
-        type: choice
-        description: Network
+        description: 'Genesis timestamp'
         required: false
-        options:
-        - l15
+        default: '0'
+      delay:
+        description: 'Delay time in minutes'
+        required: false
+        default: '0'
+      timestampMethod:
+        type: choice
+        options: 
+        - timestamp
+        - delay
+        description: 'Timestamp by hand (timestamp) or with certain delay (delay)'
+        required: true
+        default: 'timestamp'
+      network:
+        description: 'Network'
+        required: false
+        default: 'l15'
       namespace:
         type: choice
         description: Namespace
@@ -36,19 +46,35 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
+                
       - name: Run config generator script
         env:
           NETWORK: ${{ github.event.inputs.network }}
           NAMESPACE: ${{ github.event.inputs.namespace }}
           ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        if: ${{ github.event.inputs.timestampMethod == 'timestamp' }}
         run: |
           echo "Generating config with genesis timestamp ${{ github.event.inputs.genesisTime }} for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
           chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
           ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} ${{ github.event.inputs.genesisTime }}
           export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
           echo "::set-env name=SHA256_SUM::$SHA256_SUM"
-
+          
+      - name: Run config generator script with delay
+        env:
+          NETWORK: ${{ github.event.inputs.network }}
+          NAMESPACE: ${{ github.event.inputs.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+        if: ${{ github.event.inputs.timestampMethod == 'delay' }}
+        run: |
+          chmod +x timestamp.sh
+          newtimestamp=`./timestamp.sh ${{ github.event.inputs.delay }}`
+          echo "Generating config with genesis timestamp $newtimestamp for network ${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}"
+          chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.inputs.network }} ${{ github.event.inputs.namespace }} $newtimestamp
+          export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
+          echo "::set-env name=SHA256_SUM::$SHA256_SUM"
+          
       - name: Authorize GCP
         uses: google-github-actions/setup-gcloud@master
         with:
@@ -65,15 +91,13 @@ jobs:
       - name: GCS Set cache-control
         run: |
           gsutil setmeta -h "Cache-Control: no-store" gs://${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/*
-
       - name: Verify genesis time
         run: |
           wget -O ./network-config-test.yaml https://storage.googleapis.com/${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}/network-config.yaml?ignoreCache=1
           echo $(sha256sum ./network-config-test.yaml)
           echo $SHA256_SUM
-
-      - name: Request l15 network upgrade
-        if: ${{ github.event.inputs.requestUpgrade == 'true' }}
+      - name: Request l15-dev network upgrade
+        if: ${{ github.event.inputs.requestUpgrade == 'true' && github.event.inputs.timestampMethod == 'timestamp' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
         run: |
@@ -81,4 +105,15 @@ jobs:
           -H "Accept: application/vnd.github.v3+json" \
           -d '{"event_type":"l15_restart_trigger", "client_payload": {"repository": "network-configs", "namespace": "${{ github.event.inputs.namespace }}"}}' \
           -u "$GITHUB_TOKEN" \
-          https://api.github.com/repos/lukso-network/network-gitops/dispatches
+          https://api.github.com/repos/lukso-network/network-helm-charts/dispatches          
+      - name: Request l15-dev network upgrade with delay
+        if: ${{ github.event.inputs.requestUpgrade == 'true' && github.event.inputs.timestampMethod == 'delay' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"event_type":"l15_restart_trigger", "client_payload": {"repository": "network-configs", "namespace": "$newtimestamp"}}' \
+          -u "$GITHUB_TOKEN" \
+          https://api.github.com/repos/lukso-network/network-helm-charts/dispatches         
+      
