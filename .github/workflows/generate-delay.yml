@@ -85,7 +85,7 @@ jobs:
         uses: google-github-actions/upload-cloud-storage@main
         with:
           path: ./${{ github.event.inputs.network }}/${{ github.event.inputs.namespace }}
-          destination: ${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-test
+          destination: ${{ github.event.inputs.network }}-cdn/networks/${{ github.event.inputs.network }}-${{ github.event.inputs.namespace }}
           parent: false
 
       - name: GCS Set cache-control
