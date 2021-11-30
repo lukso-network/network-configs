@@ -21,12 +21,12 @@ on:
         default: 'timestamp'
       network:
         description: 'Network'
-        required: false
+        required: true
         default: 'l15'
       namespace:
         type: choice
         description: Namespace
-        required: false
+        required: true
         options:
         - dev
         - staging
