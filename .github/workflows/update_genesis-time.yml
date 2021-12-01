@@ -1,0 +1,33 @@
+name: Update genesis-time
+
+on:
+  workflow_dispatch:
+    inputs:
+      namespace:
+        type: choice
+        description: Namespace
+        required: true
+        options:
+        - dev
+        - staging
+        - prod
+
+jobs:
+  generateConfigs:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+               
+      - name: Authorize GCP
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+          
+      - name: Update genesis time
+        run: |
+          gcloud container clusters get-credentials l15-testnet --zone europe-west4-a --project l15-testnet
+          chmod +x "${GITHUB_WORKSPACE}/.github/workflows/actions/update_genesis-time.sh"
+          .github/workflows/actions/update_genesis-time.sh "${{ github.event.inputs.namespace }}"
