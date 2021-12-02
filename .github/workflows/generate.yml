@@ -112,10 +112,10 @@ jobs:
       - name: Send notification to Discord
         if: ${{ github.event.inputs.timestampMethod == 'delay' }} && ${{ github.event.inputs.requestUpgrade == 'true' }}
         run: |
-          dev=872040424670380063
-          staging=901087894385618945
-          prod=901088016033017898
-          namespace=${{ github.event.inputs.namespace }}
+          echo "872040424670380063" > dev
+          echo "901087894385618945" > staging
+          echo "901088016033017898" > prod
+          evho "${{ github.event.inputs.namespace }}" > namespace
           echo $$namespace
           curl --location --request POST "${{ secrets.DISCORD_NETWORK_WEBHOOK_URL}}?thread_id=$$namespace" \
           --header 'Content-Type: application/json' \
