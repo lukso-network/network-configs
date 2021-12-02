@@ -116,8 +116,8 @@ jobs:
           echo "901087894385618945" > staging
           echo "901088016033017898" > prod
           echo "${{ github.event.inputs.namespace }}" > namespace
-          echo $(cat $namespace)
-          curl --location --request POST "${{ secrets.DISCORD_NETWORK_WEBHOOK_URL}}?thread_id=$(cat $namespace)" \
+          echo $(cat $(cat namespace))
+          curl --location --request POST "${{ secrets.DISCORD_NETWORK_WEBHOOK_URL}}?thread_id=$(cat $(cat namespace))" \
           --header 'Content-Type: application/json' \
           --data-raw '{
               "content": "Network reset triggered. Progression starts in ${{ github.event.inputs.delay }} minutes.",
