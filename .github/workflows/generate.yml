@@ -116,6 +116,7 @@ jobs:
           staging=901087894385618945
           prod=901088016033017898
           namespace=${{ github.event.inputs.namespace }}
+          echo $$namespace
           curl --location --request POST "${{ secrets.DISCORD_NETWORK_WEBHOOK_URL}}?thread_id=$$namespace" \
           --header 'Content-Type: application/json' \
           --data-raw '{
