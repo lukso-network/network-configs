@@ -1,4 +1,4 @@
-name: Generate configs and trigger network restart
+name: (API) Generate configs and trigger network restart
 
 on:
   repository_dispatch:

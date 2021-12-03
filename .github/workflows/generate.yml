@@ -1,4 +1,4 @@
-name: Generate configs and trigger network restart
+name: (Manual) Generate configs and trigger network restart
 
 on:
   workflow_dispatch:
