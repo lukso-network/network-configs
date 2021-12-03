@@ -1,0 +1,94 @@
+name: Generate configs and trigger network restart
+
+on:
+  repository_dispatch:
+    types: [l15_restart_trigger]
+
+jobs:
+  generateConfigs:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run config generator script
+        env:
+          NETWORK: ${{ github.event.client_payload.network }}
+          NAMESPACE: ${{ github.event.client_payload.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+        if: ${{ github.event.client_payload.timestampMethod == 'timestamp' }}
+        run: |
+          echo "Generating config with genesis timestamp ${{ github.event.client_payload.genesisTime }} for network ${{ github.event.client_payload.network }}-${{ github.event.client_payload.namespace }}"
+          chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.client_payload.network }} ${{ github.event.client_payload.namespace }} ${{ github.event.client_payload.genesisTime }}
+          export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
+          echo "::set-env name=SHA256_SUM::$SHA256_SUM"
+
+      - name: Run config generator script with delay
+        env:
+          NETWORK: ${{ github.event.client_payload.network }}
+          NAMESPACE: ${{ github.event.client_payload.namespace }}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: "true"
+        if: ${{ github.event.client_payload.timestampMethod == 'delay' }}
+        run: |
+          chmod +x timestamp.sh
+          newtimestamp=`./timestamp.sh ${{ github.event.client_payload.delay }}`
+          echo "Generating config with genesis timestamp $newtimestamp for network ${{ github.event.client_payload.network }}-${{ github.event.client_payload.namespace }}"
+          chmod +x ./updateGenesisTime.sh ./genesis-state-gen-dev
+          ./updateGenesisTime.sh ${{ github.event.client_payload.network }} ${{ github.event.client_payload.namespace }} $newtimestamp
+          export SHA256_SUM=$(sha256sum ./$NETWORK/$NAMESPACE/network-config.yaml)
+          echo "::set-env name=SHA256_SUM::$SHA256_SUM"
+
+      - name: Authorize GCP
+        uses: google-github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          export_default_credentials: true
+
+      - name: Upload files
+        uses: google-github-actions/upload-cloud-storage@main
+        with:
+          path: ./${{ github.event.client_payload.network }}/${{ github.event.client_payload.namespace }}
+          destination: ${{ github.event.client_payload.network }}-cdn/networks/${{ github.event.client_payload.network }}-${{ github.event.client_payload.namespace }}
+          parent: false
+
+      - name: GCS Set cache-control
+        run: |
+          gsutil setmeta -h "Cache-Control: no-store" gs://${{ github.event.client_payload.network }}-cdn/networks/${{ github.event.client_payload.network }}-${{ github.event.client_payload.namespace }}/*
+
+      - name: Verify genesis time
+        run: |
+          wget -O ./network-config-test.yaml https://storage.googleapis.com/${{ github.event.client_payload.network }}-cdn/networks/${{ github.event.client_payload.network }}-${{ github.event.client_payload.namespace }}/network-config.yaml?ignoreCache=1
+          echo $(sha256sum ./network-config-test.yaml)
+          echo $SHA256_SUM
+
+      - name: Request l15 network upgrade
+        if: ${{ github.event.client_payload.requestUpgrade == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_DISPATCH_TOKEN }}
+        run: |
+          curl -X POST \
+          -H "Accept: application/vnd.github.v3+json" \
+          -d '{"event_type":"l15_restart_trigger", "client_payload": {"repository": "network-configs", "namespace": "${{ github.event.client_payload.namespace }}"}}' \
+          -u "$GITHUB_TOKEN" \
+          https://api.github.com/repos/lukso-network/network-gitops/dispatches
+
+      - name: Send notification to Discord
+        if: ${{ github.event.client_payload.timestampMethod == 'delay' }} && ${{ github.event.client_payload.requestUpgrade == 'true' }}
+        run: |
+          echo "872040424670380063" > dev
+          echo "901087894385618945" > staging
+          echo "901088016033017898" > prod
+          echo "${{ github.event.client_payload.namespace }}" > namespace
+          echo $(cat $(cat namespace))
+          curl --location --request POST "${{ secrets.DISCORD_NETWORK_WEBHOOK_URL}}?thread_id=$(cat $(cat namespace))" \
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+              "content": "Network reset triggered. Progression starts in ${{ github.event.client_payload.delay }} minutes.",
+              "embeds": [{
+                  "title": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}",
+                  "type": "link",
+                  "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" 
+              }]
+          }'
