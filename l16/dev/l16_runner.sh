@@ -90,7 +90,7 @@ function generate_genesis {
 	--mnemonics $BASE_PATH/kintsugi/config/mnemonics.yaml  \
 	--state-output $BASE_PATH/kintsugi/config/genesis.ssz \
 	--tranches-dir  $BASE_PATH/kintsugi/config/tranches \
-	--eth1-block 0x375751608361d3b263737069b0835b41061bcebcfd10c652e4a8bc30676df9ba
+	--eth1-block 0x2ad13ebbb0c55ec165832d3d4ee32e82623ac22c6223446ce0a4b7b1d2716b58
 	# --timestamp $(date +%s)
 }
 
