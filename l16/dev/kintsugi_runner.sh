@@ -95,6 +95,15 @@ function generate_genesis {
 	# --timestamp $(date +%s)
 }
 
+function send_deposit_txs {
+	./bin/deposit-tx-sender \
+	--deposit-json-file=./devnet-1/deposit_data_genesis.json \
+	--keystore-file=./devnet-1/UTC--2022-01-17T12-28-02.146213631Z.json \
+	--pandora-http-provider="http://127.0.0.1:8545" \
+	--keystore-password="Ksl@123" \
+	--pandora-chain-id=1337222
+}
+
 function reset_node {
 	echo "resetting whole node...."
 
@@ -173,7 +182,8 @@ function main {
 		echo "7. Deploy deposit validtor"
 		echo "8. Generate genesis ssz"
 		echo "9. Reset deposit validator"
-		echo "10. Exit"
+		echo "10.Send deposit transacations for new 5 validators"
+		echo "11. Exit"
 
 		read choice
 
@@ -195,6 +205,8 @@ function main {
 			 generate_genesis
 		elif [ $choice -eq 9 ]; then
 			 reset_deposit_validator
+		elif [ $choice -eq 10 ]; then
+			 send_deposit_txs
 		else {
 			choiceloop=false
 			echo "Finish..."
@@ -204,4 +216,5 @@ function main {
 }
 
 main
+
 
