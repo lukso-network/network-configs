@@ -8,7 +8,7 @@ MIN_GENESIS_TIME: 1642967095
 # Gensis fork
 GENESIS_FORK_VERSION: 0x60000069
 # 300 seconds (5 min)
-GENESIS_DELAY: 1200
+GENESIS_DELAY: 900
 
 # Forking
 # ---------------------------------------------------------------
