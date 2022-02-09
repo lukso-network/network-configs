@@ -2,7 +2,7 @@
 PRESET_BASE: 'mainnet'
 # Genesis
 # ---------------------------------------------------------------
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 96
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 50
 # Jan 11st, 2022, 15:00 UTC
 MIN_GENESIS_TIME: 1642967095
 # Gensis fork
