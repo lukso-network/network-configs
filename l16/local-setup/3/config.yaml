@@ -9,8 +9,6 @@ MIN_GENESIS_TIME: 1642967095
 GENESIS_FORK_VERSION: 0x60000069
 # 300 seconds (5 min)
 GENESIS_DELAY: 1200
-# The maximum milliseconds of clock disparity assumed between honest nodes
-MAXIMUM_GOSSIP_CLOCK_DISPARITY: 1500
 
 # Forking
 # ---------------------------------------------------------------
