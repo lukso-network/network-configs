@@ -13,13 +13,14 @@ This repository hosts the current LUKSO network specifications. Discussions abou
 
 ### L16
 
-| | [PRODUCTION](l16/prod) | [STAGING](l16/staging) | [DEVELOPMENT](l16/dev) |
-|:------------:|:----------------------:|:----------------------:|:----------------------:|
-|Chain ID|        not yet         |        not yet         |        19051978        |
-|Network ID|        not yet         |        not yet         |          19051978           |
-|Fork version|       not yet        |       not yet         |       0x63a55317       |
-| Bootnode Beacon |        not yet         |        not yet         |        enr:-MK4QBRXW5-vTUY5JBjnq7tTAlHQATeWpqunVNjbXKM38TUVMHxjA30il_MjMi32h17eMiP7n-Kb5ngCb18ZN-jpImeGAX8N72aqh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBLTbOoYQAAcAUAAAAAAAAAgmlkgnY0gmlwhCJbPjCJc2VjcDI1NmsxoQJ4l43A2x_1nWxiVvfdGXehmALwQ8kBrsjA5smeqHBqjYhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A        |
-|  Bootnode Geth  |        not yet         |        not yet         |          enode://54478105bc09afe0faf45f640341a47f344ed3670a50a23bdfac63f831325e3dd9d57d0bb65a447e54a7638ca48ed02894d480286712eb8f372917d8d07dd617@34.91.62.48:30303           |
+|                 | [PRODUCTION](l16/prod) | [STAGING](l16/staging) |                                                                                                                           [DEVELOPMENT](l16/dev)                                                                                                                           |
+|:---------------:|:----------------------:|:----------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+|    Chain ID     |        not yet         |        not yet         |                                                                                                                                  19051978                                                                                                                                  |
+|   Network ID    |        not yet         |        not yet         |                                                                                                                                  19051978                                                                                                                                  |
+|  Fork version   |       not yet        |       not yet         |                                                                                                                                 0x63a55317                                                                                                                                 |
+| Config version  |       not yet        |       not yet         |                                                                                                                                     17                                                                                                                                     |
+| Bootnode Beacon |        not yet         |        not yet         | enr:-MK4QJRDxW8-oRZ1VKO80Cojmuylm-5FsmTQkzxOWnRvEV84Dpgk5TiOFMBxGywdwufVHfY3zc34aD3fTEGxbpfg8f2GAX8iZzejh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBLTbOoYQAAcAUAAAAAAAAAgmlkgnY0gmlwhCJbPjCJc2VjcDI1NmsxoQJLqFjovTulysu997Wo7ygXv6MUFGtpXFq8fUbiH6QdKIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A |
+|  Bootnode Geth  |        not yet         |        not yet         |                                                         enode://5e5723f21e5f180913c6d8a4c467ad8164ab9031e9f70eaffd507f8a1b1203b05b76525c80a2376630dcd2b925850fbebc2f8b8548c73f0e34158ee45ee04e28@34.91.62.48:30303                                                         |
 
 #### Bootnode
 
