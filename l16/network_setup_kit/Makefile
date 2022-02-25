@@ -88,3 +88,6 @@ log_beacon:
 
 log_validator:
 	docker logs -f prysm_validator
+
+restart_stats:
+	sudo docker-compose stop eth2stats-client; sudo docker-compose up -d eth2stats-client
