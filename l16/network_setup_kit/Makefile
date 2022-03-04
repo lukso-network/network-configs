@@ -34,7 +34,7 @@ create-deposit:
 	&& read -p "Enter validator mnemonic: " VALIDATOR_MNEMONIC \
 	&& read -p "Enter withdrawal mnemonic: " WITHDRAWAL_MNEMONIC \
 	&& ./bin/eth2-val-tools deposit-data \
-	--fork-version=0x62000069 \
+	--fork-version=0x60000069 \
 	--source-max=$$NUMBER_OF_VALIDATORS \
 	--source-min=0 \
 	--validators-mnemonic="$$VALIDATOR_MNEMONIC" --withdrawals-mnemonic="$$WITHDRAWAL_MNEMONIC" \
