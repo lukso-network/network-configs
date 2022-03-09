@@ -21,7 +21,7 @@ help:
 	@echo "   stop            - stop all nodes"
 	@echo "   delete          - delete all data directory"
 	@echo "   log_geth        - show geth log"
-	@echo "   log_beacon      - show beacon log"
+	@echo "   log_consensus      - show consensus log"
 	@echo "   log_validator   - show validator log"
 
 
