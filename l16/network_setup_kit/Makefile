@@ -80,10 +80,10 @@ stop:
 delete:
 	@rm -rf ${EXECUTION_DATA_VOLUME} ${CONSENSUS_DATA_VOLUME} ${VALIDATOR_DATA_VOLUME}
 
-log_geth:
+log_execution:
 	docker logs -f lukso-geth
 
-log_beacon:
+log_consensus:
 	docker logs -f prysm_beacon
 
 log_validator:
