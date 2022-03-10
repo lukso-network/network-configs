@@ -15,6 +15,7 @@ help:
 	@echo "this makefile supports following FLAGNAMEs";
 	@echo "   mnemonic        - Generate a mnemonic";
 	@echo "   create-deposit  - create deposit-data.json"
+	@echo "   submit-deposit  - send deposit transaction"
 	@echo "   create-wallet   - create wallet"
 	@echo "   start           - start all except the validator nodes"
 	@echo "   start-validator - start only the validator client"
@@ -37,9 +38,10 @@ create-deposit:
 	--fork-version=0x60000069 \
 	--source-max=$$NUMBER_OF_VALIDATORS \
 	--source-min=0 \
-	--validators-mnemonic="$$VALIDATOR_MNEMONIC" --withdrawals-mnemonic="$$WITHDRAWAL_MNEMONIC" \
-	| sed 's/}/},/g' | sed '1 s/./[{/' > ./deposit_data.json; echo "]" >> ./deposit_data.json;
+	--validators-mnemonic="$$VALIDATOR_MNEMONIC" --withdrawals-mnemonic="$$WITHDRAWAL_MNEMONIC" > ./deposit_data.json;
 
+submit-deposit:
+	./send_deposit.sh
 
 create-wallet:
 	@read -p "Enter number of validators: " NUMBER_OF_VALIDATORS \

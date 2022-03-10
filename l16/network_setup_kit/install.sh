@@ -96,8 +96,13 @@ chmod +x ./bin/eth2-val-tools
 download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/Makefile ./Makefile
 download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/docker-compose.yml ./docker-compose.yml;
 download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/.env ./.env
+download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/secrets.env ./secrets.env
+download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/send_deposit.sh ./send_deposit.sh
+chmod +x ./send_deposit.sh
 
 update_env_variables
+
+docker pull wealdtech/ethereal
 
 echo ""
 echo "#################### Please Read Carefully ####################"
