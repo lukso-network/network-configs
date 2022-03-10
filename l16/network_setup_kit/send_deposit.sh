@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "USE AT YOUR OWN RISK"
-read -p "Are you sure you've double checked the values and want to make this deposit? " -n 1 -r
+read -p "Are you sure you've double checked the values and want to make this deposit? [y|N]" -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]
 then
