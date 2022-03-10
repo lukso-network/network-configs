@@ -21,8 +21,8 @@ help:
 	@echo "   start-validator - start only the validator client"
 	@echo "   stop            - stop all nodes"
 	@echo "   delete          - delete all data directory"
-	@echo "   log_geth        - show geth log"
-	@echo "   log_beacon      - show beacon log"
+	@echo "   log_execution        - show execution log"
+	@echo "   log_consensus      - show consensus log"
 	@echo "   log_validator   - show validator log"
 
 
