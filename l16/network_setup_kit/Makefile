@@ -20,7 +20,7 @@ help:
 	@echo "   start           - start all except the validator nodes"
 	@echo "   start-validator - start only the validator client"
 	@echo "   stop            - stop all nodes"
-	@echo "   delete          - delete all data directory"
+	@echo "   reset            - deletes all data directory"
 	@echo "   log_execution        - show execution log"
 	@echo "   log_consensus      - show consensus log"
 	@echo "   log_validator   - show validator log"
@@ -79,7 +79,7 @@ stop:
 	@echo "Stopping geth, beacon and validator"
 	docker-compose down
 
-delete:
+reset:
 	@rm -rf ${EXECUTION_DATA_VOLUME} ${CONSENSUS_DATA_VOLUME} ${VALIDATOR_DATA_VOLUME}
 
 log_execution:
