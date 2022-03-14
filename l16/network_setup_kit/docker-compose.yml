@@ -2,7 +2,7 @@ version: "3.4"
 services:
 
   init-geth:
-    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:debian
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:kintsugi
     container_name: lukso-geth-init
     volumes:
       - $EXECUTION_DATA_VOLUME:/execution_data
@@ -11,7 +11,7 @@ services:
       --datadir=/execution_data init ./configs/genesis.json
 
   geth:
-    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:debian
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:kintsugi
     container_name: lukso-geth
     depends_on:
       - init-geth
