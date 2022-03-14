@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-
+# git branch name. change from l16-dev to master after merge
+GIT_BRANCH="l16-dev"
 NETWORK="l16-dev"
 PLATFORM="unknown";
 NETWORK_VERSION="17"
@@ -54,7 +55,7 @@ download_network_config() {
   NETWORK_NAME="$(cut -d'-' -f1 <<<"$NETWORK")"
   NETWORK_MODE="$(cut -d'-' -f2 <<<"$NETWORK")"
 
-  CDN="https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/${NETWORK_NAME}/${NETWORK_MODE}/${NETWORK_VERSION}"
+  CDN="https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/${NETWORK_NAME}/${NETWORK_MODE}/${NETWORK_VERSION}"
   echo $CDN
   mkdir -p ./configs
   TARGET=./configs
@@ -93,11 +94,11 @@ download https://github.com/lukso-network/network-validator-tools/releases/downl
 chmod +x ./bin/eth2-val-tools
 
 # download makefile docker-compose and .env file
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/Makefile ./Makefile
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/docker-compose.yml ./docker-compose.yml;
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/.env ./.env
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/secrets.env ./secrets.env
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/send_deposit.sh ./send_deposit.sh
+download https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/l16/network_setup_kit/Makefile ./Makefile
+download https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/l16/network_setup_kit/docker-compose.yml ./docker-compose.yml;
+download https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/l16/network_setup_kit/.env ./.env
+download https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/l16/network_setup_kit/secrets.env ./secrets.env
+download https://raw.githubusercontent.com/lukso-network/network-configs/${GIT_BRANCH}/l16/network_setup_kit/send_deposit.sh ./send_deposit.sh
 chmod +x ./send_deposit.sh
 
 update_env_variables
