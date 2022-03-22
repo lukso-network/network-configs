@@ -24,8 +24,7 @@ services:
     command: >
       --datadir=/execution_data 
       --ws 
-      --ws.api  
-      engine,net,eth,admin,debug,miner  
+      --ws.api "engine,net,eth,admin,debug,miner"
       --nat extip:$EXTERNAL_IP 
       --catalyst 
       --bootnodes $GETH_BOOTSTRAP_NODE
@@ -59,12 +58,14 @@ services:
       --datadir /consensus_data
       --bootstrap-node $PRYSM_BOOTSTRAP_NODE
       --http-web3provider=http://localhost:8545
-      --min-sync-peers=0
+      --min-sync-peers=2
       --p2p-host-ip $EXTERNAL_IP
       --chain-config-file /configs/config.yaml
       --monitoring-host 0.0.0.0
       --grpc-gateway-host 0.0.0.0
       --rpc-host 0.0.0.0
+      --gc-percent=40
+      --block-batch-limit-burst-factor=2
       --verbosity $PRYSM_VERBOSITY
     network_mode: host
 
