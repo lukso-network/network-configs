@@ -13,15 +13,7 @@ This repository hosts the current LUKSO network specifications. Discussions abou
 |   Network ID   |        not yet         |       19051978       |
 |  Fork version  |        not yet         |      0x63a55317      |
 | Config version |        not yet         |          17          | 
-
-#### Bootnodes
-
-##### Consensus
-
-
-
-##### Execution
-
+ 
 
 
 ## Network services
@@ -31,17 +23,5 @@ DONE
 
 * https://consensus.stats.beta.l16.lukso.network
 * https://faucet.beta.l16.lukso.network
-
-PREPARED
-
-* https://launchpad.beta.l16.lukso.network
 * https://rpc.beta.l16.lukso.network/ 
-
-OLD and not changeble
-
-STATS
-https://ethstats.l16.d.lukso.dev/    should move to https://execution.beta.l16.lukso.network
-
-Explorer
-https://staging.explorer.geth.l16.lukso.dev/
-http://34.107.49.167:3333/
+* https://ethstats.l16.d.lukso.dev   
