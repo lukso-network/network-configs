@@ -24,13 +24,13 @@ services:
     command: >
       --datadir=/execution_data 
       --ws 
-      --ws.api "net,eth,debug"  
+      --ws.api "net,eth,debug,engine"  
       --nat extip:$EXTERNAL_IP 
       --catalyst 
       --bootnodes $GETH_BOOTSTRAP_NODE
       --networkid $GETH_NETWORK_ID 
       --http 
-      --http.api "net,eth,debug" 
+      --http.api "net,eth,debug,engine" 
       --http.addr "0.0.0.0" 
       --verbosity $GETH_VERBOSITY
       --ipcdisable 
