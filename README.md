@@ -23,5 +23,5 @@ DONE
 
 * https://consensus.stats.beta.l16.lukso.network
 * https://faucet.beta.l16.lukso.network
-* https://rpc.beta.l16.lukso.network/ 
+* https://rpc.beta.l16.lukso.network 
 * https://ethstats.l16.d.lukso.dev   

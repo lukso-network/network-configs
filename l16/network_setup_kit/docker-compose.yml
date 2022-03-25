@@ -24,16 +24,14 @@ services:
     command: >
       --datadir=/execution_data 
       --ws 
-      --ws.api  
-      engine,net,eth,admin,debug,miner  
+      --ws.api "net,eth,debug"  
       --nat extip:$EXTERNAL_IP 
       --catalyst 
       --bootnodes $GETH_BOOTSTRAP_NODE
       --networkid $GETH_NETWORK_ID 
       --http 
-      --http.api "engine,net,eth,admin,debug,miner" 
-      --http.addr "0.0.0.0"
-      --allow-insecure-unlock 
+      --http.api "net,eth,debug" 
+      --http.addr "0.0.0.0" 
       --verbosity $GETH_VERBOSITY
       --ipcdisable 
       --port $GETH_PEER_PORT
