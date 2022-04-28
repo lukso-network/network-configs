@@ -50,63 +50,15 @@ download() {
   fi
 }
 
-download_network_config() {
-  NETWORK=$1
-  NETWORK_NAME="$(cut -d'-' -f1 <<<"$NETWORK")"
-  NETWORK_MODE="$(cut -d'-' -f2 <<<"$NETWORK")"
 
-  CDN="https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/${NETWORK_NAME}/${NETWORK_MODE}/${NETWORK_VERSION}"
-  echo $CDN
-  mkdir -p ./configs
-  TARGET=./configs
-  download $CDN/genesis.json?ignoreCache=1 $TARGET/genesis.json
-  download $CDN/genesis.ssz?ignoreCache=1 $TARGET/genesis.ssz
-  download $CDN/config.yaml?ignoreCache=1 $TARGET/config.yaml
-}
-
-update_env_variables() {
-
-  PUB_IP_ADDRESS=$(curl ident.me)
-
-  if [[ $PLATFORM == "linux" ]]; then
-    # for linux platform change variables accordingly
-    sed -i "s/NODE_NAME=.*/NODE_NAME=$(uname -n)/g" .env
-    sed -i "s/EXTERNAL_IP=.*/EXTERNAL_IP=${PUB_IP_ADDRESS}/g" .env
-    sed -i "s/GETH_EXTERNAL_IP=.*/GETH_EXTERNAL_IP=extip:${PUB_IP_ADDRESS}/g" .env
-
-  fi
-
-  if [[ $PLATFORM == "darwin" ]]; then
-    # for mac platform change variables accordingly
-    sed -i "" "s/NODE_NAME=.*/NODE_NAME=$(uname -n)/g" .env
-    sed -i "" "s/EXTERNAL_IP=.*/EXTERNAL_IP=${PUB_IP_ADDRESS}/g" .env
-    sed -i "" "s/GETH_EXTERNAL_IP=.*/GETH_EXTERNAL_IP=extip:${PUB_IP_ADDRESS}/g" .env
-  fi
-}
-
-mkdir -p ./bin
-
-# download latest configs
-download_network_config l16-dev;
 
 # download eth2 validator tool and give exec permission
-download https://github.com/lukso-network/network-validator-tools/releases/download/v1.0.0/network-validator-tools-v1.0.0-${PLATFORM}-${ARCHITECTURE} ./bin/eth2-val-tools
-chmod +x ./bin/eth2-val-tools
+download https://github.com/lukso-network/lukso-cli/releases/download/v0.0.1-dev/lukso-cli-${PLATFORM}-${ARCHITECTURE} ./lukso-cli
+chmod +x ./lukso-cli
 
-# download makefile docker-compose and .env file
-download $REPOSITORY/Makefile ./Makefile
-download $REPOSITORY/docker-compose.yml ./docker-compose.yml;
-download $REPOSITORY/.env ./.env
-download $REPOSITORY/secrets.env ./secrets.env
-download $REPOSITORY/send_deposit.sh ./send_deposit.sh
-chmod +x ./send_deposit.sh
-
-update_env_variables
-
-docker pull wealdtech/ethereal
 
 echo ""
 echo "#################### Please Read Carefully ####################"
-echo "use \"make help\" to check available options"
+echo "use \"lukso-cli --help\" to check available options"
 echo "###############################################################"
 
