@@ -52,7 +52,7 @@ download() {
 
 
 
-# download eth2 validator tool and give exec permission
+# download lukso-cli and give exec permission
 download https://github.com/lukso-network/lukso-cli/releases/download/v0.0.1-dev/lukso-cli-${PLATFORM}-${ARCHITECTURE} ./lukso-cli
 chmod +x ./lukso-cli
 
