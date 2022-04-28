@@ -2,7 +2,7 @@ version: "3.4"
 services:
 
   init-geth:
-    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:kintsugi
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
     container_name: lukso-geth-init
     volumes:
       - $EXECUTION_DATA_VOLUME:/execution_data
@@ -11,7 +11,7 @@ services:
       --datadir=/execution_data init ./configs/genesis.json
 
   geth:
-    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:kintsugi
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
     container_name: lukso-geth
     depends_on:
       - init-geth
@@ -25,8 +25,7 @@ services:
       --datadir=/execution_data 
       --ws 
       --ws.api "net,eth,debug,engine"  
-      --nat extip:$EXTERNAL_IP 
-      --catalyst 
+      --nat extip:$EXTERNAL_IP
       --bootnodes $GETH_BOOTSTRAP_NODE
       --networkid $GETH_NETWORK_ID 
       --http 
@@ -52,22 +51,22 @@ services:
     stop_grace_period: 2m
     command: >
       --accept-terms-of-use
-      --kintsugi-testnet
       --genesis-state /configs/genesis.ssz
       --datadir /consensus_data
       --bootstrap-node $PRYSM_BOOTSTRAP_NODE
       --http-web3provider=http://localhost:8545
-      --min-sync-peers=0
+      --min-sync-peers=2
       --p2p-host-ip $EXTERNAL_IP
       --chain-config-file /configs/config.yaml
       --monitoring-host 0.0.0.0
       --grpc-gateway-host 0.0.0.0
+      --suggested-fee-recipient $GETH_ETHERBASE
       --rpc-host 0.0.0.0
       --verbosity $PRYSM_VERBOSITY
     network_mode: host
 
   prysm_validator:
-    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-prysm/validator:kintsugi
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-prysm/validator:$PRYSM_BEACON_VERSION
     container_name: prysm_validator
     depends_on:
       - prysm_beacon
