@@ -4,6 +4,7 @@
 NETWORK="l16-dev"
 PLATFORM="unknown";
 NETWORK_VERSION="17"
+REPOSITORY="https://raw.githubusercontent.com/lukso-network/network-configs/main/l16/network_setup_kit"
 
 # for Apple M1s
 if [ "$(uname -s)" == "Darwin" ] && [ "$(uname -m)" == "arm64" ]
@@ -93,11 +94,11 @@ download https://github.com/lukso-network/network-validator-tools/releases/downl
 chmod +x ./bin/eth2-val-tools
 
 # download makefile docker-compose and .env file
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/Makefile ./Makefile
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/docker-compose.yml ./docker-compose.yml;
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/.env ./.env
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/secrets.env ./secrets.env
-download https://raw.githubusercontent.com/lukso-network/network-configs/l16-dev/l16/network_setup_kit/send_deposit.sh ./send_deposit.sh
+download $REPOSITORY/Makefile ./Makefile
+download $REPOSITORY/docker-compose.yml ./docker-compose.yml;
+download $REPOSITORY/.env ./.env
+download $REPOSITORY/secrets.env ./secrets.env
+download $REPOSITORY/send_deposit.sh ./send_deposit.sh
 chmod +x ./send_deposit.sh
 
 update_env_variables
