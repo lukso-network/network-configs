@@ -10,7 +10,7 @@ This repository hosts the current LUKSO network specifications. Discussions abou
 |                | [L16 Testnet](l16/tesnet) | [L16 BETA](l16/beta) |
 |:--------------:| :-------------------------:|:--------------------:|
 |    Chain ID    |             not yet    |       83748374       |
-|   Network ID   |        not yet         |         8374         |
+|   Network ID   |        not yet         |         83748374         |
 |  Fork version  |        not yet         |      0x63a55317      |
 | Config version |        not yet         |          19          | 
  
