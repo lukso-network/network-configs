@@ -9,19 +9,18 @@ This repository hosts the current LUKSO network specifications. Discussions abou
 
 |                | [L16 Testnet](l16/tesnet) | [L16 BETA](l16/beta) |
 |:--------------:| :-------------------------:|:--------------------:|
-|    Chain ID    |             not yet    |       19051978       |
-|   Network ID   |        not yet         |       19051978       |
+|    Chain ID    |             not yet    |       83748374       |
+|   Network ID   |        not yet         |         8374         |
 |  Fork version  |        not yet         |      0x63a55317      |
-| Config version |        not yet         |          17          | 
+| Config version |        not yet         |          19          | 
  
 
 
 ## Network services
  
+### L16 BETA
 
-DONE
-
-* https://consensus.stats.beta.l16.lukso.network
-* https://faucet.beta.l16.lukso.network
-* https://rpc.beta.l16.lukso.network 
-* https://ethstats.l16.d.lukso.dev   
+* http://consensus.stats.beta.l16.lukso.network
+* http://execution.stats.beta.l16.lukso.network
+* http://consensus.explorer.beta.l16.lukso.network
+* http://execution.explorer.beta.l16.lukso.network 
