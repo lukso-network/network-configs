@@ -99,13 +99,8 @@ services:
       - $KEYSTORE_VOLUME:/keystore
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
-    command: >
-      account validator import
-      --datadir /validator_data
-      --testnet-dir /configs
-      --directory /keystore/keys
-      --password-file /keystore/password.txt
-      --reuse-password
+      - $LH_SCRIPTS_VOLUME:/scripts
+    command: sh /scripts/lighthouse/create-wallet.sh
     network_mode: host
 
   eth2stats-client:
