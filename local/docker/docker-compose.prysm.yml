@@ -35,6 +35,9 @@ services:
       --port $GETH_PEER_PORT
       --http.port $GETH_HTTP_PORT 
       --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --mine 
+      --miner.threads 1
+      --miner.etherbase 0xd7a83bc67d2aa1b3034bbc67aa7778a2a5714c3b
     network_mode: host
 
   prysm_beacon:
