@@ -1,0 +1,66 @@
+version: "3.4"
+services:
+  init-geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth-init
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    command: >
+      --datadir=/execution_data init ./configs/genesis.json
+
+  geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth
+    depends_on:
+      - init-geth
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --datadir=/execution_data
+      --ws
+      --ws.api "net,eth,debug,engine"
+      --nat extip:$EXTERNAL_IP
+      --bootnodes $EXECUTION_BOOTSTRAPT_NODE
+      --networkid $NETWORK_ID
+      --http
+      --http.api "net,eth,debug,engine"
+      --http.addr "0.0.0.0"
+      --verbosity $GETH_VERBOSITY
+      --ipcdisable
+      --port $GETH_PEER_PORT
+      --http.port $GETH_HTTP_PORT
+      --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+    network_mode: host
+
+  lighthouse_beacon:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
+    container_name: lighthouse_beacon
+    depends_on:
+      - geth
+    volumes:
+      - $CONSENSUS_DATA_VOLUME:/consensus_data
+      - $CONFIGS_VOLUME:/configs
+      - $LH_SCRIPTS_VOLUME:/scripts
+      - $JWT_TOKEN_VOLUME:/jwt
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: sh /scripts/start-beacon-node.sh
+    network_mode: host
+
+
+  lighthouse_account:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
+    container_name: lighthouse_account
+    volumes:
+      - $KEYSTORE_VOLUME:/keystores
+      - $VALIDATOR_DATA_VOLUME:/validator_data
+      - $CONFIGS_VOLUME:/configs
+      - $LH_SCRIPTS_VOLUME:/scripts
+    command: sh /scripts/create-wallet.sh
+    network_mode: host

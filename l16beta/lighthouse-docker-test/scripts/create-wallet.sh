@@ -8,6 +8,6 @@ exec lighthouse \
   import \
 	--datadir /validator_data \
 	--testnet-dir /configs \
-	--directory /validator_data/keys \
+	--directory /keystores/keys \
 	--password-file /validator_data/password.txt \
 	--reuse-password
