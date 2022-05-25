@@ -35,18 +35,18 @@ services:
       --port $GETH_PEER_PORT
       --http.port $GETH_HTTP_PORT
       --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --authrpc.jwtsecret /configs/jwtsecret
     network_mode: host
 
-  lighthouse_beacon:
+  lh_beacon:
     image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
-    container_name: lighthouse_beacon
+    container_name: lh_beacon
     depends_on:
       - geth
     volumes:
       - $CONSENSUS_DATA_VOLUME:/consensus_data
       - $CONFIGS_VOLUME:/configs
       - $LH_SCRIPTS_VOLUME:/scripts
-      - $JWT_TOKEN_VOLUME:/jwt
     restart: unless-stopped
     stop_signal: SIGINT
     stop_grace_period: 2m
@@ -54,13 +54,29 @@ services:
     network_mode: host
 
 
-  lighthouse_account:
+  lh_account:
     image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
-    container_name: lighthouse_account
+    container_name: lh_account
     volumes:
       - $KEYSTORE_VOLUME:/keystores
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
       - $LH_SCRIPTS_VOLUME:/scripts
     command: sh /scripts/create-wallet.sh
+    network_mode: host
+
+
+  eth2stats-client:
+    image: macht/eth2stats-client:v1.0.0
+    container_name: eth2stats-client
+    depends_on:
+      - lh_beacon
+    command: >
+      run
+      --beacon.type="v1"
+      --eth2stats.node-name=$NODE_NAME
+      --eth2stats.addr=$ETH_2_STATS_ADDRESS
+      --eth2stats.tls=false
+      --beacon.metrics-addr=http://127.0.0.1:5054/metrics
+      --beacon.addr=http://127.0.0.1:5052
     network_mode: host
