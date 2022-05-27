@@ -58,7 +58,7 @@ services:
     image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
     container_name: lh_validator
     depends_on:
-      - geth
+      - lh_beacon
     volumes:
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
