@@ -54,6 +54,22 @@ services:
     network_mode: host
 
 
+  lh_validator:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
+    container_name: lh_validator
+    depends_on:
+      - geth
+    volumes:
+      - $VALIDATOR_DATA_VOLUME:/validator_data
+      - $CONFIGS_VOLUME:/configs
+      - $LH_SCRIPTS_VOLUME:/scripts
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: sh /scripts/start-validator-node.sh
+    network_mode: host
+
+
   lh_account:
     image: europe-docker.pkg.dev/lks-lz-artifacts/docker-lighthouse/lighthouse:$LH_BEACON_VERSION
     container_name: lh_account

@@ -12,6 +12,7 @@ exec lighthouse \
     --eth1-endpoints http://localhost:8545 \
     --http \
     --http-allow-origin="*" \
+    --http-address 0.0.0.0 \
     --metrics-allow-origin="*" \
     --metrics \
     --jwt-secrets /configs/jwtsecret \
