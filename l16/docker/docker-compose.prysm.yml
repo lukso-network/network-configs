@@ -51,12 +51,12 @@ services:
     stop_signal: SIGINT
     stop_grace_period: 2m
     command: >
-      --accept-terms-of-use
-      --genesis-state /configs/genesis.ssz
+      --accept-terms-of-use 
       --datadir /consensus_data
       --bootstrap-node $PRYSM_BOOTSTRAP_NODE
       --http-web3provider=http://localhost:8545
       --min-sync-peers=2
+      --contract-deployment-block 0
       --p2p-host-ip $EXTERNAL_IP
       --chain-config-file /configs/config.yaml
       --monitoring-host 0.0.0.0
