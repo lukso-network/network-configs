@@ -43,6 +43,7 @@ services:
     container_name: prysm_beacon
     depends_on:
       - geth
+      - eth2stats-client
     volumes:
       - $CONSENSUS_DATA_VOLUME:/consensus_data
       - $CONFIGS_VOLUME:/configs
@@ -91,8 +92,7 @@ services:
   eth2stats-client:
     image: macht/eth2stats-client:v1.0.0
     container_name: eth2stats-client
-    depends_on:
-      - prysm_beacon
+    restart: unless-stopped
     command: >
       run
       --beacon.type=prysm
