@@ -74,6 +74,8 @@ services:
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
     restart: unless-stopped
+    depends_on:
+      - prysm_beacon
     stop_signal: SIGINT
     stop_grace_period: 2m
     command: >
