@@ -2,13 +2,13 @@
 PRESET_BASE: 'mainnet'
 # Genesis
 # ---------------------------------------------------------------
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 2
-# Jan 11st, 2022, 15:00 UTC
-MIN_GENESIS_TIME: 1642967095
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 5
+# Fri Jun 10 2022 16:00:00 GMT+0000
+MIN_GENESIS_TIME: 1654876800
 # Gensis fork
 GENESIS_FORK_VERSION: 0x60000069
-# 300 seconds (5 min)
-GENESIS_DELAY: 766
+# 1800 seconds (30 mins)
+GENESIS_DELAY: 1800
 
 
 # Forking
@@ -34,9 +34,9 @@ SHARDING_FORK_EPOCH: 18446744073709551615
 
 # Time parameters
 # ---------------------------------------------------------------
-# 12 seconds
+# 6 seconds
 SECONDS_PER_SLOT: 6
-# 14 (estimate from Eth1 mainnet)
+# 2 seconds (estimate from Eth1 mainnet)
 SECONDS_PER_ETH1_BLOCK: 2
 # 2**8 (= 256) epochs ~27 hoursaw
 MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
@@ -52,13 +52,13 @@ ETH1_FOLLOW_DISTANCE: 16
 INACTIVITY_SCORE_BIAS: 4
 # 2**4 (= 16)
 INACTIVITY_SCORE_RECOVERY_RATE: 16
-# 2**4 * 10**9 (= 16,000,000,000) Gwei
+# 110,000,000,000 Gwei
 EJECTION_BALANCE: 110000000000
 # 2**2 (= 4)
 MIN_PER_EPOCH_CHURN_LIMIT: 4
 # 2**16 (= 65,536)
 CHURN_LIMIT_QUOTIENT: 65536
-# 220 lyx
+# 220,000,000,000 Gwei
 MAX_EFFECTIVE_BALANCE: 220000000000
 
 
