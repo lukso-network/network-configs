@@ -1,6 +1,6 @@
 [
   {
-    "consensus": "enode://8e07c89e7b5bed75ee57cbfad9219f697c37c41d0cf58af261565de38dd07d8ee89b3378db9c04976160e1861855dafbc4d30e255bd2606dbf65e415fc83ac08@34.90.126.134:30303",
-    "execution": ""
+    "consensus": "",
+    "execution": "enode://8e07c89e7b5bed75ee57cbfad9219f697c37c41d0cf58af261565de38dd07d8ee89b3378db9c04976160e1861855dafbc4d30e255bd2606dbf65e415fc83ac08@34.90.126.134:30303"
   }
 ]
