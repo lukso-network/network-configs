@@ -3,12 +3,12 @@ PRESET_BASE: 'mainnet'
 # Genesis
 # ---------------------------------------------------------------
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 5
-# Fri Jun 10 2022 16:00:00 GMT+0000
-MIN_GENESIS_TIME: 1654876800
+# Mon Jun 13 2022 03:00:00 GMT+0000
+MIN_GENESIS_TIME: 1655089200
 # Gensis fork
 GENESIS_FORK_VERSION: 0x60000069
-# 1800 seconds (30 mins)
-GENESIS_DELAY: 1800
+# Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
+GENESIS_DELAY: 300
 
 
 # Forking
