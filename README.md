@@ -4,7 +4,7 @@ This repository is the single source of truth for the configuration of the vario
 initiated by LUKSO.
  
 
-## L16
+## L16 
  
 
 | Services by LUKSO  |                                           Location                                           |
@@ -21,8 +21,7 @@ initiated by LUKSO.
 |  [config.yaml](./l16/configs/config.yaml)  | 
 | [genesis.json](./l16/configs/genesis.json) |  
 | [Bootnodes](./l16/bootnode/bootnodes.json) |  
-|   [Node Params](./l16/node_params.json)    |   
-
+|   [Node Params](./l16/node_params.json)    |    
 
   
  
