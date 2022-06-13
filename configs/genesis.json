@@ -1,6 +1,6 @@
 {
   "config": {
-    "chainId": 10819499,
+    "chainId": 83748374,
     "homesteadBlock": 0,
     "eip150Block": 0,
     "eip155Block": 0,
@@ -12,7 +12,7 @@
     "berlinBlock": 0,
     "londonBlock": 0,
     "mergeForkBlock": 100,
-    "terminalTotalDifficulty": 50000000000
+    "terminalTotalDifficulty": 500000000
   },
   "alloc": {
     "0x0000000000000000000000000000000000000000": {
@@ -826,14 +826,14 @@
     "0xcce25d1620bd5e33485b808b30d3c805ea28dbe3": {
       "balance": "10000000000000000000000000"
     },
-    "0xE36C23E2f183419966fC5B8492b947E69E3C7825": {
-      "balance": "10000000000000000000000000"
+    "0x35C219619acBF298646F3e8005FAfc459b25f834": {
+      "balance": "50000000000000000000000"
     }
   },
   "coinbase": "0xcce25d1620bd5e33485b808b30d3c805ea28dbe3",
   "difficulty": "0x01",
   "extraData": "",
-  "gasLimit": "0x4C4B400",
+  "gasLimit": "0x400000",
   "nonce": "0x1234",
   "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
