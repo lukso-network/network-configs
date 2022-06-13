@@ -1,26 +1,31 @@
 # LUKSO network configs repository
 
-This repository hosts the current LUKSO network specifications. Discussions about design rationale and proposed changes can be brought up and discussed as issues. Solidified, agreed-upon changes to the spec can be made through pull requests.
-
-## Current network configs
+This repository is the single source of truth for the configuration of the various networks
+initiated by LUKSO.
  
 
-### L16
+## L16
 
-|                | [L16 Testnet](l16/tesnet) | [L16 BETA](l16/beta) |
-|:--------------:| :-------------------------:|:--------------------:|
-|    Chain ID    |             not yet    |       83748374       |
-|   Network ID   |        not yet         |         83748374         |
-|  Fork version  |        not yet         |      0x63a55317      |
-| Config version |        not yet         |          19          | 
+
+### Services provided by LUKSO
+
+|      Service       |                                           Location                                           |
+|:------------------:|:--------------------------------------------------------------------------------------------:|
+|  Consensus Stats   |    [https://stats.consensus.l16.lukso.network](https://stats.consensus.l16.lukso.network)    |
+|  Execution Stats   |    [https://stats.execution.l16.lukso.network](https://stats.execution.l16.lukso.network)    | 
+| Consensus Explorer | [https://explorer.consensus.l16.lukso.network](https://explorer.consensus.l16.lukso.network) | 
+| Execution Explorer | [https://explorer.execution.l16.lukso.network](https://explorer.execution.l16.lukso.network) |  
+|       Faucet       |             [https://faucet.l16.lukso.network](https://faucet.l16.lukso.network)             |
+
+### Configurations
+
+|               Configuration                |                                           Location                                           |
+|:------------------------------------------:|:--------------------------------------------------------------------------------------------:|
+|  [config.yaml](./l16/configs/config.yaml)  |    [https://stats.consensus.l16.lukso.network](https://stats.consensus.l16.lukso.network)    |
+| [genesis.json](./l16/configs/genesis.json) |    [https://stats.execution.l16.lukso.network](https://stats.execution.l16.lukso.network)    | 
+| [Bootnodes](./l16/bootnode/bootnodes.json) | [https://explorer.consensus.l16.lukso.network](https://explorer.consensus.l16.lukso.network) | 
+|   [Node Params](./l16/node_params.json)    | [https://explorer.execution.l16.lukso.network](https://explorer.execution.l16.lukso.network) |  
+
+
+  
  
-
-
-## Network services
- 
-### L16 BETA
-
-* http://consensus.stats.beta.l16.lukso.network
-* http://execution.stats.beta.l16.lukso.network
-* http://consensus.explorer.beta.l16.lukso.network
-* http://execution.explorer.beta.l16.lukso.network 
