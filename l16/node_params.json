@@ -1,8 +1,8 @@
 {
   "executionApi": "https://rpc.l16.lukso.network",
   "consensusApi": "https://beacon.l16.lukso.network",
-  "executionStats": "34.141.193.191",
-  "consensusStats": "35.204.103.208:9090",
+  "executionStats": "34.141.251.230",
+  "consensusStats": "34.90.158.183:9090",
   "networkId": "2828",
   "minStakeAmount": "220000000000",
   "gethVersion": "v0.2.1",
