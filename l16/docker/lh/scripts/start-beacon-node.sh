@@ -18,6 +18,6 @@ exec lighthouse \
     --metrics \
     --metrics-address 0.0.0.0 \
     --jwt-secrets /configs/jwtsecret \
-    --boot-nodes "enr:-MK4QJ170_c4shhTN7NYc0ZiumYUrME_YUcWw_d8W6KKPHtHYVTVogsTqsQZDY_R3VlWnpKW-tIMJeB2JOIvo0D3Gi6GAYDxIN1yh2F0dG5ldHOIAAAAAAAAAACEZXRoMpCBQMXLYgAAcf__________gmlkgnY0gmlwhCJaVcaJc2VjcDI1NmsxoQI6qePHCvwjkh8CMvuUaSWTNiYkFzZpZh3j-DgNjBLvo4hzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A" \
+    --boot-nodes "enr:-MK4QHptxgcppYG9PiFc_dbteq_efGQpgq3KEVDkt9zwgJddP56LaV3o4XS-jgJYADbv6gdrhUegsaqVgSb8e19fmCeGAYFtM7Sph2F0dG5ldHOIAAAAAAAAAACEZXRoMpCUeKqrYQAAcAMAAAAAAAAAgmlkgnY0gmlwhCKNxs-Jc2VjcDI1NmsxoQJQcrUCPeBAqaknqD7DfAv1uexG6Q-Gs1fXvZ9JQ0BoQIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A" \
     --suggested-fee-recipient "0x7781121fd00A009670E31b76A2bf99b3A2D6878D" \
     --debug-level "debug"
