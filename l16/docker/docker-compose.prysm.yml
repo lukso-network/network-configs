@@ -53,6 +53,7 @@ services:
     command: >
       --accept-terms-of-use 
       --datadir /consensus_data
+      --genesis-beacon-api-url=http://34.91.41.150:3500
       --bootstrap-node $PRYSM_BOOTSTRAP_NODE
       --http-web3provider=http://localhost:8545
       --min-sync-peers=2
