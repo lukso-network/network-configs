@@ -66,6 +66,8 @@ services:
       --rpc-host 0.0.0.0
       --verbosity $PRYSM_VERBOSITY
       --p2p-max-peers 250
+      --subscribe-all-subnets
+      --minimum-peers-per-subnet 2
     network_mode: host
 
   prysm_validator:
