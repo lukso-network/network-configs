@@ -65,6 +65,7 @@ services:
       --suggested-fee-recipient $GETH_ETHERBASE
       --rpc-host 0.0.0.0
       --verbosity $PRYSM_VERBOSITY
+      --p2p-max-peers 250
     network_mode: host
 
   prysm_validator:
