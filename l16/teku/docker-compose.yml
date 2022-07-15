@@ -1,0 +1,63 @@
+version: "3.4"
+services:
+
+  init-geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth-init
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    command: >
+      --datadir=/execution_data init ./configs/genesis.json
+
+  geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth
+    depends_on:
+      - init-geth
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --datadir=/execution_data 
+      --ws 
+      --ws.api "net,eth,debug,engine"  
+      --nat extip:$EXTERNAL_IP
+      --bootnodes $GETH_BOOTSTRAP_NODE
+      --networkid $GETH_NETWORK_ID 
+      --http 
+      --http.api "net,eth,debug,engine" 
+      --http.addr "0.0.0.0" 
+      --verbosity $GETH_VERBOSITY
+      --ipcdisable 
+      --port $GETH_PEER_PORT
+      --http.port $GETH_HTTP_PORT 
+      --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+    network_mode: host
+
+  teku_beacon:
+    image: consensys/teku:latest
+    container_name: teku_beacon
+    depends_on:
+      - geth
+    volumes:
+      - $CONSENSUS_DATA_VOLUME:/consensus_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --initial-state /configs/genesis.ssz
+      --config-file /configs/config.yaml
+      --logging debug
+      --data-path /consensus_data
+      --eth1-endpoint http://localhost:8545
+      --ee-endpoint http://localhost:8551
+      --ee-jwt-secret-file ~/tmp/jwtsecret
+      --log-destination console 
+      --p2p-discovery-bootnodes enr:-MK4QDg4ex-j-_h-WDmNJm06vhsDiFcH8-47a1BmfNImqSa4PHun96l4kedG6ydvGNHMuUNNI0hSgY-MuMVRXaAsafGGAYGusnNvh2F0dG5ldHOIG_QgJDg9RgCEZXRoMpB9O39zYgAAcf__________gmlkgnY0gmlwhCJbspeJc2VjcDI1NmsxoQJWout_OlBjEk7AAV-wwZnS7uJCCeeBj4gjOrez2F-CO4hzeW5jbmV0cw-DdGNwgjLIg3VkcIIu4A
+      --validators-proposer-default-fee-recipient=0x7781121fd00A009670E31b76A2bf99b3A2D6878D
+    network_mode: host

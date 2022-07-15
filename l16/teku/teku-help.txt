@@ -1,0 +1,303 @@
+
+teku [OPTIONS] [COMMAND]
+
+Description:
+
+Run the Teku beacon chain client and validator
+
+Options:
+  -c, --config-file=<FILENAME>
+                             Path/filename of the yaml config file (default:
+                               none)
+  -h, --help                 Show this help message and exit.
+  -V, --version              Print version information and exit.
+Network
+      --eth1-deposit-contract-address=<ADDRESS>
+                             Contract address for the deposit contract. Only
+                               required when creating a custom network.
+      --initial-state=<STRING>
+                             The initial state. This value should be a file or
+                               URL pointing to an SSZ-encoded finalized
+                               checkpoint state.
+  -n, --network=<NETWORK>    Represents which network to use.
+                               Default: mainnet
+P2P
+      --p2p-advertised-ip=<NETWORK>
+                             P2P advertised IP (Default: 127.0.0.1)
+      --p2p-advertised-port=<INTEGER>
+                             P2P advertised port. The default is the port
+                               specified in --p2p-port
+      --p2p-advertised-udp-port=<INTEGER>
+                             Advertised UDP port to external peers. The default
+                               is the port specified in --p2p-advertised-port
+      --p2p-discovery-bootnodes[=<enr:-...>[,<enr:-...>...]...]
+                             List of ENRs of the bootnodes
+      --p2p-discovery-enabled[=<BOOLEAN>]
+                             Enables discv5 discovery
+                               Default: true
+      --p2p-enabled[=<BOOLEAN>]
+                             Enables P2P
+                               Default: true
+      --p2p-interface=<NETWORK>
+                             P2P network interface
+                               Default: 0.0.0.0
+      --p2p-nat-method=<natMethod>
+                             Specify the NAT circumvention method to be used,
+                               possible values are UPNP, NONE. NONE will
+                               require manual router configuration.
+                               Default: NONE
+      --p2p-peer-lower-bound=<INTEGER>
+                             Lower bound on the target number of peers
+                               Default: 64
+      --p2p-peer-upper-bound=<INTEGER>
+                             Upper bound on the target number of peers
+                               Default: 100
+      --p2p-port=<INTEGER>   P2P port
+                               Default: 9000
+      --p2p-private-key-file=<FILENAME>
+                             This node's private key file. If not specified,
+                               uses or generates a key which is stored within
+                               the <beacon-data-dir>.
+      --p2p-static-peers[=<PEER_ADDRESSES>[,<PEER_ADDRESSES>...]...]
+                             Static peers
+                               Default: []
+      --p2p-subscribe-all-subnets-enabled[=<BOOLEAN>]
+                               Default: false
+      --p2p-udp-port=<INTEGER>
+                             UDP port used for discovery. The default is the
+                               port specified in --p2p-port
+Validator
+      --validator-keys=<KEY_DIR>:<PASS_DIR> | <KEY_FILE>:<PASS_FILE>[,<KEY_DIR>:
+        <PASS_DIR> | <KEY_FILE>:<PASS_FILE>...]...
+                             <KEY_DIR>:<PASS_DIR> will find <KEY_DIR>/**.json,
+                               and expect to find <PASS_DIR>/**.txt.
+                             <KEY_FILE>:<PASS_FILE> will expect that the file
+                               <KEY_FILE> exists, and the file containing the
+                               password for it is <PASS_FILE>.
+                             The path separator is operating system dependent,
+                               and should be ';' in windows rather than ':'.
+                               Default: []
+      --validators-early-attestations-enabled[=<BOOLEAN>]
+                             Generate attestations as soon as a block is known,
+                               rather than delaying until the attestation is due
+                               Default: true
+      --validators-external-signer-keystore=<FILE>
+                             Keystore (PKCS12/JKS) to use for TLS mutual
+                               authentication with external signer
+      --validators-external-signer-keystore-password-file=<FILE>
+                             Password file to decrypt keystore (PKCS12/JKS)
+                               that will be used for TLS mutual authentication
+                               with external signer
+      --validators-external-signer-public-keys[=<STRINGS>[,<STRINGS>...]...]
+                             The list of external signer public keys, or a URL
+                               to load the keys from
+                               Default: []
+      --validators-external-signer-slashing-protection-enabled[=<BOOLEAN>]
+                             Enable internal slashing protection for external
+                               signers
+                               Default: true
+      --validators-external-signer-timeout=<INTEGER>
+                             Timeout (in milliseconds) for the external signing
+                               service
+                               Default: 5000
+      --validators-external-signer-truststore=<FILE>
+                             Keystore (PKCS12/JKS) to trust external signer's
+                               self-signed certificate
+      --validators-external-signer-truststore-password-file=<FILE>
+                             Password file to decrypt keystore (PKCS12/JKS)
+                               that will be used to trust external signer's
+                               self-signed certificate
+      --validators-external-signer-url=<NETWORK>
+                             URL for the external signing service
+      --validators-graffiti=<GRAFFITI STRING>
+                             Graffiti value to include during block creation.
+                               Value gets converted to bytes and padded to
+                               Bytes32.
+      --validators-graffiti-file=<GRAFFITI FILE>
+                             File to load graffiti value to include during
+                               block creation. Value gets converted to bytes
+                               and padded to Bytes32. Takes precedence over
+                               --validators-graffiti. If the file can not be
+                               read, the --validators-graffiti value is used as
+                               a fallback.
+      --validators-keystore-locking-enabled=<BOOLEAN>
+                             Enable locking validator keystore files
+                               Default: true
+      --validators-performance-tracking-mode=<TRACKING_MODE>
+                             Set strategy for handling performance tracking.
+                               Valid values: LOGGING, METRICS, ALL, NONE
+                               Default: ALL
+      --validators-proposer-config=<STRING>
+                             remote URL or local file path to load proposer
+                               configuration from
+      --validators-proposer-config-refresh-enabled[=<BOOLEAN>]
+                             Enable the proposer configuration reload on every
+                               proposer preparation (once per epoch)
+                               Default: false
+      --validators-proposer-default-fee-recipient=<ADDRESS>
+                             Default fee recipient sent to the execution
+                               engine, which could use it as fee recipient when
+                               producing a new execution block.
+Execution Layer
+      --ee-endpoint=<NETWORK>
+                             URL for Execution Engine node.
+      --ee-jwt-secret-file=<FILENAME>
+                             Location of the file specifying the hex-encoded
+                               256 bit secret key to be used for
+                               verifying/generating jwt tokens
+      --eth1-deposit-contract-max-request-size=<INTEGER>
+                             Maximum number of blocks to request deposit
+                               contract event logs for in a single request.
+                               Default: 10000
+      --eth1-endpoint, --eth1-endpoints=<NETWORK>[,<NETWORK>...]...
+                             URLs for Eth1 nodes.
+                               Default: []
+Data Storage
+      --data-beacon-path=<FILENAME>
+                             Path to beacon node data
+                               Default: <data-base-path>/beacon
+      --data-path, --data-base-path=<FILENAME>
+                             Path to the base directory for storage
+                               Default: /Users/atif/Library/teku
+      --data-storage-archive-frequency=<FREQUENCY>
+                             Sets the frequency, in slots, at which to store
+                               finalized states to disk. This option is ignored
+                               if --data-storage-mode is set to PRUNE
+                               Default: 2048
+      --data-storage-mode=<STORAGE_MODE>
+                             Sets the strategy for handling historical chain
+                               data.  (Valid values: ARCHIVE, PRUNE)
+                               Default: PRUNE
+      --data-storage-non-canonical-blocks-enabled[=<BOOLEAN>]
+                             Store non-canonical blocks
+                               Default: false
+      --data-validator-path=<FILENAME>
+                             Path to validator client data
+                               Default: <data-base-path>/validator
+Beacon REST API
+      --rest-api-cors-origins[=<origin>[,<origin>...]...]
+                             Comma separated list of origins to allow, or * to
+                               allow any origin
+                               Default: []
+      --rest-api-docs-enabled[=<BOOLEAN>]
+                             Enable swagger-docs and swagger-ui endpoints
+                               Default: false
+      --rest-api-enabled[=<BOOLEAN>]
+                             Enables Beacon Rest API
+                               Default: false
+      --rest-api-host-allowlist[=<hostname>[,<hostname>...]...]
+                             Comma-separated list of hostnames to allow, or *
+                               to allow any host
+                               Default: [127.0.0.1, localhost]
+      --rest-api-interface=<NETWORK>
+                             Interface of Beacon Rest API
+                               Default: 127.0.0.1
+      --rest-api-port=<INTEGER>
+                             Port number of Beacon Rest API
+                               Default: 5051
+Validator REST API
+      --validator-api-cors-origins[=<origin>[,<origin>...]...]
+                             Comma separated list of origins to allow, or * to
+                               allow any origin
+                               Default: []
+      --validator-api-docs-enabled[=<BOOLEAN>]
+                             Enable swagger-docs and swagger-ui endpoints
+                               Default: false
+      --validator-api-enabled[=<BOOLEAN>]
+                             Enables Validator Rest API
+                               Default: false
+      --validator-api-host-allowlist[=<hostname>[,<hostname>...]...]
+                             Comma-separated list of hostnames to allow, or *
+                               to allow any host
+                               Default: [127.0.0.1, localhost]
+      --validator-api-interface=<NETWORK>
+                             Interface of Validator Rest API
+                               Default: 127.0.0.1
+      --validator-api-keystore-file=<keystoreFile>
+                             Keystore used for ssl for the validator api.
+      --validator-api-keystore-password-file=<keystorePasswordFile>
+                             Password used to decrypt the keystore for the
+                               validator api.
+      --validator-api-port=<INTEGER>
+                             Port number of Rest API
+                               Default: 5052
+Weak Subjectivity
+      --ws-checkpoint=<STRING>
+                             A recent checkpoint within the weak subjectivity
+                               period. Should be a string containing
+                               <BLOCK_ROOT>:<EPOCH_NUMBER> or a URL containing
+                               the field ws_checkpoint with the same
+                               information.
+Logging
+  -l, --logging=<LOG VERBOSITY LEVEL>
+                             Logging verbosity levels: OFF, FATAL, ERROR, WARN,
+                               INFO, DEBUG, TRACE, ALL (default: INFO).
+      --log-color-enabled[=<BOOLEAN>]
+                             Whether Status and Event log messages include a
+                               console color display code
+                               Default: true
+      --log-destination=<LOG_DESTINATION>
+                             Whether a logger is added for the console, the log
+                               file, or both (Valid values: BOTH, CONSOLE,
+                               DEFAULT_BOTH, FILE, CUSTOM)
+                               Default: DEFAULT_BOTH
+      --log-file=<FILENAME>  Path containing the location (relative or
+                               absolute) and the log filename. If not set will
+                               default to <data-path>/logs/teku.log
+      --log-file-name-pattern=<REGEX>
+                             Pattern for the filename to apply to rolled over
+                               log files. If not set will default to
+                               <data-path>/logs/teku_%d{yyyy-MM-dd}.log
+      --log-include-events-enabled[=<BOOLEAN>]
+                             Whether frequent update events are logged (e.g.
+                               every slot and epoch event)
+                               Default: true
+      --log-include-validator-duties-enabled[=<BOOLEAN>]
+                             Whether events are logged when validators perform
+                               duties
+                               Default: true
+Metrics
+      --metrics-categories[=<METRICS_CATEGORY>[,<METRICS_CATEGORY>...]...]
+                             Metric categories to enable
+                               Default: [JVM, PROCESS, BEACON, DISCOVERY,
+                               EVENTBUS, EXECUTOR, LIBP2P, NETWORK, STORAGE,
+                               STORAGE_HOT_DB, STORAGE_FINALIZED_DB,
+                               REMOTE_VALIDATOR, VALIDATOR,
+                               VALIDATOR_PERFORMANCE]
+      --metrics-enabled[=<BOOLEAN>]
+                             Enables metrics collection via Prometheus
+                               Default: false
+      --metrics-host-allowlist[=<hostname>[,<hostname>...]...]
+                             Comma-separated list of hostnames to allow, or *
+                               to allow any host
+                               Default: [127.0.0.1, localhost]
+      --metrics-interface=<NETWORK>
+                             Metrics network interface to expose metrics for
+                               Prometheus
+                               Default: 127.0.0.1
+      --metrics-port=<INTEGER>
+                             Metrics port to expose metrics for Prometheus
+                               Default: 8008
+      --metrics-publish-endpoint=<URL>
+                             Publish metrics for node monitoring to an external
+                               service
+      --metrics-publish-interval=<INTEGER>
+                             Interval between metric publications to the
+                               external service (measured in seconds)
+                               Default: 60
+Commands:
+  help                  Displays help information about the specified command
+  admin                 Holds advanced tools for node admins
+  transition            Manually run state transitions
+  peer                  Commands for LibP2P PeerID
+  genesis               Commands for generating genesis state
+  slashing-protection   Manage local slashing protection data used by the
+                          validator client.
+  migrate-database      Migrate the database to a specified version.
+  debug-tools           Utilities for debugging issues
+  voluntary-exit        Create and sign a voluntary exit for a specified
+                          validator.
+  validator-client, vc  Run a Validator Client that connects to a remote Beacon
+                          Node
+
+Teku is licensed under the Apache License 2.0
