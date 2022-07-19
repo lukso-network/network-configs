@@ -36,6 +36,7 @@ services:
       --port $GETH_PEER_PORT
       --http.port $GETH_HTTP_PORT 
       --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --miner.gaslimit 60000000
     network_mode: host
 
   prysm_beacon:
