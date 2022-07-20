@@ -45,6 +45,7 @@ services:
     container_name: teku_beacon
     depends_on:
       - geth
+      - eth2stats-client
     volumes:
       - $CONSENSUS_DATA_VOLUME:/consensus_data
       - $CONFIGS_VOLUME:/configs
@@ -64,7 +65,7 @@ services:
       --log-color-enabled true
       --metrics-enabled true
       --metrics-host-allowlist *
-      --p2p-discovery-bootnodes $CONSENSUS_BOOTSTRAP_NODE
+      --p2p-discovery-bootnodes $PRYSM_BOOTSTRAP_NODE
       --validators-proposer-default-fee-recipient $GETH_ETHERBASE
     network_mode: host
 
