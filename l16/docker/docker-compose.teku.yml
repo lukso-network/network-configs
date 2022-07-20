@@ -1,0 +1,84 @@
+version: "3.4"
+services:
+
+  init-geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth-init
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    command: >
+      --datadir=/execution_data init ./configs/genesis.json
+
+  geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth
+    depends_on:
+      - init-geth
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --datadir=/execution_data
+      --ws
+      --ws.api "net,eth,debug,engine"
+      --nat extip:$EXTERNAL_IP
+      --bootnodes $GETH_BOOTSTRAP_NODE
+      --networkid $GETH_NETWORK_ID
+      --http
+      --http.api "net,eth,debug,engine"
+      --http.addr "0.0.0.0"
+      --verbosity $GETH_VERBOSITY
+      --ipcdisable
+      --port $GETH_PEER_PORT
+      --http.port $GETH_HTTP_PORT
+      --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --miner.gaslimit 60000000
+      --authrpc.jwtsecret /configs/jwtsecret
+    network_mode: host
+
+  teku_beacon:
+    image: consensys/teku:$TEKU_BEACON_VERSION
+    container_name: teku_beacon
+    depends_on:
+      - geth
+      - eth2stats-client
+    volumes:
+      - $CONSENSUS_DATA_VOLUME:/consensus_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --network /configs/config.yaml
+      --initial-state /configs/genesis.ssz
+      --p2p-subscribe-all-subnets-enabled true
+      --ee-jwt-secret-file /configs/jwtsecret
+      --eth1-endpoint http://localhost:8545
+      --ee-endpoint http://localhost:8551
+      --data-beacon-path /consensus_data/beacon
+      --rest-api-enabled true
+      --logging debug
+      --log-color-enabled true
+      --metrics-enabled true
+      --metrics-host-allowlist *
+      --p2p-discovery-bootnodes $PRYSM_BOOTSTRAP_NODE
+      --validators-proposer-default-fee-recipient $GETH_ETHERBASE
+    network_mode: host
+
+  eth2stats-client:
+    image: macht/eth2stats-client:v1.0.0
+    container_name: eth2stats-client
+    restart: unless-stopped
+    command: >
+      run
+      --beacon.type=teku
+      --eth2stats.node-name=$NODE_NAME
+      --eth2stats.addr=$ETH_2_STATS_ADDRESS
+      --eth2stats.tls=false
+      --beacon.metrics-addr=http://127.0.0.1:8008/metrics
+      --beacon.addr=http://127.0.0.1:5051
+    network_mode: host
