@@ -22,24 +22,26 @@ services:
     stop_signal: SIGINT
     stop_grace_period: 2m
     command: >
-      --datadir=/execution_data 
-      --ws 
-      --ws.api "net,eth,debug,engine"  
+      --datadir=/execution_data
+      --ws
+      --ws.api "net,eth,debug,engine"
       --nat extip:$EXTERNAL_IP
       --bootnodes $GETH_BOOTSTRAP_NODE
-      --networkid $GETH_NETWORK_ID 
-      --http 
-      --http.api "net,eth,debug,engine" 
-      --http.addr "0.0.0.0" 
+      --networkid $GETH_NETWORK_ID
+      --http
+      --http.api "net,eth,debug,engine"
+      --http.addr "0.0.0.0"
       --verbosity $GETH_VERBOSITY
-      --ipcdisable 
+      --ipcdisable
       --port $GETH_PEER_PORT
-      --http.port $GETH_HTTP_PORT 
+      --http.port $GETH_HTTP_PORT
       --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --miner.gaslimit 60000000
+      --authrpc.jwtsecret /configs/jwtsecret
     network_mode: host
 
   teku_beacon:
-    image: consensys/teku:latest
+    image: consensys/teku:$TEKU_BEACON_VERSION
     container_name: teku_beacon
     depends_on:
       - geth
@@ -50,14 +52,32 @@ services:
     stop_signal: SIGINT
     stop_grace_period: 2m
     command: >
+      --network /configs/config.yaml
       --initial-state /configs/genesis.ssz
-      --config-file /configs/config.yaml
-      --logging debug
-      --data-path /consensus_data
+      --p2p-subscribe-all-subnets-enabled true
+      --ee-jwt-secret-file /configs/jwtsecret
       --eth1-endpoint http://localhost:8545
       --ee-endpoint http://localhost:8551
-      --ee-jwt-secret-file ~/tmp/jwtsecret
-      --log-destination console 
-      --p2p-discovery-bootnodes enr:-MK4QDg4ex-j-_h-WDmNJm06vhsDiFcH8-47a1BmfNImqSa4PHun96l4kedG6ydvGNHMuUNNI0hSgY-MuMVRXaAsafGGAYGusnNvh2F0dG5ldHOIG_QgJDg9RgCEZXRoMpB9O39zYgAAcf__________gmlkgnY0gmlwhCJbspeJc2VjcDI1NmsxoQJWout_OlBjEk7AAV-wwZnS7uJCCeeBj4gjOrez2F-CO4hzeW5jbmV0cw-DdGNwgjLIg3VkcIIu4A
-      --validators-proposer-default-fee-recipient=0x7781121fd00A009670E31b76A2bf99b3A2D6878D
+      --data-beacon-path /consensus_data/beacon
+      --rest-api-enabled true
+      --logging debug
+      --log-color-enabled true
+      --metrics-enabled true
+      --metrics-host-allowlist *
+      --p2p-discovery-bootnodes $CONSENSUS_BOOTSTRAP_NODE
+      --validators-proposer-default-fee-recipient $GETH_ETHERBASE
+    network_mode: host
+
+  eth2stats-client:
+    image: macht/eth2stats-client:v1.0.0
+    container_name: eth2stats-client
+    restart: unless-stopped
+    command: >
+      run
+      --beacon.type=teku
+      --eth2stats.node-name=$NODE_NAME
+      --eth2stats.addr=$ETH_2_STATS_ADDRESS
+      --eth2stats.tls=false
+      --beacon.metrics-addr=http://127.0.0.1:8008/metrics
+      --beacon.addr=http://127.0.0.1:5051
     network_mode: host
