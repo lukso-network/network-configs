@@ -61,12 +61,34 @@ services:
       --ee-endpoint http://localhost:8551
       --data-beacon-path /consensus_data/beacon
       --rest-api-enabled true
-      --logging debug
+      --logging $TEKU_VERBOSITY
       --log-color-enabled true
       --metrics-enabled true
       --metrics-host-allowlist *
       --p2p-discovery-bootnodes $PRYSM_BOOTSTRAP_NODE
       --validators-proposer-default-fee-recipient $GETH_ETHERBASE
+    network_mode: host
+
+  teku_validator:
+    image: consensys/teku:$TEKU_BEACON_VERSION
+    container_name: teku_validator
+    volumes:
+      - $KEYSTORE_VOLUME:/keystore
+      - $VALIDATOR_DATA_VOLUME:/validator_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    depends_on:
+      - teku_beacon
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      validator-client
+      --data-validator-path /validator_data
+      --network /configs/config.yaml
+      --beacon-node-api-endpoint http://localhost:5051
+      --validator-keys /keystore/teku-keys:/keystore/teku-secrets
+      --validators-proposer-default-fee-recipient $GETH_ETHERBASE
+      --logging $TEKU_VERBOSITY
     network_mode: host
 
   eth2stats-client:
