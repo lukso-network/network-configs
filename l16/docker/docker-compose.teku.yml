@@ -83,12 +83,13 @@ services:
     stop_grace_period: 2m
     command: >
       validator-client
-      --data-validator-path /validator_data
-      --network /configs/config.yaml
+      --data-validator-path /validator_data/validator
+      --network auto
       --beacon-node-api-endpoint http://localhost:5051
       --validator-keys /keystore/teku-keys:/keystore/teku-secrets
       --validators-proposer-default-fee-recipient $GETH_ETHERBASE
       --logging $TEKU_VERBOSITY
+      --validators-external-signer-slashing-protection-enabled true
     network_mode: host
 
   eth2stats-client:
