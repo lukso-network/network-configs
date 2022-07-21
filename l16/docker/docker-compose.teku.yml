@@ -59,7 +59,7 @@ services:
       --ee-jwt-secret-file /configs/jwtsecret
       --eth1-endpoint http://localhost:8545
       --ee-endpoint http://localhost:8551
-      --data-beacon-path /consensus_data/beacon
+      --data-path /consensus_data
       --rest-api-enabled true
       --logging $TEKU_VERBOSITY
       --log-color-enabled true
@@ -83,7 +83,7 @@ services:
     stop_grace_period: 2m
     command: >
       validator-client
-      --data-validator-path /validator_data/validator
+      --data-path /validator_data
       --network auto
       --beacon-node-api-endpoint http://localhost:5051
       --validator-keys /keystore/teku-keys:/keystore/teku-secrets
