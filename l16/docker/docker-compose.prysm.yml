@@ -92,6 +92,7 @@ services:
       --monitoring-host 0.0.0.0
       --grpc-gateway-host 0.0.0.0
       --rpc-host 0.0.0.0
+      --suggested-fee-recipient $GETH_ETHERBASE
     network_mode: host
 
   eth2stats-client:
