@@ -98,7 +98,8 @@ services:
     restart: unless-stopped
     command: >
       run
-      --beacon.type=teku
+      --vv
+      --beacon.type=v1
       --eth2stats.node-name=$NODE_NAME
       --eth2stats.addr=$ETH_2_STATS_ADDRESS
       --eth2stats.tls=false
