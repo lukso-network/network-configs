@@ -2,7 +2,8 @@
 #
 # Starts a validator.
 
-exec lighthouse vc \
+exec lighthouse \
+    vc \
 	  --datadir ./validator_data \
 	  --testnet-dir ./configs \
 	  --http \
