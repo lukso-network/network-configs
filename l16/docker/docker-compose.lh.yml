@@ -47,6 +47,7 @@ services:
       - $CONSENSUS_DATA_VOLUME:/consensus_data
       - $CONFIGS_VOLUME:/configs
       - $LH_SCRIPTS_VOLUME:/scripts
+    env_file: .env
     restart: unless-stopped
     stop_signal: SIGINT
     stop_grace_period: 2m
@@ -63,6 +64,7 @@ services:
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
       - $LH_SCRIPTS_VOLUME:/scripts
+    env_file: .env
     command: sh /scripts/create_wallet.sh
     network_mode: host
 
@@ -76,6 +78,7 @@ services:
       - $VALIDATOR_DATA_VOLUME:/validator_data
       - $CONFIGS_VOLUME:/configs
       - $LH_SCRIPTS_VOLUME:/scripts
+    env_file: .env
     restart: unless-stopped
     stop_signal: SIGINT
     stop_grace_period: 2m
