@@ -16,12 +16,16 @@ initiated by LUKSO.
 |       Faucet       |             [https://faucet.l16.lukso.network](https://faucet.l16.lukso.network)             |
  
 
-|               Configurations               |
+|      Consensus Chain Configurations        |
 |:------------------------------------------:|
-|  [config.yaml](./l16/configs/config.yaml)  | 
-| [genesis.json](./l16/configs/genesis.json) |  
+|  [config.yaml](./l16/configs/config.yaml)  |  
 | [Bootnodes](./l16/bootnode/bootnodes.json) |  
 |   [Node Params](./l16/node_params.json)    |    
 
+|      Execution Chain Configurations        |
+|:------------------------------------------:|
+| [genesis.json](./l16/configs/genesis.json) |  
+| [Bootnodes](./l16/bootnode/bootnodes.json) |  
+|   [Node Params](./l16/node_params.json)    |  
   
  
