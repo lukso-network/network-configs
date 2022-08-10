@@ -1,3 +1,4 @@
+// # NOTE These paremters are NOT FINAL, this is a working document. Parameters in this document can change drastically before mainnet launch.
 {
   "config": {
     "chainId": 2828,
