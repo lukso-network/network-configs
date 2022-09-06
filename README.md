@@ -1,7 +1,6 @@
 # LUKSO Network Configs
 
-This repository is the single source of truth for the configuration of the various networks
-initiated by LUKSO.
+This repository contains the configuration for various LUKSO networks.
  
 
 ## L16 
