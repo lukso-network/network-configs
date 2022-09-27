@@ -9,13 +9,13 @@ DataDir = "/execution_data"
 HTTPHost = "0.0.0.0"
 HTTPPort = 8545
 HTTPVirtualHosts = ["*"]
-HTTPModules = ["net", "eth", "debug", "engine", "txpool"]
+HTTPModules = ["net", "eth", "engine", "txpool"]
 AuthAddr = "localhost"
 AuthPort = 8551
 AuthVirtualHosts = ["localhost"]
 WSHost = "0.0.0.0"
 WSPort = 8546
-WSModules = ["net", "eth", "debug", "engine"]
+WSModules = ["net", "eth", "engine"]
 GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
