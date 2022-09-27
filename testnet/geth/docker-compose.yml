@@ -1,0 +1,27 @@
+version: "3.4"
+services:
+
+  init-geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth-init
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    command: >
+      --datadir=/execution_data init ./configs/genesis.json
+
+  geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth
+    depends_on:
+      - init-geth
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    env_file: ./.env
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --config=/configs/geth.toml
+    network_mode: host

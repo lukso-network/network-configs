@@ -1,0 +1,16 @@
+accept-terms-of-use: true
+chain-id: 2828
+genesis-state: /configs/genesis.ssz
+datadir: /consensus_data
+bootstrap-node: ["enr:-MK4QN2zRIJ3s-GUSUjKz7oeqPJWI575-_Vq8O3aowVEXXymNuDGEAbVQ7YGRTSAJikZOtsjd7xbe2CfhzCqsNG4gISGAYGKYijSh2F0dG5ldHOIAAAAAAAAAACEZXRoMpB9O39zYgAAcf__________gmlkgnY0gmlwhCKNxs-Jc2VjcDI1NmsxoQMEBOjx5h002S6OmHAZLELspbivT2DqRjQXGmWMUURfiIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A"]
+http-web3provider: "http://localhost:8545"
+p2p-host-ip: "34.91.89.113"
+chain-config-file: /configs/config.yml
+monitoring-host: "0.0.0.0"
+grpc-gateway-host: "0.0.0.0"
+rpc-host: "0.0.0.0"
+verbosity: "debug"
+suggested-fee-recipient: "0x7781121fd00A009670E31b76A2bf99b3A2D6878D"
+min-sync-peers: 2
+contract-deployment-block: 0
+genesis-beacon-api-url: "http://34.91.41.150:3500" #Value hardcoded since this is striclty used for L16

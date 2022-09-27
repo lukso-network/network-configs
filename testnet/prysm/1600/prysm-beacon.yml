@@ -1,0 +1,15 @@
+accept-terms-of-use: true
+chain-id: 1600
+genesis-state: /configs/genesis.ssz
+datadir: /consensus_data
+bootstrap-node: ["enr:-MK4QBEcBjkqG_oy-7OYhRluBA2XpA8ET5ykX6iPNIpmHdsxDeR9ViDqUnKRNMSAwYgshc8KY6uBHm_ep1lKsQjxSH6GAYMiMAJ2h2F0dG5ldHOIAAAAAAAAAACEZXRoMpAJ63JJYgAAcf__________gmlkgnY0gmlwhCKNuqWJc2VjcDI1NmsxoQPrt_s3ruXh8CgxIgQeiDApHxz2EpBTujPBNoI9Qc_FP4hzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A"]
+http-web3provider: "http://localhost:8545"
+p2p-host-ip: ""
+chain-config-file: /configs/config.yml
+monitoring-host: "0.0.0.0"
+grpc-gateway-host: "0.0.0.0"
+rpc-host: "0.0.0.0"
+verbosity: "debug"
+suggested-fee-recipient: "0x7781121fd00A009670E31b76A2bf99b3A2D6878D"
+min-sync-peers: 2
+contract-deployment-block: 0
