@@ -1,0 +1,9 @@
+[submodule "testnet/l16/network-docker-geth-client"]
+	path = testnet/l16/network-docker-geth-client
+	url = git@github.com:lukso-network/network-docker-geth-client.git
+[submodule "testnet/l16/geth"]
+	path = testnet/l16/geth
+	url = git@github.com:lukso-network/network-docker-geth-client.git
+[submodule "testnet/l16/prysm"]
+	path = testnet/l16/prysm
+	url = git@github.com:lukso-network/network-docker-prysm-client.git
