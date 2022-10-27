@@ -1,0 +1,110 @@
+version: "3.4"
+services:
+
+  init-geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth-init
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    command: >
+      --datadir=/execution_data init ./configs/genesis.json
+
+  geth:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-geth/geth:$GETH_VERSION
+    container_name: lukso-geth
+    depends_on:
+      - init-geth
+    volumes:
+      - $EXECUTION_DATA_VOLUME:/execution_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --datadir=/execution_data 
+      --ws 
+      --ws.api "net,eth,debug,engine"  
+      --nat extip:$EXTERNAL_IP
+      --bootnodes $GETH_BOOTSTRAP_NODE
+      --networkid $GETH_NETWORK_ID 
+      --http 
+      --http.api "net,eth,debug,engine" 
+      --http.addr "0.0.0.0" 
+      --verbosity $GETH_VERBOSITY
+      --ipcdisable 
+      --port $GETH_PEER_PORT
+      --http.port $GETH_HTTP_PORT 
+      --ethstats "${NODE_NAME}@${ETH_STATS_ADDRESS}"
+      --miner.gaslimit 60000000
+    network_mode: host
+
+  prysm_beacon:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-prysm/beacon:$PRYSM_BEACON_VERSION
+    container_name: prysm_beacon
+    depends_on:
+      - geth
+      - eth2stats-client
+    volumes:
+      - $CONSENSUS_DATA_VOLUME:/consensus_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --accept-terms-of-use 
+      --datadir /consensus_data
+      --genesis-beacon-api-url=http://34.91.41.150:3500
+      --bootstrap-node $PRYSM_BOOTSTRAP_NODE
+      --http-web3provider=http://localhost:8545
+      --min-sync-peers=2
+      --contract-deployment-block 0
+      --p2p-host-ip $EXTERNAL_IP
+      --chain-config-file /configs/config.yaml
+      --monitoring-host 0.0.0.0
+      --grpc-gateway-host 0.0.0.0
+      --suggested-fee-recipient $GETH_ETHERBASE
+      --rpc-host 0.0.0.0
+      --verbosity $PRYSM_VERBOSITY
+      --p2p-max-peers 250
+      --subscribe-all-subnets
+      --minimum-peers-per-subnet 2
+    network_mode: host
+
+  prysm_validator:
+    image: europe-docker.pkg.dev/lks-lz-artifacts/docker-prysm/validator:$PRYSM_BEACON_VERSION
+    container_name: prysm_validator
+    volumes:
+      - $KEYSTORE_VOLUME:/keystore
+      - $VALIDATOR_DATA_VOLUME:/validator_data
+      - $CONFIGS_VOLUME:/configs
+    restart: unless-stopped
+    depends_on:
+      - prysm_beacon
+    stop_signal: SIGINT
+    stop_grace_period: 2m
+    command: >
+      --accept-terms-of-use
+      --datadir /validator_data
+      --wallet-dir /keystore/prysm
+      --wallet-password-file /keystore/password.txt
+      --chain-config-file /configs/config.yaml
+      --monitoring-host 0.0.0.0
+      --grpc-gateway-host 0.0.0.0
+      --rpc-host 0.0.0.0
+      --suggested-fee-recipient $GETH_ETHERBASE
+    network_mode: host
+
+  eth2stats-client:
+    image: macht/eth2stats-client:v1.0.0
+    container_name: eth2stats-client
+    restart: unless-stopped
+    command: >
+      run
+      --beacon.type=prysm
+      --eth2stats.node-name=$NODE_NAME
+      --eth2stats.addr=$ETH_2_STATS_ADDRESS
+      --eth2stats.tls=false
+      --beacon.metrics-addr=http://127.0.0.1:8080/metrics
+      --beacon.addr=127.0.0.1:4000
+    network_mode: host
