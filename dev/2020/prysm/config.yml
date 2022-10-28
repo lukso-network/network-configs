@@ -1,0 +1,75 @@
+# Extends the mainnet preset
+PRESET_BASE: 'mainnet'
+
+# Genesis Start
+# ---------------------------------------------------------------
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 1
+# Sun Jan 23 2022 19:44:55 GMT+0000
+MIN_GENESIS_TIME: 1642967095
+# Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
+GENESIS_DELAY: 1080
+
+TERMINAL_TOTAL_DIFFICULTY: 500000000 
+TERMINAL_BLOCK_HASH: 0x0000000000000000000000000000000000000000000000000000000000000000
+TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 18446744073709551615
+
+# Deposit contract and execution chain IDs
+# ---------------------------------------------------------------
+# Custom Ethereum testnet
+DEPOSIT_CHAIN_ID: 2020
+DEPOSIT_NETWORK_ID: 2020
+DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
+
+# Forks
+# ---------------------------------------------------------------
+# Some forks are disabled for now:
+#  - These may be re-assigned to another fork-version later
+#  - Temporarily set to max uint64 value: 2**64 - 1
+
+# Gensis fork
+GENESIS_FORK_VERSION: 0x20200001
+
+# Altair
+ALTAIR_FORK_VERSION: 0x20200002
+ALTAIR_FORK_EPOCH: 3
+
+# BELLATRIX
+BELLATRIX_FORK_VERSION: 0x20200003
+BELLATRIX_FORK_EPOCH: 6
+
+# Sharding
+SHARDING_FORK_VERSION: 0x20209999
+SHARDING_FORK_EPOCH: 18446744073709551615
+
+
+# Time parameters
+# ---------------------------------------------------------------
+# 12 seconds
+SECONDS_PER_SLOT: 12
+# 14 (estimate from Eth1 mainnet)
+SECONDS_PER_ETH1_BLOCK: 12
+# 2**8 (= 256) epochs ~27 hoursaw
+MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
+# 2**8 (= 256) epochs ~27 hours
+SHARD_COMMITTEE_PERIOD: 256
+# 64 blocks is ~760s
+ETH1_FOLLOW_DISTANCE: 64
+
+
+# Validator cycle
+# ---------------------------------------------------------------
+# 2**2 (= 4)
+INACTIVITY_SCORE_BIAS: 4
+# 2**4 (= 16)
+INACTIVITY_SCORE_RECOVERY_RATE: 16
+# 2**2 (= 4)
+MIN_PER_EPOCH_CHURN_LIMIT: 4
+# 2**16 (= 65,536)
+CHURN_LIMIT_QUOTIENT: 65536
+
+# Validator Stakes
+# ---------------------------------------------------------------
+# 2**8 * 10**9 (= 256,000,000,000) Gwei
+MAX_EFFECTIVE_BALANCE: 256000000000
+# 2**4 * 10**9 (= 16,000,000,000) Gwei
+EJECTION_BALANCE: 16000000000
