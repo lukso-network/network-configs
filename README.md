@@ -1,7 +1,3 @@
-# Lukso: Network-Configs
-
-Last Edited: October 31, 2022 12:33 PM
-
 # **Repository Overview - network-configs**
 
 # **Description**
