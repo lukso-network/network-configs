@@ -46,6 +46,8 @@ SHARDING_FORK_EPOCH: 18446744073709551615
 # ---------------------------------------------------------------
 # 12 seconds
 SECONDS_PER_SLOT: 12
+# 2**5 (= 32) slots 6.4 minutes
+SLOTS_PER_EPOCH: 32
 # 14 (estimate from Eth1 mainnet)
 SECONDS_PER_ETH1_BLOCK: 12
 # 2**8 (= 256) epochs ~27 hoursaw
