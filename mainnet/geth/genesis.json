@@ -1,7 +1,7 @@
 // # NOTE These paremters are NOT FINAL, this is a working document. Parameters in this document can change drastically before mainnet launch.
 {
   "config": {
-    "chainId": 2828,
+    "chainId": 3838,
     "homesteadBlock": 0,
     "eip150Block": 0,
     "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -14,7 +14,7 @@
     "berlinBlock": 0,
     "londonBlock": 0,
     "mergeForkBlock": 0,
-    "terminalTotalDifficulty": 12000000000
+    "terminalTotalDifficulty": 1
   },
   "difficulty": "1",
   "extraData": "0x416e642074686520776f726c6420626563616d65206f6e65",
