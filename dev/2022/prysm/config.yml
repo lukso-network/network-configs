@@ -5,7 +5,7 @@ PRESET_BASE: 'mainnet'
 # ---------------------------------------------------------------
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 1
 # Sun Jan 23 2022 19:44:55 GMT+0000
-MIN_GENESIS_TIME: 1669204800
+MIN_GENESIS_TIME: 1669211400
 # Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
 GENESIS_DELAY: 600
 
