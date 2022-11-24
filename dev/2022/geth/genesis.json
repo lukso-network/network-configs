@@ -12,8 +12,8 @@
     "istanbulBlock": 0,
     "berlinBlock": 0,
     "londonBlock": 0,
-    "mergeForkBlock": 1,
-    "terminalTotalDifficulty": 2
+      "mergeForkBlock": 100,
+      "terminalTotalDifficulty": 500000000
   },
   "alloc": {
     "0x0000000000000000000000000000000000000000": {
@@ -836,10 +836,10 @@
   },
   "coinbase": "0xcce25d1620bd5e33485b808b30d3c805ea28dbe3",
   "difficulty": "0x01",
-  "extraData": "0x416e642074686520776f726c6420626563616d65206f6e65",
+  "extraData": "",
   "gasLimit": "0x4C4B400",
   "nonce": "0x1234",
   "mixhash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
-  "timestamp": "0x637E3DA4"
+    "timestamp": "0"
 }
