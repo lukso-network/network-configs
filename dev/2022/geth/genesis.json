@@ -12,8 +12,8 @@
     "istanbulBlock": 0,
     "berlinBlock": 0,
     "londonBlock": 0,
-    "mergeForkBlock": 400,
-    "terminalTotalDifficulty": 50000000
+    "mergeForkBlock": 0,
+    "terminalTotalDifficulty": 1
   },
   "alloc": {
     "0x0000000000000000000000000000000000000000": {
