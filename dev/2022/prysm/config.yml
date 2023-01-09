@@ -4,7 +4,7 @@ CONFIG_NAME: 'devnet'
 
 # Genesis Start
 # ---------------------------------------------------------------
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 1
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 120
 # Sun Jan 23 2022 19:44:55 GMT+0000
 MIN_GENESIS_TIME: 1673097085
 # Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
@@ -56,7 +56,7 @@ MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
 # 2**8 (= 256) epochs ~27 hours
 SHARD_COMMITTEE_PERIOD: 256
 # 64 blocks is ~760s
-ETH1_FOLLOW_DISTANCE: 64 # TODO look again
+ETH1_FOLLOW_DISTANCE: 0 # TODO look again
 
 
 # Validator cycle
