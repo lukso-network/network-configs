@@ -1,47 +1,49 @@
+# LUKSO config
+
 # Extends the mainnet preset
 PRESET_BASE: 'mainnet'
+
+# Free-form short name of the network that this configuration applies to - known
+# canonical network names include:
+# * 'mainnet' - there can be only one
+# * 'prater' - testnet
+# Must match the regex: [a-z0-9\-]
 CONFIG_NAME: 'lukso'
 
-# Genesis Start
+# Transition
 # ---------------------------------------------------------------
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 120
-# Sun Jan 23 2022 19:44:55 GMT+0000
-MIN_GENESIS_TIME: 1674131123
-# Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
-GENESIS_DELAY: 2400
-
+# Estimated on Sept 15, 2022
 TERMINAL_TOTAL_DIFFICULTY: 0
-TERMINAL_BLOCK_HASH: 0xa87a6e8ab3ecb48a6b4355ef78804cd1a4c5a0bddf0417155a7eb026680fd9e2
+# By default, don't use these params
+TERMINAL_BLOCK_HASH: 0xee7e4a777e58ff66af67ac2857ff52dd980bc8b6cf2cd76acf54d7590f9eda92
 TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 0
 
-# Deposit contract and execution chain IDs
+# Genesis
 # ---------------------------------------------------------------
-# Custom Ethereum testnet
-DEPOSIT_CHAIN_ID: 2022
-DEPOSIT_NETWORK_ID: 2022
-DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
+# `2**14` (= 16,384)
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 8
+# Dec 1, 2020, 12pm UTC
+MIN_GENESIS_TIME: 1674137529
+# Mainnet initial fork version, recommend altering for testnets
+GENESIS_FORK_VERSION: 0x20220001
+# 7200 seconds (2 hours)
+GENESIS_DELAY: 2400
 
-# Forks
+# Forking
 # ---------------------------------------------------------------
 # Some forks are disabled for now:
 #  - These may be re-assigned to another fork-version later
 #  - Temporarily set to max uint64 value: 2**64 - 1
 
-# Gensis fork
-GENESIS_FORK_VERSION: 0x20220001
-
 # Altair
 ALTAIR_FORK_VERSION: 0x20220002
 ALTAIR_FORK_EPOCH: 0
-
-# BELLATRIX
+# Bellatrix
 BELLATRIX_FORK_VERSION: 0x20220003
 BELLATRIX_FORK_EPOCH: 0
-
 # Capella
 CAPELLA_FORK_VERSION: 0x20220004
-CAPELLA_FORK_EPOCH: 1543534534534
-
+CAPELLA_FORK_EPOCH: 18446744073709551615
 
 # Time parameters
 # ---------------------------------------------------------------
@@ -55,9 +57,8 @@ SECONDS_PER_ETH1_BLOCK: 12
 MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
 # 2**8 (= 256) epochs ~27 hours
 SHARD_COMMITTEE_PERIOD: 256
-# 64 blocks is ~760s
-ETH1_FOLLOW_DISTANCE: 0 # TODO look again
-
+# 2**11 (= 2,048) Eth1 blocks ~8 hours
+ETH1_FOLLOW_DISTANCE: 2048
 
 # Validator cycle
 # ---------------------------------------------------------------
@@ -77,7 +78,9 @@ CHURN_LIMIT_QUOTIENT: 65536
 # 40%
 PROPOSER_SCORE_BOOST: 40
 
-# Validator Stakes
+# Deposit contract
 # ---------------------------------------------------------------
-# 2**5 * 10**9 (= 32,000,000,000) Gwei
-MAX_EFFECTIVE_BALANCE: 32000000000
+# Ethereum PoW Mainnet
+DEPOSIT_CHAIN_ID: 2022
+DEPOSIT_NETWORK_ID: 2022
+DEPOSIT_CONTRACT_ADDRESS: 0x4242424242424242424242424242424242424242
