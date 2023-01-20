@@ -1,7 +1,7 @@
 // # NOTE These paremters are NOT FINAL, this is a working document. Parameters in this document can change drastically before mainnet launch.
 {
   "config": {
-    "chainId": 2828,
+    "chainId": 42,
     "homesteadBlock": 0,
     "eip150Block": 0,
     "eip150Hash": "0x0000000000000000000000000000000000000000000000000000000000000000",
@@ -24,10 +24,10 @@
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000", // TODO: NECESSARY?
   "alloc": {
     "0x39c6358c1447311d814f36f2DCC6F0474Ba91D94": {
-      "balance": "99000000000000000000000000"
+      "balance": "11256000000000000000000000"
     },
     "0xcce25d1620bd5e33485b808b30d3c805ea28dbe3": {
-      "balance": "1000000000000000000000000"
+      "balance": "30744000000000000000000000"
     },
     "0x0000000000000000000000000000000000000000": {
       "balance": "1"
