@@ -5,7 +5,7 @@ NetworkId = 2828
 GasCeil = 60000000
 
 [Node]
-DataDir = "/execution_data"
+DataDir = "./execution_data"
 HTTPHost = "0.0.0.0"
 HTTPPort = 8545
 HTTPVirtualHosts = ["*"]
@@ -27,7 +27,7 @@ ListenAddr = ":30303"
 EnableMsgEvents = false
 
 [Ethstats]
-URL = "lks-d-test-config@34.141.251.230"
+URL = "default-node-config@34.141.251.230"
 
 [Metrics]
 Enabled = true
