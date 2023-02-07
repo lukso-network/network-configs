@@ -1,18 +1,29 @@
-# NOTE These paremters are NOT FINAL, this is a working document. Parameters in this document can change drastically before mainnet launch.
+# LUKSO config
 
 # Extends the mainnet preset
 PRESET_BASE: 'mainnet'
 
-# Genesis Start
-# ---------------------------------------------------------------
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 400
-# Thu Jun 16 2022 16:00:00 GMT+0000
-MIN_GENESIS_TIME: 1655395200
-# Network starts at MIN_GENESIS_TIME + GENESIS_DELAY
-GENESIS_DELAY: 1800
+# Free-form short name of the network that this configuration applies to
+# Must match the regex: [a-z0-9\-]
+CONFIG_NAME: 'lukso'
 
-TERMINAL_TOTAL_DIFFICULTY: 1
-TERMINAL_BLOCK_HASH: 0x0000000000000000000000000000000000000000000000000000000000000000 # TODO add genesis block hash
+# Genesis
+# ---------------------------------------------------------------
+# `2**14` (= 16,384)
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 120
+# Dec 1, 2020, 12pm UTC
+MIN_GENESIS_TIME: 1675680701
+# 7200 seconds (2 hours)
+GENESIS_DELAY: 2400
+
+# Transition
+# ---------------------------------------------------------------
+# Configs are present in case a need arose to manually select a particular proof of work fork to follow in case of trouble
+# The total (cumulative) difficulty threshold required of the final block mined in Ethereum
+TERMINAL_TOTAL_DIFFICULTY: 0
+# Designates the hash of the terminal PoW block if set
+TERMINAL_BLOCK_HASH: 0x7289eb900adb3273f90d4b6b8ce63c09b7ccc2f020bd77bc911a1f8b3c03862c
+# Specifies the terminal block hash epoch to manual
 TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 0
 
 # Deposit contract and execution chain IDs
@@ -28,35 +39,37 @@ DEPOSIT_CONTRACT_ADDRESS: 0x000000000000000000000000000000000000cafe
 #  - These may be re-assigned to another fork-version later
 #  - Temporarily set to max uint64 value: 2**64 - 1
 
-# Gensis fork
-GENESIS_FORK_VERSION: 0x38380001
-
+# Initial fork version
+GENESIS_FORK_VERSION: 0x20220001
 # Altair
-ALTAIR_FORK_VERSION: 0x38380001
+ALTAIR_FORK_VERSION: 0x20220002
 ALTAIR_FORK_EPOCH: 0
-
-# Belatrix
-BELLATRIX_FORK_VERSION: 0x38380001
+# Bellatrix
+BELLATRIX_FORK_VERSION: 0x20220003
 BELLATRIX_FORK_EPOCH: 0
+# Capella
+CAPELLA_FORK_VERSION: 0x20220004
+CAPELLA_FORK_EPOCH: 18446744073709551615
 
-# Sharding
-SHARDING_FORK_VERSION: 0x38389999
-SHARDING_FORK_EPOCH: 18446744073709551615
-
+# Fork choice
+# ---------------------------------------------------------------
+# 40%
+PROPOSER_SCORE_BOOST: 40
 
 # Time parameters
 # ---------------------------------------------------------------
 # 12 seconds
 SECONDS_PER_SLOT: 12
+# 2**5 (= 32) slots 6.4 minutes
+SLOTS_PER_EPOCH: 32
 # 14 (estimate from Eth1 mainnet)
 SECONDS_PER_ETH1_BLOCK: 12
 # 2**8 (= 256) epochs ~27 hours
 MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 256
 # 2**8 (= 256) epochs ~27 hours
 SHARD_COMMITTEE_PERIOD: 256
-# 64 blocks is ~760s
-ETH1_FOLLOW_DISTANCE: 64 # TODO look again
-
+# 2**11 (= 2,048) Eth1 blocks ~8 hours
+ETH1_FOLLOW_DISTANCE: 2048
 
 # Validator cycle
 # ---------------------------------------------------------------
