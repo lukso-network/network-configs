@@ -13,14 +13,14 @@
     "berlinBlock": 0,
     "londonBlock": 0,
     "mergeForkBlock": 0,
-    "mergeNetsplitBlock": 0,
+    "mergeNetsplitBlock": 0, #TODO verify
     "terminalTotalDifficulty": 0,
-    "terminalTotalDifficultyPassed": true
+    "terminalTotalDifficultyPassed": true #TODO verify
   },
-  "nonce": "0x44144",
-  "timestamp": "0x63E0DBBD",
+  "nonce": "0x44144", #TODO verify
+  "timestamp": "0x63E0DBBD", #TODO verify
   "extraData": "0x416e642074686520776f726c6420626563616d65206f6e65",
-  "gasLimit": "0x4C4B400",
+  "gasLimit": "0x4C4B400",#TODO verify
   "difficulty": "0x1",
   "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "coinbase": "0x0000000000000000000000000000000000000000",
@@ -29,10 +29,10 @@
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "alloc": {
     "0x39c6358c1447311d814f36f2DCC6F0474Ba91D94": {
-      "balance": "11256000000000000000000000"
+      "balance": "99000000000000000000000000"
     },
     "0xcce25d1620bd5e33485b808b30d3c805ea28dbe3": {
-      "balance": "30744000000000000000000000"
+      "balance": "11256000000000000000000000"
     },
     "0x0000000000000000000000000000000000000000": {
       "balance": "1"
