@@ -1,5 +1,5 @@
 [Eth]
-NetworkId = 2020
+NetworkId = 2022
 
 [Eth.Miner]
 GasCeil = 1600000000

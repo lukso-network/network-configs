@@ -2,7 +2,7 @@
 
 # **Description**
 
-This repository contains all [Lukso Network](https://lukso.network/) blockchain’s configurations. These configurations offer a repeatable, re-usable, simple configuration management and multi-application deployment, to simply load a configuration file with different methods to run the nodes. (eg. Binaries, Docker, etc…)
+This repository contains all [LUKSO Network](https://lukso.network/) blockchain’s configurations. These configurations offer a repeatable, re-usable, simple configuration management and multi-application deployment, to simply load a configuration file with different methods to run the nodes. (eg. Binaries, Docker, etc…)
 
 # **Repository Structure**
 
