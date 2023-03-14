@@ -1,5 +1,5 @@
 [Eth]
-NetworkId = 42
+NetworkId = 4201
 
 [Eth.Miner]
 GasCeil = 600000000
