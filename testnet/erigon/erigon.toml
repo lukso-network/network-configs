@@ -5,7 +5,7 @@ externalcl = true
 
 datadir = "/mainnet-data"
 "authrpc.jwtsecret" = "/mainnet-data/jwtsecret/jwt.hex"
-nat = any
+nat = "any"
 ws = true
 http = true
 "http.addr" = "0.0.0.0"
