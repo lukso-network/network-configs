@@ -7,8 +7,8 @@ GasPrice = 0
 PriceLimit = 0
 
 [Node]
-DataDir = "/mainnet-data"
-JWTSecret = "/mainnet-data/jwtsecret"
+DataDir = "./mainnet-data"
+JWTSecret = "./mainnet-data/jwtsecret"
 # GraphQLVirtualHosts = ["localhost"]
 HTTPHost = "localhost"
 HTTPPort = 8545

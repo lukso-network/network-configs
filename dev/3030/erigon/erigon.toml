@@ -3,8 +3,8 @@ chain = "mainnet"
 
 externalcl = true
 
-datadir = "/mainnet-data"
-"authrpc.jwtsecret" = "/mainnet-data/jwtsecret/jwt.hex"
+datadir = "./mainnet-data"
+"authrpc.jwtsecret" = "./mainnet-data/jwtsecret/jwt.hex"
 nat = "any"
 ws = true
 http = true
