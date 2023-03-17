@@ -3,8 +3,8 @@ NetworkId = 42
 
 [Eth.Miner]
 GasCeil = 600000000
-GasPrice = 0 
-PriceLimit = 0
+GasPrice = 42000000000
+PriceLimit = 40000000000
 
 [Node]
 DataDir = "./mainnet-data"
