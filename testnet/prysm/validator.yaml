@@ -1,0 +1,8 @@
+datadir: './testnet-data'
+wallet-dir: './testnet-keystore/prysm'
+wallet-password-file: './testnet-keystore/password.txt'
+chain-config-file: './config/testnet/shared/config.yaml'
+monitoring-host: '0.0.0.0'
+grpc-gateway-host: '0.0.0.0'
+rpc-host: '0.0.0.0'
+suggested-fee-recipient: ''
