@@ -5,43 +5,34 @@ NetworkId = 4201
 GasCeil = 600000000
 GasPrice = 42000000000
 PriceLimit = 40000000000
+Etherbase = ""
 
 [Node]
 DataDir = "/execution_data"
 JWTSecret = "/configs/jwt.hex"
-# GraphQLVirtualHosts = ["localhost"]
-HTTPHost = "0.0.0.0"
+IPCPath = "/execution_data/geth.ipc"
+HTTPHost = "localhost"
 HTTPPort = 8545
-HTTPVirtualHosts = ["*"]
-HTTPModules = ["net", "eth", "engine", "txpool"]
-WSHost = "0.0.0.0"
-WSPort = 8546
-WSModules = ["net", "eth", "engine"]
-# Engine API
-AuthAddr = "0.0.0.0"
+HTTPVirtualHosts = ["localhost"]
+HTTPModules = ["net", "web3", "eth"]
+AuthAddr = "localhost"
 AuthPort = 8551
-AuthVirtualHosts = ["*"]
+AuthVirtualHosts = ["localhost"]
+WSHost = "localhost"
+WSPort = 8546
+WSModules = ["net", "web3", "eth"]
+GraphQLVirtualHosts = ["localhost"]
 
 [Node.P2P]
 MaxPeers = 50
 NoDiscovery = false
-ListenAddr = ":30303"
-EnableMsgEvents = false
 BootstrapNodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
 BootstrapNodesV5 = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
+StaticNodes = []
+TrustedNodes = []
+ListenAddr = ":30303"
+DiscAddr = ""
+EnableMsgEvents = false
 
 [Ethstats]
-URL = "lks-d-test-config@34.147.90.56"
-
-[Metrics]
-Enabled = true
-HTTP = "0.0.0.0"
-Port = 6060
-InfluxDBEndpoint = "http://localhost:8086"
-InfluxDBDatabase = "geth"
-InfluxDBUsername = "test"
-InfluxDBPassword = "test"
-InfluxDBTags = "host=localhost"
-InfluxDBToken = "test"
-InfluxDBBucket = "geth"
-InfluxDBOrganization = "geth"
+URL = "node_name@server_address"
