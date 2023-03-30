@@ -14,19 +14,22 @@
     "londonBlock": 0,
     "mergeForkBlock": 0,
     "terminalTotalDifficulty": 0,
-    "shanghaiTime": 1679421510
+    "shanghaiTime": 1680236280
   },
   "number": "0x0",
   "nonce": "0x1",
   "difficulty": "0x1",
   "gasLimit": "0x3938700",
   "gasUsed": "0x0",
-  "timestamp": "0x6419C2EC",
+  "timestamp": "0x6425AAF8",
   "extraData": "0x416e642074686520776f726c6420626563616d65206f6e65",
   "coinbase": "0x0000000000000000000000000000000000000000",
   "mixHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "parentHash": "0x0000000000000000000000000000000000000000000000000000000000000000",
   "alloc": {
+    "0x2ae4B27f7Af291890Edb293D44E195A34B395c9A": {
+      "balance": "99000000000000000000000000"
+    },
     "0x39c6358c1447311d814f36f2DCC6F0474Ba91D94": {
       "balance": "99000000000000000000000000"
     },
