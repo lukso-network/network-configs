@@ -8,7 +8,6 @@ chain-config-file: './config/testnet/shared/config.yaml'
 monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'
-suggested-fee-recipient: ''
 p2p-max-peers: 250
 subscribe-all-subnets: true
 minimum-peers-per-subnet: 0

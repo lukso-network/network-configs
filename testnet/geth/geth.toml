@@ -4,8 +4,6 @@ NetworkId = 4201
 [Eth.Miner]
 GasCeil = 600000000
 GasPrice = 42000000000
-PriceLimit = 40000000000
-Etherbase = ""
 
 [Node]
 DataDir = "./testnet-data/execution"
