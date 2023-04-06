@@ -7,8 +7,8 @@ GasPrice = 42000000000
 PriceLimit = 40000000000
 
 [Node]
-DataDir = "./mainnet-data"
-JWTSecret = "./mainnet-data/jwtsecret"
+DataDir = "./mainnet-data/execution"
+JWTSecret = "./configs/shared/secrets/jwt.hex"
 # GraphQLVirtualHosts = ["localhost"]
 HTTPHost = "localhost"
 HTTPPort = 8545

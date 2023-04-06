@@ -8,9 +8,9 @@ PriceLimit = 40000000000
 Etherbase = ""
 
 [Node]
-DataDir = "/execution_data"
-JWTSecret = "/configs/jwt.hex"
-IPCPath = "/execution_data/geth.ipc"
+DataDir = "./testnet-data/execution"
+JWTSecret = "./configs/shared/secrets/jwt.hex"
+IPCPath = "./testnet-data/execution/geth.ipc"
 HTTPHost = "localhost"
 HTTPPort = 8545
 HTTPVirtualHosts = ["localhost"]

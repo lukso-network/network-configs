@@ -2,7 +2,7 @@ datadir: './testnet-data'
 genesis-state: './config/testnet/shared/genesis.ssz'
 bootstrap-node: ''
 execution-endpoint: 'http://localhost:8551'
-jwt-secret: './testnet-data/jwtsecret/jwt.hex'
+jwt-secret: "./configs/shared/secrets/jwt.hex"
 min-sync-peers: 0
 p2p-host-ip: ''
 chain-config-file: './config/testnet/shared/config.yaml'
