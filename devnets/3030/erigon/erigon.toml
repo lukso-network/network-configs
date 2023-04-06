@@ -1,10 +1,10 @@
-networkid = 4201
+networkid = 3030
 chain = "mainnet"
 
 externalcl = true
 
-datadir = "./mainnet-data"
-"authrpc.jwtsecret" = "./mainnet-data/jwtsecret/jwt.hex"
+datadir = "./mainnet-data/execution"
+"authrpc.jwtsecret" = "./configs/shared/secrets/jwt.hex"
 nat = "any"
 ws = true
 http = true

@@ -1,0 +1,16 @@
+datadir: './testnet-data'
+genesis-state: './config/testnet/shared/genesis.ssz'
+execution-endpoint: 'http://localhost:8551'
+jwt-secret: "./configs/shared/secrets/jwt.hex"
+min-sync-peers: 0
+p2p-host-ip: '0.0.0.0'
+chain-config-file: './config/testnet/shared/config.yaml'
+monitoring-host: '0.0.0.0'
+grpc-gateway-host: '0.0.0.0'
+rpc-host: '0.0.0.0'
+p2p-max-peers: 250
+subscribe-all-subnets: true
+minimum-peers-per-subnet: 0
+bootstrap-node: [enr:-MK4QL_QJUpcwZszA99XzR9nDL9FiXmt_asTqrpCy4wtDzRzIJvSAsan9LI3umpDKWTOpvEMuOdg0feAgXeaG-5C3uSGAYdLen_mh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBy3Hm5QgEABP__________gmlkgnY0gmlwhCJaUYyJc2VjcDI1NmsxoQKZw1caFRxUwB-ee7gSDc1ZGqr13ngROXHEokVKNbvYuIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A]
+block-batch-limit: 512
+block-batch-limit-burst-factor: 10
