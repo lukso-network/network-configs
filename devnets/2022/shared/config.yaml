@@ -11,8 +11,8 @@ CONFIG_NAME: 'lukso'
 # ---------------------------------------------------------------
 # `2**14` (= 16,384)
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 120
-# Wednesday, 12 April 2023 13:00:00 GMT+02:00
-MIN_GENESIS_TIME: 1681297200
+# Wednesday, 12 April 2023 14:20:00 GMT+02:00
+MIN_GENESIS_TIME: 1681302000
 # 2400 seconds (40 min)
 GENESIS_DELAY: 2400
 
