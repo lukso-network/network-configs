@@ -11,8 +11,8 @@ CONFIG_NAME: 'lukso'
 # ---------------------------------------------------------------
 # `2**14` (= 16,384)
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 120
-# Tuesday, April 11, 2023 6:30:00 PM GMT+02:00
-MIN_GENESIS_TIME: 1681230600
+# Thursday, April 13, 2023 8:30:00 AM GMT+02:00
+MIN_GENESIS_TIME: 1681367400
 # 2400 seconds (40 min)
 GENESIS_DELAY: 2400
 
@@ -77,13 +77,6 @@ MIN_VALIDATOR_WITHDRAWABILITY_DELAY: 12
 SHARD_COMMITTEE_PERIOD: 12
 # 2**11 (= 2,048) Eth1 blocks ~8 hours
 ETH1_FOLLOW_DISTANCE: 2048
-
-# Sync committee
-# ---------------------------------------------------------------
-# 2**9 (= 512)
-SYNC_COMMITTEE_SIZE: 96
-# 2**8 (= 256)
-EPOCHS_PER_SYNC_COMMITTEE_PERIOD: 24
 
 # Validator cycle
 # ---------------------------------------------------------------
