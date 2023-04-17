@@ -78,6 +78,13 @@ SHARD_COMMITTEE_PERIOD: 12
 # 2**11 (= 2,048) Eth1 blocks ~8 hours
 ETH1_FOLLOW_DISTANCE: 2048
 
+# Sync committee
+# ---------------------------------------------------------------
+# 2**9 (= 512)
+SYNC_COMMITTEE_SIZE: 512
+# 2**8 (= 256)
+EPOCHS_PER_SYNC_COMMITTEE_PERIOD: 256
+
 # Validator cycle
 # ---------------------------------------------------------------
 # 2**2 (= 4)
