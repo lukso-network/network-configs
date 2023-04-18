@@ -10,11 +10,11 @@ CONFIG_NAME: 'lukso'
 # Genesis
 # ---------------------------------------------------------------
 # `2**14` (= 16,384)
-MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 300
-# Dec 1, 2020, 12pm UTC
-MIN_GENESIS_TIME: 1675680701
-# 7200 seconds (2 hours)
-GENESIS_DELAY: 2400
+MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 110
+# Friday, 14 April 2023 13:45:00 GMT+02:00
+MIN_GENESIS_TIME: 1681741800
+# 2400 seconds (40 min)
+GENESIS_DELAY: 1200
 
 # Transition
 # ---------------------------------------------------------------
@@ -52,7 +52,7 @@ BELLATRIX_FORK_EPOCH: 0
 
 # Capella
 CAPELLA_FORK_VERSION: 0x42000004
-CAPELLA_FORK_EPOCH: 844
+CAPELLA_FORK_EPOCH: 8
 
 # Fork choice
 # ---------------------------------------------------------------
