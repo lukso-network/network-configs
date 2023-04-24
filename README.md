@@ -10,9 +10,6 @@ This repository contains all [LUKSO Network](https://lukso.network/) blockchainâ
 
 Devnets are used to test new blockchain parameters, stress-tests and other configs before they will be integrated into the mainnet. They are not meant to run for long or extended periods of time, therefore they can be removed at anytime. 
 
-## **dev/L16 [ DEPRECATION SOON ]**
-
-L16 as a pre mainnet network will be deprecated soon.
 
 ## **Testnet**
 
