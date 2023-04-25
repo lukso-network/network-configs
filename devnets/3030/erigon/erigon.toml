@@ -3,7 +3,7 @@ chain = "mainnet"
 
 externalcl = true
 
-datadir = "./mainnet-data/execution"
+datadir = "./devnet-data/execution"
 "authrpc.jwtsecret" = "./configs/shared/secrets/jwt.hex"
 nat = "any"
 ws = true
