@@ -1,7 +1,10 @@
-datadir: './testnet-data'
-wallet-dir: './testnet-keystore'
-wallet-password-file: './testnet-keystore/password.txt'
 chain-config-file: './config/testnet/shared/config.yaml'
+
+datadir: './testnet-data/validator'
+
+wallet-dir: './testnet-keystore'
+# wallet-password-file: './testnet-keystore/password.txt'
+
 monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'

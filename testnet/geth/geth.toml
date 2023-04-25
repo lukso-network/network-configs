@@ -1,36 +1,47 @@
+# The full config options can be found here:
+# https://geth.ethereum.org/docs/fundamentals/config-files
+
 [Eth]
 NetworkId = 4201
 
+
 [Eth.Miner]
-GasCeil = 600000000
-GasPrice = 42000000000
+GasCeil = 42000000
+GasPrice = 4200000000 # 4.2 Gwei
+
 
 [Node]
 DataDir = "./testnet-data/execution"
-JWTSecret = "./configs/shared/secrets/jwt.hex"
-IPCPath = "./testnet-data/execution/geth.ipc"
+# IPCPath = "./testnet-data/execution/geth.ipc"
 HTTPHost = "localhost"
 HTTPPort = 8545
 HTTPVirtualHosts = ["localhost"]
-HTTPModules = ["net", "web3", "eth"]
-AuthAddr = "localhost"
-AuthPort = 8551
-AuthVirtualHosts = ["localhost"]
+HTTPModules = ["net", "web3", "eth"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
 WSHost = "localhost"
 WSPort = 8546
-WSModules = ["net", "web3", "eth"]
-GraphQLVirtualHosts = ["localhost"]
+WSModules = ["net", "web3", "eth"]  # ["net", "eth", "web3", "debug", "engine", "txpool"]
+# GraphQLVirtualHosts = ["localhost"]
+
+# Engine API
+JWTSecret = "./configs/shared/secrets/jwt.hex"
+AuthAddr = "localhost"
+AuthPort = 8551
+AuthVirtualHosts = ["localhost"] # ["*"]
+
 
 [Node.P2P]
-MaxPeers = 50
-NoDiscovery = false
 BootstrapNodes = []
 BootstrapNodesV5 = []
+
 StaticNodes = []
 TrustedNodes = []
+
+MaxPeers = 50
+NoDiscovery = false
 ListenAddr = ":30303"
 DiscAddr = ""
 EnableMsgEvents = false
+
 
 [Ethstats]
 # URL = "node_name@server_address"

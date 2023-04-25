@@ -1,14 +1,19 @@
+# The full config options can be found here:
+# https://geth.ethereum.org/docs/fundamentals/config-files
+
+
 [Eth]
 NetworkId = 42
 
+
 [Eth.Miner]
-GasCeil = 600000000
-GasPrice = 42000000000
+GasCeil = 42000000
+GasPrice = 4200000000  # 4.2 Gwei
+
 
 [Node]
 DataDir = "./mainnet-data/execution"
-JWTSecret = "./configs/shared/secrets/jwt.hex"
-# GraphQLVirtualHosts = ["localhost"]
+# IPCPath = "./mainnet-data/execution/geth.ipc"
 HTTPHost = "localhost"
 HTTPPort = 8545
 HTTPVirtualHosts = ["*"]
@@ -16,31 +21,27 @@ HTTPModules = ["net"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
 WSHost = "localhost"
 WSPort = 8546
 WSModules = ["net"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
+# GraphQLVirtualHosts = ["localhost"]
+
 # Engine API
+JWTSecret = "./configs/shared/secrets/jwt.hex"
 AuthAddr = "localhost"
 AuthPort = 8551
-AuthVirtualHosts = ["*"]
+AuthVirtualHosts = ["localhost"] # ["*"]
+
 
 [Node.P2P]
-MaxPeers = 50
-NoDiscovery = false
-ListenAddr = ":30303"
-EnableMsgEvents = false
 BootstrapNodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
 BootstrapNodesV5 = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
 
-[Ethstats]
-# URL = "${NODE_NAME}@${ETH_STATS_IP}"
+StaticNodes = []
+TrustedNodes = []
 
-[Metrics]
-Enabled = false
-HTTP = "localhost"
-Port = 6060
-# InfluxDBEndpoint = "http://localhost:8086"
-# InfluxDBDatabase = "geth"
-# InfluxDBUsername = "testuser"
-# InfluxDBPassword = "testpw"
-# InfluxDBTags = "host=localhost"
-# InfluxDBToken = "test"
-# InfluxDBBucket = "geth"
-# InfluxDBOrganization = "geth"
+MaxPeers = 50
+NoDiscovery = false
+ListenAddr = ":30303"
+DiscAddr = ""
+EnableMsgEvents = false
+
+[Ethstats]
+# URL = "node_name@server_address"

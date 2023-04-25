@@ -2,8 +2,8 @@
 NetworkId = 2022
 
 [Eth.Miner]
-GasCeil = 600000000
-GasPrice = 42000000000
+GasCeil = 42000000
+GasPrice = 4200000000
 
 [Node]
 DataDir = "./devnet-data/execution"

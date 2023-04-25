@@ -19,7 +19,7 @@
   "number": "0x0",
   "nonce": "0x1",
   "difficulty": "0x1",
-  "gasLimit": "0x3938700",#60M
+  "gasLimit": "0x280de80",#42M
   "gasUsed": "0x0",
   "timestamp": "0x643D34C0", #same as MIN_GENESIS_TIME
   "extraData": "0x416e642074686520776f726c6420626563616d65206f6e65",

@@ -1,7 +1,10 @@
-datadir: './mainnet-data/validator'
-wallet-dir: './mainnet-keystore'
-wallet-password-file: './mainnet-keystore/password.txt'
 chain-config-file: './configs/mainnet/shared/config.yaml'
+
+datadir: './mainnet-data/validator'
+
+wallet-dir: './mainnet-keystore'
+# wallet-password-file: './mainnet-keystore/password.txt'
+
 monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'
