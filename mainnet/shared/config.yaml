@@ -28,7 +28,6 @@ TERMINAL_BLOCK_HASH_ACTIVATION_EPOCH: 1
 
 # Deposit contract and execution chain IDs
 # ---------------------------------------------------------------
-# Custom Ethereum testnet
 DEPOSIT_CHAIN_ID: 42
 DEPOSIT_NETWORK_ID: 42
 DEPOSIT_CONTRACT_ADDRESS: 0xcafe00000000000000000000000000000000cafe
