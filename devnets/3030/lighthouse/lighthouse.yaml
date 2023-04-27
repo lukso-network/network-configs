@@ -1,5 +1,5 @@
-testnet-dir: /configs
-datadir: devnet-data/consensus
+testnet-dir: ./configs/devnet/shared
+datadir: ./devnet-data/consensus
 subscribe-all-subnets: true
 listen-address: 0.0.0.0
 eth1: true
