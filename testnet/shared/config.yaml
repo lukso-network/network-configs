@@ -11,9 +11,9 @@ CONFIG_NAME: 'lukso'
 # ---------------------------------------------------------------
 # Min Genesis Validators in Genesis state
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 4000
-# Date and time (GMT): Friday, 28 April 2023 12:20:00
-MIN_GENESIS_TIME: 1682684400
-# 2400 seconds (40 Min)
+# Date and time (GMT): Friday, 28 April 2023 00:00:00
+MIN_GENESIS_TIME: 1682719212
+# 2400 seconds (40 Min) / 16128 + 1682719212 + 2400 - 2
 GENESIS_DELAY: 2400
 
 # Transition
