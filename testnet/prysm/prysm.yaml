@@ -2,7 +2,7 @@ chain-config-file: './config/testnet/shared/config.yaml'
 genesis-state: './config/testnet/shared/genesis.ssz'
 
 datadir: './testnet-data/consensus'
-jwt-secret: "./configs/shared/secrets/jwt.hex"
+jwt-secret: '/configs/shared/secrets/jwt.hex'
 execution-endpoint: 'http://localhost:8551'
 
 min-sync-peers: 0
@@ -16,4 +16,4 @@ minimum-peers-per-subnet: 0
 block-batch-limit: 512
 block-batch-limit-burst-factor: 10
 
-bootstrap-node: [enr:-MK4QL_QJUpcwZszA99XzR9nDL9FiXmt_asTqrpCy4wtDzRzIJvSAsan9LI3umpDKWTOpvEMuOdg0feAgXeaG-5C3uSGAYdLen_mh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBy3Hm5QgEABP__________gmlkgnY0gmlwhCJaUYyJc2VjcDI1NmsxoQKZw1caFRxUwB-ee7gSDc1ZGqr13ngROXHEokVKNbvYuIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A]
+bootstrap-node: ['enr:-MK4QJdBMcF5dyoa6Om2q_5PzsI4cDHquYTeUf01T3wCF1StRMUwhrKGccgZWXf_KQA8NPrXO-r5P9VdIKGlxFqs9L2GAYfHv6L2h2F0dG5ldHOIAAAAAAAAAACEZXRoMpBWKoojQgEABCoAAAAAAAAAgmlkgnY0gmlwhCKNxNSJc2VjcDI1NmsxoQL4kFXIBKhNkKGYWOowQLwUjB1GM9HO9sSlv24YEUoleIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A','enr:-MK4QGDrjtBvuhlv2cF1hlurzcHJLIvgfl4ddD8l9Y3_e4Tdb6u3jCOHkIv590X3vuiN1ahB5Cg1Ddtee0ZuEOKJcPyGAYfHv_Qgh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBWKoojQgEABCoAAAAAAAAAgmlkgnY0gmlwhCJbnOCJc2VjcDI1NmsxoQIIsOVZbBTW9Ges-GyiI-UmBQX_alDqlKJAbR5Ncb-SyohzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A']
