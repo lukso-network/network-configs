@@ -7,18 +7,18 @@ miner.gaslimit = 42000000
 miner.gasprice = 4200000000  # 4.2 Gwei
 
 datadir = "./testnet-data/execution"
-"authrpc.jwtsecret" = "./configs/shared/secrets/jwt.hex"
+authrpc.jwtsecret = "./configs/shared/secrets/jwt.hex"
 nat = "any"
 ws = false
 http = true
-"http.addr" = "0.0.0.0"
-"http.api" = "eth,erigon" # "eth,erigon,engine,debug,trace"
-"http.vhosts" = "*"
-"authrpc.addr" = "0.0.0.0"
-"authrpc.port" = 8551
-"authrpc.vhosts" = "*"
+http.addr = "0.0.0.0"
+http.api = "eth,erigon,engine" # "eth,erigon,engine,debug,trace"
+http.vhosts = "*"
+authrpc.addr = "0.0.0.0"
+authrpc.port = 8551
+authrpc.vhosts = "*"
 
 # ethstats = "${NODE_NAME}@${ETH_STATS_IP}"
 
 # Bootnodes
-bootnodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
+bootnodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.141.196.212:30303","enode://ab4221c35f8cd50fb4036cc8a1f0e1b11b754416c445ce6bc02779bfa4feab4131e35ccb655c5db8999bdd1b16b70487dd74ef7a16c8065f9f81c8ab4c646f99@34.91.156.224:30303"]
