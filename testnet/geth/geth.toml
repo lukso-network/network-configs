@@ -16,10 +16,10 @@ DataDir = "./testnet-data/execution"
 HTTPHost = "localhost"
 HTTPPort = 8545
 HTTPVirtualHosts = ["localhost"]
-HTTPModules = ["net", "web3", "eth"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
+HTTPModules = ["net", "web3", "eth", "engine"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
 WSHost = "localhost"
 WSPort = 8546
-WSModules = ["net", "web3", "eth"]  # ["net", "eth", "web3", "debug", "engine", "txpool"]
+WSModules = ["net", "web3", "eth", "engine"]  # ["net", "eth", "web3", "debug", "engine", "txpool"]
 # GraphQLVirtualHosts = ["localhost"]
 
 # Engine API
