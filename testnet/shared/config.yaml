@@ -11,8 +11,8 @@ CONFIG_NAME: 'lukso'
 # ---------------------------------------------------------------
 # Min Genesis Validators in Genesis state
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 4000
-# Date and time (UTC): Wednesday, 3 May 2023 16:20:00
-# Shanghai time = 16,128 (42 epochs in seconds) + 1,683,128,400 + 2,400 - 2
+# Date and time (UTC): Wednesday, May 3rd 2023 16:20:00
+# Shanghai time = 16128 (42 epochs in seconds) + 1683128400 + 2400 - 2
 MIN_GENESIS_TIME: 1683128400
 # 2400 seconds (40 Min) 
 GENESIS_DELAY: 2400
