@@ -17,5 +17,3 @@ metrics = true
 metrics-address = "0.0.0.0"
 metrics-allow-origin = "*"
 metrics-port = 5054
-boot-nodes = "enr:-MK4QL_QJUpcwZszA99XzR9nDL9FiXmt_asTqrpCy4wtDzRzIJvSAsan9LI3umpDKWTOpvEMuOdg0feAgXeaG-5C3uSGAYdLen_mh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBy3Hm5QgEABP__________gmlkgnY0gmlwhCJaUYyJc2VjcDI1NmsxoQKZw1caFRxUwB-ee7gSDc1ZGqr13ngROXHEokVKNbvYuIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A"
-slots-per-restore-point = 32
