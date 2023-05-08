@@ -11,10 +11,12 @@ CONFIG_NAME: 'lukso'
 # ---------------------------------------------------------------
 # Min Genesis Validators in Genesis state
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 4096
-# Thu Apr 27 2023 11:20:00 GMT
-MIN_GENESIS_TIME: 1682594400
+# Min Genesis Time: Tuesday, 23 May 2023 15:40:00 GMT (+ Genesis Delay -> 4:20pm GMT)
+MIN_GENESIS_TIME: 1684856400
 # 2400 seconds (40 Min)
 GENESIS_DELAY: 2400
+# Network start time: 1684856400 + 2400 = 1684858800
+# Tuesday, 23 May 2023 16:20:00 GMT
 
 # Transition
 # ---------------------------------------------------------------
@@ -50,10 +52,12 @@ BELLATRIX_FORK_VERSION: 0x42000003
 BELLATRIX_FORK_EPOCH: 0
 
 # Capella
-# ~31.2 days after mainnet start
-# Epoch to timestamp: 32 * 12 * 7042 - 2 + MIN_GENESIS_TIME + GENESIS_DELAY
+# 1 epoch = 384 seconds
+# Epoch to seconds: 32 * 12 * 8100 = 3110400
+# Shanghai time: 3110400 + 1684858800 - 2 = 1687969198
+# Capella fork: Wednesday, 28 June 2023 16:20:00 GMT
 CAPELLA_FORK_VERSION: 0x42000004
-CAPELLA_FORK_EPOCH: 7042
+CAPELLA_FORK_EPOCH: 8100
 
 # Fork choice
 # ---------------------------------------------------------------
