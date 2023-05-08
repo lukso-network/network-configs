@@ -16,4 +16,4 @@ minimum-peers-per-subnet: 0
 block-batch-limit: 512
 block-batch-limit-burst-factor: 10
 
-bootstrap-node: [enr:-MK4QL_QJUpcwZszA99XzR9nDL9FiXmt_asTqrpCy4wtDzRzIJvSAsan9LI3umpDKWTOpvEMuOdg0feAgXeaG-5C3uSGAYdLen_mh2F0dG5ldHOIAAAAAAAAAACEZXRoMpBy3Hm5QgEABP__________gmlkgnY0gmlwhCJaUYyJc2VjcDI1NmsxoQKZw1caFRxUwB-ee7gSDc1ZGqr13ngROXHEokVKNbvYuIhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A]
+bootstrap-node: []

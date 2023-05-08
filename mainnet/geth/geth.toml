@@ -16,7 +16,7 @@ DataDir = "./mainnet-data/execution"
 # IPCPath = "./mainnet-data/execution/geth.ipc"
 HTTPHost = "localhost"
 HTTPPort = 8545
-HTTPVirtualHosts = ["*"]
+HTTPVirtualHosts = ["localhost"]
 HTTPModules = ["net"] # ["net", "eth", "web3", "debug", "engine", "txpool"]
 WSHost = "localhost"
 WSPort = 8546
@@ -31,8 +31,8 @@ AuthVirtualHosts = ["localhost"] # ["*"]
 
 
 [Node.P2P]
-BootstrapNodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
-BootstrapNodesV5 = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.147.105.186:30303"]
+BootstrapNodes = []
+BootstrapNodesV5 = []
 
 StaticNodes = []
 TrustedNodes = []

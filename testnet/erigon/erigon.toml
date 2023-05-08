@@ -5,7 +5,7 @@ externalcl = true
 
 miner.gaslimit = 42000000
 miner.gasprice = 1000000000  # 1 Gwei
-rpc.allow-unprotected-txs = true # test
+rpc.allow-unprotected-txs = true
 
 datadir = "./testnet-data/execution"
 authrpc.jwtsecret = "./configs/shared/secrets/jwt.hex"
