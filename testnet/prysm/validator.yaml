@@ -1,4 +1,4 @@
-chain-config-file: './config/testnet/shared/config.yaml'
+chain-config-file: './configs/testnet/shared/config.yaml'
 
 datadir: './testnet-data/validator'
 
