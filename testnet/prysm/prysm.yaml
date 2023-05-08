@@ -1,5 +1,5 @@
-chain-config-file: './config/testnet/shared/config.yaml'
-genesis-state: './config/testnet/shared/genesis.ssz'
+chain-config-file: './configs/testnet/shared/config.yaml'
+genesis-state: './configs/testnet/shared/genesis.ssz'
 
 datadir: './testnet-data/consensus'
 jwt-secret: './configs/shared/secrets/jwt.hex'
