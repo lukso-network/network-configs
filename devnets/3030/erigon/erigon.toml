@@ -1,12 +1,15 @@
-networkid = 3030
 chain = "mainnet"
+networkid = 3030
 
 externalcl = true
+
+miner.gaslimit = 42000000
+GasPrice = 1000000000 # 1 Gwei
 
 datadir = "./devnet-data/execution"
 "authrpc.jwtsecret" = "./configs/shared/secrets/jwt.hex"
 nat = "any"
-ws = true
+ws = false
 http = true
 "http.addr" = "0.0.0.0"
 "http.api" = "erigon" # "eth,erigon,engine,debug,trace"
