@@ -1,7 +1,10 @@
-datadir: './devnet-data/validator'
-wallet-dir: './devnet-keystore'
-wallet-password-file: './devnet-keystore/password.txt'
 chain-config-file: './configs/devnet/shared/config.yaml'
+
+datadir: './devnet-data/validator'
+
+wallet-dir: './devnet-keystore'
+# wallet-password-file: './devnet-keystore/password.txt'
+
 monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'
