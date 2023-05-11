@@ -2,7 +2,7 @@
 # https://geth.ethereum.org/docs/fundamentals/config-files
 
 [Eth]
-NetworkId = 3030
+NetworkId = 1620
 
 [Eth.Miner]
 GasCeil = 42000000

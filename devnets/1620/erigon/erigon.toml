@@ -1,5 +1,5 @@
 chain = "mainnet"
-networkid = 3030
+networkid = 1620
 
 externalcl = true
 
