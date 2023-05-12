@@ -1,35 +1,35 @@
-# **Repository Overview - network-configs**
-
-# **Description**
+# LUKSO Network Configurations
 
 This repository contains all [LUKSO Network](https://lukso.network/) blockchain’s configurations. These configurations offer a repeatable, re-usable, simple configuration management and multi-application deployment, to simply load a configuration file with different methods to run the nodes. (eg. Binaries, Docker, etc…)
 
-# **Repository Structure**
+## **Repository Structure**
 
-## **Devnets**
+### **Devnets**
 
 Devnets are used to test new blockchain parameters, stress-tests and other configs before they will be integrated into the mainnet. They are not meant to run for long or extended periods of time, therefore they can be removed at anytime. 
 
 
-## **Testnet**
+### **Testnet**
 
 Testnet is the official playground for blockchain developers to build dapps before deployig them on the main network. 
 
 The testnet is also used to test mainnet forks before applying them to mainnet.
 
-## **Mainnet**
+### **Mainnet**
 
 Mainnet directory is used to host the future main network configurations, right now it’s used as a template on how the network will look like in the future.
 
-# **To participate into the LUKSO blockchain** 
-You only need to run one client per each layer (**Execution Layer** and **Consensus Layer**) to participate in the network. 
-## **Execution Layer vs Consensus Layer**
+## To participate in the LUKSO blockchain
+
+You need to run one client per layer (**Execution Layer** and **Consensus Layer**) to participate in the network. 
+
+### Execution Layer vs Consensus Layer
 
 Execution layer clients are executing transactions and smart contracts using the Ethereum Virtual Machine (EVM).
 
 The consensus layer functions as the new slot generation and validtaor infrastructure managing the Proof of Stake (Casper FFG) consensus of LUKSO.
 
-## **How many clients per Layer** 
+### How many clients per Layer
 It’s very important to choose one client per layer, for example:
 
 - Geth and Prysm
@@ -37,23 +37,23 @@ It’s very important to choose one client per layer, for example:
 
 Keep in mind that you need to run the execution first. The clients are explained below to which layer they belong. 
 
-# TODO improve below
+## TODO improve below
 
-# **How to install, setup and run a node?**
+### How to install, setup and run a node?
 There are three different methods to install/setup/run a node:
 
 - [LUKSO CLI](https://github.com/lukso-network/tools-lukso-cli)
 - Binary Application
 - Docker Container
 
-# **How to install the clients**
+### How to install the clients
 
-## **LUKSO CLI**
+### LUKSO CLI
 
 The LUKSO CLI is a command line tool that install clients and starts clients for you. [See the README of the CLI for details](https://github.com/lukso-network/tools-lukso-cli#readme).
 
 
-## **Binary Applications**
+### Binary Applications
 Follow the instructions below to install the respective clients:
 
 ******************Execution Layer:******************
@@ -67,7 +67,7 @@ Follow the instructions below to install the respective clients:
 - [Prysm](https://github.com/prysmaticlabs/prysm/releases)
 - [Lighthouse](https://github.com/sigp/lighthouse/releases)
 
-## **Docker Containers (TBD, not ready yet!)**
+### Docker Containers (TBD, not ready yet!)
 Docker allows you to separate your applications from your infrastructure so you can deliver software quickly.
 
 ******************Execution Layer:******************
@@ -82,10 +82,10 @@ Docker allows you to separate your applications from your infrastructure so you 
 
 **(Under development)**
 
-# **How to setup and run the clients**
+## How to setup and run the clients
 Once you have installed the prefered clients given above, here is what you need to configure and run them. 
 
-## **Binary Applications**
+### Binary Applications
 
 ```bash
 # 1 - Clone network-configs repository
