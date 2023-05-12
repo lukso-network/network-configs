@@ -2,20 +2,20 @@
 
 This repository contains all [LUKSO Network](https://lukso.network/) blockchain’s configurations. These configurations offer a repeatable, re-usable, simple configuration management and multi-application deployment, to simply load a configuration file with different methods to run the nodes. (eg. Binaries, Docker, etc…)
 
-## **Repository Structure**
+## Repository Structure
 
-### **Devnets**
+### Devnets
 
 Devnets are used to test new blockchain parameters, stress-tests and other configs before they will be integrated into the mainnet. They are not meant to run for long or extended periods of time, therefore they can be removed at anytime. 
 
 
-### **Testnet**
+### Testnet
 
 Testnet is the official playground for blockchain developers to build dapps before deployig them on the main network. 
 
 The testnet is also used to test mainnet forks before applying them to mainnet.
 
-### **Mainnet**
+### Mainnet
 
 Mainnet directory is used to host the future main network configurations, right now it’s used as a template on how the network will look like in the future.
 
