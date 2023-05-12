@@ -104,14 +104,10 @@ geth --config=./geth/geth.toml
 prysm.sh beacon-chain --config-file=./prysm/prysm-archive-node.yml
 ```
 
-
-
-
-## **Docker Containers**
-
+### Docker Containers
 
 **(TBD)**
 
-## **Lusko CLI**
+### LUKSO CLI
 
 **(Under development)**
