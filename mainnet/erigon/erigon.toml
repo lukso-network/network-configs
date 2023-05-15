@@ -12,10 +12,10 @@ authrpc.jwtsecret = "./configs/shared/secrets/jwt.hex"
 nat = "any"
 ws = false
 http = true
-http.addr = "0.0.0.0"
+http.addr = "localhost"
 http.api = "erigon,engine" # "eth,erigon,engine,debug,trace"
 http.vhosts = "*"
-authrpc.addr = "0.0.0.0"
+authrpc.addr = "localhost"
 authrpc.port = 8551
 authrpc.vhosts = "*"
 
