@@ -44,4 +44,4 @@ DiscAddr = ""
 EnableMsgEvents = false
 
 [Ethstats]
-# URL = "node_name@server_address"
+# URL = "<NODE_NAME>:<ETH_STATS_SECRET>@stats.execution.mainnet.lukso.network"
