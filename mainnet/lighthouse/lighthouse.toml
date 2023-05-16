@@ -17,3 +17,4 @@ metrics = true
 metrics-address = "0.0.0.0"
 metrics-allow-origin = "*"
 metrics-port = 5054
+boot-nodes = 'enr:-MK4QN4_alrfsh6dhq-ddDVdkitypKNaq2OVubPfroAV4xtYStkdTeJ8xRquu8uvW4YnV9nphIkItqDi6NQl27DmhyGGAYgklR0Ph2F0dG5ldHOIAAAAAAAAAACEZXRoMpDcUbERQgAABKQfAAAAAAAAgmlkgnY0gmlwhCKTScGJc2VjcDI1NmsxoQIGq35AegYDYpfIR4fd9wO0QPINuA2dFxV5rsJRRLPTEYhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A'
