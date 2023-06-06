@@ -14,6 +14,7 @@
     "londonBlock": 0,
     "mergeForkBlock": 0,
     "terminalTotalDifficulty": 0,
+    "terminalTotalDifficultyPassed": true,
     "shanghaiTime": 1683146926
   },
   "number": "0x0",
