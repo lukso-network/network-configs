@@ -1,8 +1,6 @@
 "chain" = "mainnet"
 "networkid" = 42
 
-"externalcl" = true
-
 "miner.gaslimit" = 42000000
 
 "datadir" = "./mainnet-data/execution"

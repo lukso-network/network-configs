@@ -1,8 +1,6 @@
 chain = "mainnet"
 networkid = 7420
 
-externalcl = true
-
 miner.gaslimit = 42000000
 GasPrice = 1000000000 # 1 Gwei
 
