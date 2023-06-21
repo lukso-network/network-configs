@@ -1,8 +1,6 @@
 chain = "mainnet"
 networkid = 7420
 
-externalcl = true
-
 miner.gaslimit = 42000000
 GasPrice = 1000000000 # 1 Gwei
 
@@ -17,6 +15,8 @@ http = true
 "authrpc.addr" = "localhost"
 "authrpc.port" = 8551
 "authrpc.vhosts" = "*"
+"snapshots" = false
+"prune" = "htc"
 
 # ethstats = "${NODE_NAME}@${ETH_STATS_IP}"
 
