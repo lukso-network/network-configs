@@ -6,5 +6,4 @@ init-slashing-protection = true
 http = true
 http-port = 5062
 metrics = true
-metrics-address="127.0.0.1"
 metrics-port=5057
