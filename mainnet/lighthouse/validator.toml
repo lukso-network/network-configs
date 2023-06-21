@@ -7,5 +7,4 @@ http = true
 http-port = 5062
 metrics = true
 metrics-address="127.0.0.1"
-metrics-allow-origin="*"
 metrics-port=5057

@@ -15,6 +15,5 @@ enable-private-discovery = true
 enr-address = "0.0.0.0"
 metrics = true
 metrics-address = "127.0.0.1"
-metrics-allow-origin = "*"
 metrics-port = 5054
 boot-nodes = 'enr:-MK4QHdcy0ljlcSOPBGd2ydCh0-Rd-rRKqExylHiKunbJC3eI3DKSh4fGNM4pDnNYNvRu-9llVB1pMXloywn4XzVWhWGAYgmkP7yh2F0dG5ldHOIAAAAAAAAAACEZXRoMpDcUbERQgAABKQfAAAAAAAAgmlkgnY0gmlwhCKTScGJc2VjcDI1NmsxoQJNpNUERqKhA8eDDC4tovG3a59NXVOW16JDFAWXoFFTEYhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A'

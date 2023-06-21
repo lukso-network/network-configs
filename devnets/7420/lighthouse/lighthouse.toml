@@ -15,5 +15,4 @@ enable-private-discovery = true
 enr-address = "0.0.0.0"
 metrics = true
 metrics-address = "127.0.0.1"
-metrics-allow-origin = "*"
 metrics-port = 5054
