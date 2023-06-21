@@ -1,6 +1,6 @@
-testnet-dir = "./configs/testnet/shared"
-validators-dir = "./testnet-keystore/validators"
-secrets-dir = "./testnet-keystore/validators"
+testnet-dir = "./configs/devnet/shared"
+validators-dir = "./devnet-keystore/validators"
+secrets-dir = "./devnet-keystore/validators"
 beacon-nodes = "http://127.0.0.1:4000"
 init-slashing-protection = true
 http = true
