@@ -15,5 +15,6 @@ subscribe-all-subnets: true
 minimum-peers-per-subnet: 0
 block-batch-limit: 512
 block-batch-limit-burst-factor: 10
+contract-deployment-block: 0
 
 bootstrap-node: []
