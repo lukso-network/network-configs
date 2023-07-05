@@ -17,7 +17,7 @@ http = true
 "authrpc.vhosts" = "*"
 "snapshots" = false
 "prune" = "htc"
-"private.api.addr" = "localhost:9098"
+"private.api.addr" = "127.0.0.1:9098"
 
 # ethstats = "${NODE_NAME}@${ETH_STATS_IP}"
 
