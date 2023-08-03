@@ -1,0 +1,6 @@
+beacon-node-api-endpoint: http://localhost:5051
+validator-keys: ./mainnet-keystore:./mainnet-keystore
+data-path: ./mainnet-data/validator
+network: ./configs/mainnet/teku/config.yaml
+metrics-enabled: true
+metrics-port: 8009
