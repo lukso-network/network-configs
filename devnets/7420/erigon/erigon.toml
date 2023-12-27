@@ -18,6 +18,7 @@ http = true
 "snapshots" = false
 "prune" = "htc"
 "private.api.addr" = "127.0.0.1:9098"
+"db.size.limit" = "8TB" # optimal solution for erigon's breaking changes
 
 # ethstats = "${NODE_NAME}@${ETH_STATS_IP}"
 

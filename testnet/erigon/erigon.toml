@@ -17,6 +17,7 @@
 "snapshots" = false
 "prune" = "htc"
 "private.api.addr" = "127.0.0.1:9098"
+"db.size.limit" = "8TB" # optimal solution for erigon's breaking changes
 
 # Bootnodes
 bootnodes = ["enode://c2bb19ce658cfdf1fecb45da599ee6c7bf36e5292efb3fb61303a0b2cd07f96c20ac9b376a464d687ac456675a2e4a44aec39a0509bcb4b6d8221eedec25aca2@34.141.196.212:30303","enode://4cee52dc3cdc0f9466d40354c0ae038b561eff0409f01092d44d692f35797a0f3e796481c5ad1ca9afb4ea00dcceaaddbf3a79ec311221bfad3567ba347e329b@34.91.156.224:30303"]
