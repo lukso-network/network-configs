@@ -9,7 +9,6 @@ min-sync-peers: 0
 monitoring-host: 'localhost'
 grpc-gateway-host: 'localhost'
 rpc-host: 'localhost'
-p2p-host-ip: '0.0.0.0'
 p2p-max-peers: 250
 subscribe-all-subnets: true
 minimum-peers-per-subnet: 0
