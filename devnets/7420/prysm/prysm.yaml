@@ -5,15 +5,13 @@ datadir: './devnet-data/consensus'
 jwt-secret: './configs/shared/secrets/jwt.hex'
 execution-endpoint: 'http://localhost:8551'
 
-min-sync-peers: 0
+min-sync-peers: 1
 monitoring-host: 'localhost'
 grpc-gateway-host: 'localhost'
 rpc-host: 'localhost'
 p2p-max-peers: 250
 subscribe-all-subnets: true
-minimum-peers-per-subnet: 0
-block-batch-limit: 512
-block-batch-limit-burst-factor: 10
+minimum-peers-per-subnet: 1
 contract-deployment-block: 0
 
 bootstrap-node: []

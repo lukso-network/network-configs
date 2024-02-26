@@ -5,15 +5,13 @@ datadir: './testnet-data/consensus'
 jwt-secret: './configs/shared/secrets/jwt.hex'
 execution-endpoint: 'http://localhost:8551'
 
-min-sync-peers: 0
+min-sync-peers: 1
 monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'
 p2p-max-peers: 250
 subscribe-all-subnets: true
-minimum-peers-per-subnet: 0
-block-batch-limit: 512
-block-batch-limit-burst-factor: 10
+minimum-peers-per-subnet:
 contract-deployment-block: 0
 
 bootstrap-node: ['enr:-MK4QPAebhGrV0IdXCaVQ33cL-5oySUvBXPkXZTHhCDrqMOtITlhab5B6PL9hfQY5NuRF5ctLcSFhHMCdLT4RWxxo-SGAYiVi7DIh2F0dG5ldHOIAAAAAAAAAACEZXRoMpCvClM1QgEABP__________gmlkgnY0gmlwhCKNxNSJc2VjcDI1NmsxoQISdsDnr_lxpAXRQmeOu-F_eAtxypZI4ctFavqdagbka4hzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A','enr:-MK4QMEZyb5vA6A4664OJNbdRF7QQHtSMISOqU9CF8qcdB7BBjX0HsQY92roqS-0n1wTyiuCFT0weAIE7FkukdnjL0GGAYli9q2wh2F0dG5ldHOIAAAAAAAAAACEZXRoMpCvClM1QgEABP__________gmlkgnY0gmlwhCJbnOCJc2VjcDI1NmsxoQJvUBwASZv0klLo0Zz51eb_LCQx-lNrNPp-lLULQBTpfYhzeW5jbmV0cwCDdGNwgjLIg3VkcIIu4A']
