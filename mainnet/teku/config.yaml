@@ -59,6 +59,12 @@ BELLATRIX_FORK_EPOCH: 0
 CAPELLA_FORK_VERSION: 0x42000004
 CAPELLA_FORK_EPOCH: 8100
 
+# Deneb
+# 18446744073709551615 is max uint64
+# It is set to far future epoch for now
+DENEB_FORK_VERSION: 0x42000005
+DENEB_FORK_EPOCH: 18446744073709551615
+
 # Fork choice
 # ---------------------------------------------------------------
 # 40%
