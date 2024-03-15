@@ -8,7 +8,7 @@ NetworkId = 42
 
 [Eth.Miner]
 GasCeil = 42000000
-GasPrice = 4200000000  # 4.2 Gwei
+GasPrice = 1000000000  # 1.0 Gwei
 
 
 [Node]
