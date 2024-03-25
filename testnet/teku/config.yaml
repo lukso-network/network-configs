@@ -57,10 +57,9 @@ CAPELLA_FORK_VERSION: 0x42010004
 CAPELLA_FORK_EPOCH: 42
 
 # Deneb
-# 18446744073709551615 is max uint64
-# It is set to far future epoch for now
+# GMT: Wednesday, April 10, 2024 4:20 PM
 DENEB_FORK_VERSION: 0x42010005
-DENEB_FORK_EPOCH: 18446744073709551615
+DENEB_FORK_EPOCH: 77175
 
 # Fork choice
 # ---------------------------------------------------------------
