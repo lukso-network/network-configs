@@ -57,9 +57,9 @@ CAPELLA_FORK_VERSION: 0x42010004
 CAPELLA_FORK_EPOCH: 42
 
 # Deneb
-# GMT: Wednesday, April 10, 2024 4:20 PM
+# Date and time (GMT): Wednesday, 22 May 2024 16:20:00
 DENEB_FORK_VERSION: 0x42010005
-DENEB_FORK_EPOCH: 77175
+DENEB_FORK_EPOCH: 86625
 
 # Fork choice
 # ---------------------------------------------------------------
