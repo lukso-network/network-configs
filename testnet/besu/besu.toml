@@ -9,4 +9,4 @@
 'min-gas-price' = 1000000000
 'target-gas-limit' = 42000000
 'sync-mode' = 'SNAP'
-
+'max-peers' = 25
