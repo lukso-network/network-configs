@@ -10,7 +10,6 @@ monitoring-host: '0.0.0.0'
 grpc-gateway-host: '0.0.0.0'
 rpc-host: '0.0.0.0'
 p2p-max-peers: 70
-subscribe-all-subnets: true
 minimum-peers-per-subnet: 1
 contract-deployment-block: 0
 
