@@ -56,7 +56,8 @@
     "eip4788TransitionTimestamp": "0x66EAFDAB",
     "eip4844TransitionTimestamp": "0x66EAFDAB",
     "eip5656TransitionTimestamp": "0x66EAFDAB",
-    "eip6780TransitionTimestamp": "0x66EAFDAB"
+    "eip6780TransitionTimestamp": "0x66EAFDAB",
+    "eip7516TransitionTimestamp": "0x66EAFDAB"
   },
   "genesis": {
     "number": "0x0",
