@@ -1,0 +1,5 @@
+data-dir = './testnet-data/validator'
+validators-dir = './testnet-keystore/validators'
+secrets-dir = './testnet-keystore/secrets'
+beacon-node = ['127.0.0.1:5052']
+doppelganger-detection = true

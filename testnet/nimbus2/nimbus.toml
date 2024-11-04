@@ -1,0 +1,9 @@
+network = './configs/testnet/nimbus2'
+data-dir = './testnet-data/consensus'
+el = ['http://localhost:8551'] 
+genesis-state = './configs/testnet/shared/genesis.ssz'
+rest = true
+rest-address = '127.0.0.1'
+rest-port = 5052
+doppelganger-detection = true
+bootstrap-file = './configs/testnet/nimbus2/bootnodes.txt'
