@@ -1,6 +1,7 @@
 network = './configs/mainnet/nimbus2'
 data-dir = './mainnet-data/consensus'
 el = ['http://localhost:8551'] 
+jwt-secret = './configs/shared/secrets/jwt.hex'
 genesis-state = './configs/mainnet/shared/genesis.ssz'
 rest = true
 rest-address = '127.0.0.1'
