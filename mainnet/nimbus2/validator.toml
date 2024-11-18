@@ -1,0 +1,5 @@
+data-dir = './mainnet-data/validator'
+validators-dir = './mainnet-keystore/validators'
+secrets-dir = './mainnet-keystore/secrets'
+beacon-node = ['127.0.0.1:5052']
+doppelganger-detection = true
