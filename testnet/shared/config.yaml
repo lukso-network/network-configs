@@ -61,6 +61,12 @@ CAPELLA_FORK_EPOCH: 42
 DENEB_FORK_VERSION: 0x42010005
 DENEB_FORK_EPOCH: 113400
 
+# Electra
+# 18446744073709551615 is max uint64
+# It is set to far future epoch for now
+ELECTRA_FORK_VERSION: 0x42010006
+ELECTRA_FORK_EPOCH: 18446744073709551615
+
 # Fork choice
 # ---------------------------------------------------------------
 # 40%
