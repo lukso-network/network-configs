@@ -58,6 +58,16 @@
     "eip5656TransitionTimestamp": "0x66EAFDAB",
     "eip6780TransitionTimestamp": "0x66EAFDAB",
     "eip7516TransitionTimestamp": "0x66EAFDAB"
+    "eip7702TransitionTimestamp": "0x68485B30",
+    "eip7251TransitionTimestamp": "0x68485B30",
+    "eip7002TransitionTimestamp": "0x68485B30",
+    "eip6110TransitionTimestamp": "0x68485B30",
+    "eip7691TransitionTimestamp": "0x68485B30",
+    "eip7623TransitionTimestamp": "0x68485B30",
+    "eip7685TransitionTimestamp": "0x68485B30",
+    "eip7549TransitionTimestamp": "0x68485B30",
+    "eip2935TransitionTimestamp": "0x68485B30",
+    "eip2537TransitionTimestamp": "0x68485B30",
   },
   "genesis": {
     "number": "0x0",

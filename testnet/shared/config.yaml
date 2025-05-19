@@ -57,15 +57,14 @@ CAPELLA_FORK_VERSION: 0x42010004
 CAPELLA_FORK_EPOCH: 42
 
 # Deneb
-# Date and time (GMT): Wednesday, 18 September 2024 16:20:00
+# Date and time: Wednesday, 18 September 2024 16:20:00 GMT
 DENEB_FORK_VERSION: 0x42010005
 DENEB_FORK_EPOCH: 113400
 
 # Electra
-# 18446744073709551615 is max uint64
-# It is set to far future epoch for now
-ELECTRA_FORK_VERSION: 0x42010006
-ELECTRA_FORK_EPOCH: 18446744073709551615
+# Date and time: Tuesday, 10 July 2025 16:20:00 GMT
+DENEB_FORK_VERSION: 0x42010006
+DENEB_FORK_EPOCH: 173025
 
 # Fork choice
 # ---------------------------------------------------------------
@@ -107,7 +106,7 @@ CHURN_LIMIT_QUOTIENT: 65536
 
 # Validator Stakes
 # ---------------------------------------------------------------
-# 2**5 * 10**9 (= 32,000,000,000) Gwei
-MAX_EFFECTIVE_BALANCE: 32000000000
+# 2**10 * 10**9 (= 2,048,000,000,000) Gwei
+MAX_EFFECTIVE_BALANCE: 2048000000000
 # 2**4 * 10**9 (= 16,000,000,000) Gwei
 EJECTION_BALANCE: 16000000000
