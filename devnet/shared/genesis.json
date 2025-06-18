@@ -16,9 +16,9 @@
     "mergeForkBlock": 0,
     "terminalTotalDifficulty": 0,
     "terminalTotalDifficultyPassed": true,
-    "shanghaiTime": 1749561240,
-    "cancunTime": 1749565080,
-    "pragueTime": 1749568920,
+    "shanghaiTime": 1750266840,
+    "cancunTime": 1750270680,
+    "pragueTime": 1750274520,
     "consolidationRequestContractAddress": "0x0000bbddc7ce488642fb579f8b00f3a590007251",
     "withdrawalRequestContractAddress": "0x00000961ef480eb55e80d19ad83579a64c007002",
     "blobSchedule": {

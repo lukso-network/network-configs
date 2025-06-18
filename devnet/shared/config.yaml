@@ -12,7 +12,7 @@ CONFIG_NAME: 'lukso-devnet'
 # Min Genesis Validators in Genesis state
 MIN_GENESIS_ACTIVE_VALIDATOR_COUNT: 200
 # Min Genesis Time: Tuesday, 23 May 2023 15:40:00 GMT
-MIN_GENESIS_TIME: 1749556800
+MIN_GENESIS_TIME: 1750262400
 # 600 seconds (10 Min)
 GENESIS_DELAY: 600
 # Final Network start time: 1749556800 + 600 = 1749557400
