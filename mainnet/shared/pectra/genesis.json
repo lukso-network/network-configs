@@ -21,7 +21,7 @@
     "pragueTime": 1758126000,
     "consolidationRequestContractAddress": "0x0000bbddc7ce488642fb579f8b00f3a590007251",
     "withdrawalRequestContractAddress": "0x00000961ef480eb55e80d19ad83579a64c007002",
-    "depositContractAddress": "0xcafe00000000000000000000000000000000cafe",
+    "depositContractAddress": "0xCAfe00000000000000000000000000000000CAfe",
     "blobSchedule": {
       "cancun": {
         "target": 3,
