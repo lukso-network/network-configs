@@ -18,7 +18,22 @@
     "terminalTotalDifficultyPassed": true,
     "shanghaiTime": 1687969198,
     "cancunTime": 1732119595,
-    "pragueTime": 1795018800
+    "pragueTime": 1758126000,
+    "consolidationRequestContractAddress": "0x0000bbddc7ce488642fb579f8b00f3a590007251",
+    "withdrawalRequestContractAddress": "0x00000961ef480eb55e80d19ad83579a64c007002",
+    "depositContractAddress": "0xcafe00000000000000000000000000000000cafe",
+    "blobSchedule": {
+      "cancun": {
+        "target": 3,
+        "max": 6,
+        "baseFeeUpdateFraction": 3338477
+      },
+      "prague": {
+        "target": 6,
+        "max": 9,
+        "baseFeeUpdateFraction": 5007716
+      }
+    }
   },
   "number": "0x0",
   "nonce": "0x1",
