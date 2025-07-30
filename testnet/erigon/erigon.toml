@@ -14,8 +14,7 @@
 "authrpc.addr" = "localhost"
 "authrpc.port" = 8551
 "authrpc.vhosts" = "*"
-"snapshots" = false
-"prune" = "htc"
+"prune.mode" = "full"
 "private.api.addr" = "127.0.0.1:9098"
 "db.size.limit" = "8TB" # optimal solution for erigon's breaking changes
 "maxpeers" = 100
