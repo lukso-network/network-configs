@@ -66,6 +66,11 @@ DENEB_FORK_EPOCH: 113400
 ELECTRA_FORK_VERSION: 0x42010006
 ELECTRA_FORK_EPOCH: 188550
 
+# Fulu
+# Set for future
+FULU_FORK_VERSION: 0x42010007
+FULU_FORK_EPOCH: 18446744073709551615
+
 # Fork choice
 # ---------------------------------------------------------------
 # 40%

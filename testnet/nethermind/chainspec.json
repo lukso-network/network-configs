@@ -68,9 +68,44 @@
     "eip7549TransitionTimestamp": "0x68A352B0",
     "eip2935TransitionTimestamp": "0x68A352B0",
     "eip2537TransitionTimestamp": "0x68A352B0",
+    "eip7594TransitionTimestamp": "0xFFFFFFFF",
+    "eip7892TransitionTimestamp": "0xFFFFFFFF",
+    "eip7918TransitionTimestamp": "0xFFFFFFFF",
+    "eip7825TransitionTimestamp": "0xFFFFFFFF",
+    "eip7935TransitionTimestamp": "0xFFFFFFFF",
+    "eip7934TransitionTimestamp": "0xFFFFFFFF",
+    "eip7883TransitionTimestamp": "0xFFFFFFFF",
+    "eip7642TransitionTimestamp": "0xFFFFFFFF",
+    "eip7951TransitionTimestamp": "0xFFFFFFFF",
+    "eip7939TransitionTimestamp": "0xFFFFFFFF",
+    "eip7910TransitionTimestamp": "0xFFFFFFFF",
+    "eip7917TransitionTimestamp": "0xFFFFFFFF",
     "eip7251ContractAddress": "0x0000bbddc7ce488642fb579f8b00f3a590007251",
     "eip7002ContractAddress": "0x00000961ef480eb55e80d19ad83579a64c007002",
-    "depositContractAddress": "0xCAfe00000000000000000000000000000000CAfe"
+    "depositContractAddress": "0xCAfe00000000000000000000000000000000CAfe",
+    "blobSchedule": [
+      {
+        "name": "prague",
+        "timestamp": "0xFFFFFFFF",
+        "target": 6,
+        "max": 9,
+        "baseFeeUpdateFraction": "0x4c6964"
+      },
+      {
+        "name": "bpo1",
+        "timestamp": "0xFFFFFFFF",
+        "target": 10,
+        "max": 15,
+        "baseFeeUpdateFraction": "0x7f5a51"
+      },
+      {
+        "name": "bpo2",
+        "timestamp": "0xFFFFFFFF",
+        "target": 14,
+        "max": 21,
+        "baseFeeUpdateFraction": "0xb24b3f"
+      }
+    ]
   },
   "genesis": {
     "number": "0x0",
