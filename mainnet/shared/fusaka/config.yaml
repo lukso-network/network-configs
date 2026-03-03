@@ -70,9 +70,9 @@ ELECTRA_FORK_VERSION: 0x42000006
 ELECTRA_FORK_EPOCH: 190800
 
 # Fulu
-# Set for future
+# Date and time: Wednesday, 15th April 2026 16:20:00 GMT
 FULU_FORK_VERSION: 0x42000007
-FULU_FORK_EPOCH: 18446744073709551615
+FULU_FORK_EPOCH: 238050
 
 # Fork choice
 # ---------------------------------------------------------------
