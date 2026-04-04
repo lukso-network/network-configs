@@ -66,6 +66,11 @@ DENEB_FORK_EPOCH: 113400
 ELECTRA_FORK_VERSION: 0x42010006
 ELECTRA_FORK_EPOCH: 188550
 
+# Fulu
+# Date and time: Wednesday, 15th April 2026 16:20:00 GMT
+FULU_FORK_VERSION: 0x42010007
+FULU_FORK_EPOCH: 242550
+
 # Fork choice
 # ---------------------------------------------------------------
 # 40%
