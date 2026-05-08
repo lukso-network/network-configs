@@ -42,6 +42,5 @@ ListenAddr = ":30303"
 DiscAddr = ""
 EnableMsgEvents = false
 
-
 [Ethstats]
-# URL = "node_name@server_address"
+# URL = "<NODE_NAME>:<ETH_STATS_SECRET>@stats.execution.testnet.lukso.network"
